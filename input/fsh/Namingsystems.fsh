@@ -16,7 +16,7 @@ Usage: #definition
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * usage = "Used for identifying healthcare providers, facilities, and resources within the Uzbekistan healthcare system"
 * uniqueId[0].type = #uri
-* uniqueId[=].value = $organization-argoz-id-system
+* uniqueId[=].value = $organization-argos-id-system
 * uniqueId[=].preferred = true
 * uniqueId[=].comment = "This is the canonical URI for the Uzbekistan HRM Argoz system"
 

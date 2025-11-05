@@ -186,7 +186,7 @@ Description: "Example of an oxygen saturation vital sign observation with interp
 * effectiveDateTime = "2014-12-05T09:30:10+01:00"
 * performer = Reference(Practitioner/example-practitioner)
 * valueQuantity = 95 '%' "%"
-* interpretation = $v3-ObservationInterpretation#N "Normal"
+* interpretation = $observation-interpretation#N "Normal"
 * interpretation.text = "Normal (applies to non-numeric results)"
 * referenceRange.low = 90 '%' "%"
 * referenceRange.high = 99 '%' "%"

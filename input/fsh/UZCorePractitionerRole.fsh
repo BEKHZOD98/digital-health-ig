@@ -45,8 +45,6 @@ InstanceOf: UZCorePractitionerRole
 Description: "Example of a practitioner's role"
 Usage: #example
 * language = #uz
-* identifier[nationalId]
-  * value = "9876543210"
 * active = true
 * practitioner = Reference(Practitioner/example-practitioner)
 * organization = Reference(Organization/example-organization)
