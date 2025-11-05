@@ -1,11 +1,11 @@
 // This file contains definitions of our internally-defined naming systems
 
-Instance: uzb-hrm-argos
+Instance: uzb-hrm-argoz
 InstanceOf: NamingSystem
 Description: "Healthcare provider identifiers assigned by the Uzbekistan Human Resource Management (HRM) system"
 Usage: #definition
-* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-hrm-argos"
-* name = "UzbekistanHrmArgosSystem"
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-hrm-argoz"
+* name = "UzbekistanHrmArgozSystem"
 * status = #active
 * kind = #identifier
 * publisher = "Uzinfocom"
@@ -16,9 +16,9 @@ Usage: #definition
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * usage = "Used for identifying healthcare providers, facilities, and resources within the Uzbekistan healthcare system"
 * uniqueId[0].type = #uri
-* uniqueId[=].value = $organization-argos-id-system
+* uniqueId[=].value = $organization-argoz-id-system
 * uniqueId[=].preferred = true
-* uniqueId[=].comment = "This is the canonical URI for the Uzbekistan HRM Argos system"
+* uniqueId[=].comment = "This is the canonical URI for the Uzbekistan HRM Argoz system"
 
 Instance: uzb-soliq
 InstanceOf: NamingSystem
@@ -239,6 +239,19 @@ Usage: #definition
 * uniqueId.preferred = true
 * uniqueId.comment = "This is the canonical URI for the Uzbekistan DHP Location Unit identifier system"
 
+Instance: allergy-intolerance-identifier
+InstanceOf: NamingSystem
+Usage: #definition
+Title: "DHP UZ AllergyIntolerance Identifier System"
+Description: "Identifier namespace used for AllergyIntolerance resources in the Uzbekistan DHP."
+* name = "UZ_DHP_AllergyIntolerance_Identifier"
+* status = #active
+* kind = #identifier
+* date = "2025-08-19"
+* publisher = "Uzinfocom"
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://terminology.dhp.uz/fhir/core/AllergyIntolerance"
+
 Instance: episodeofcare-identifier
 InstanceOf: NamingSystem
 Usage: #definition
@@ -249,11 +262,7 @@ Description: "Identifier system used for EpisodeOfCare resources within the Uzbe
 * kind = #identifier
 * date = "2025-08-13"
 * publisher = "Uzinfocom"
-
-// Необязательно: тип идентификатора (v2-0203 "Visit number")
 * type = http://terminology.hl7.org/CodeSystem/v2-0203#VN "Visit number"
-
-// Уникальные идентификаторы NamingSystem
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "http://dhp.uz/ids/episode-of-care"
 * uniqueId[0].preferred = true
