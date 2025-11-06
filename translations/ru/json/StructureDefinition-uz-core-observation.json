@@ -14,20 +14,20 @@
         {
           "id" : "StructureDefinition.title",
           "context" : "A short, descriptive, user-friendly title for the structure definition.",
-          "source" : "Uz Core Observation",
-          "target" : "Uz Core Observation"
+          "source" : "UZ Core Observation",
+          "target" : "UZ Core Observation"
         },
         {
           "id" : "StructureDefinition.publisher",
           "context" : "The name of the organization or individual responsible for the release and ongoing maintenance of the structure definition.",
-          "source" : "Uzinfocom LLC",
-          "target" : "ООО «Единый интегратор Uzinfocom»"
+          "source" : "Ministry of Health of the Republic of Uzbekistan",
+          "target" : "Ministry of Health of the Republic of Uzbekistan"
         },
         {
           "id" : "StructureDefinition.contact.name",
           "context" : "The name of an individual to contact.",
-          "source" : "Uzinfocom LLC",
-          "target" : "Uzinfocom LLC"
+          "source" : "Ministry of Health of the Republic of Uzbekistan",
+          "target" : "Ministry of Health of the Republic of Uzbekistan"
         }
       ]
     }

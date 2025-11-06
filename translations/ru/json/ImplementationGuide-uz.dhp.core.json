@@ -20,13 +20,13 @@
         {
           "id" : "ImplementationGuide.publisher",
           "context" : "The name of the organization or individual responsible for the release and ongoing maintenance of the implementation guide.",
-          "source" : "Uzinfocom LLC",
-          "target" : "ООО «Единый интегратор Uzinfocom»"
+          "source" : "Ministry of Health of the Republic of Uzbekistan",
+          "target" : null
         },
         {
           "id" : "ContactDetail.name",
           "context" : "The name of an individual to contact.",
-          "source" : "Uzinfocom LLC",
+          "source" : "Ministry of Health of the Republic of Uzbekistan",
           "target" : null
         },
         {
@@ -34,6 +34,12 @@
           "context" : "A free text natural language description of the implementation guide from a consumer's perspective.",
           "source" : "National implementation guide for Uzbekistan using FHIR R5.",
           "target" : "Национальное руководство по внедрению для Узбекистана с использованием FHIRR5."
+        },
+        {
+          "id" : "Coding.display",
+          "context" : "A representation of the meaning of the code in the system, following the rules of the system.",
+          "source" : "Uzbekistan",
+          "target" : null
         },
         {
           "id" : "ImplementationGuide.definition.resource.name",
@@ -202,6 +208,66 @@
           "context" : "A description of the reason that a resource has been included in the implementation guide.",
           "source" : "Defines the type of event that is being recorded in Uzbek and Russian",
           "target" : "Определяет типы событий аудита на узбекском и русском языках"
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "blood-pressure-example",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Example of a blood pressure vital sign observation with systolic and diastolic components",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "bmi-example",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Example of a body mass index (BMI) vital sign observation",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "body-height-example",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Example of a body height vital sign observation",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "body-temperature-example",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Example of a body temperature vital sign observation",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "body-weight-example",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Example of a body weight vital sign observation",
+          "target" : null
         },
         {
           "id" : "ImplementationGuide.definition.resource.name",
@@ -848,18 +914,6 @@
         {
           "id" : "ImplementationGuide.definition.resource.name",
           "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "Example Uz Core Observation - Blood Pressure",
-          "target" : "Example Uz Core Observation - Blood Pressure"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.description",
-          "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Example instance of a blood pressure measurement for a patient",
-          "target" : "Пример экземпляра измерения артериального давления у пациента"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.name",
-          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
           "source" : "example-auditevent-condition-lookup",
           "target" : "example-auditevent-condition-lookup"
         },
@@ -1179,6 +1233,30 @@
           "id" : "ImplementationGuide.definition.resource.description",
           "context" : "A description of the reason that a resource has been included in the implementation guide.",
           "source" : "NamingSystem for globally standardized trade identifiers (GTIN) used for medicinal products.",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "head-circumference-example",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Example of a head circumference vital sign observation",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "heart-rate-example",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Example of a heart rate vital sign observation",
           "target" : null
         },
         {
@@ -1670,6 +1748,18 @@
         {
           "id" : "ImplementationGuide.definition.resource.name",
           "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "oxygen-saturation-example",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Example of an oxygen saturation vital sign observation with interpretation and reference range",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
           "source" : "Participant type translations",
           "target" : "Participant type translations"
         },
@@ -1940,6 +2030,18 @@
         {
           "id" : "ImplementationGuide.definition.resource.name",
           "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "respiratory-rate-example",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Example of a respiratory rate vital sign observation",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
           "source" : "Role class",
           "target" : "Role class"
         },
@@ -2084,20 +2186,14 @@
         {
           "id" : "ImplementationGuide.definition.resource.description",
           "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Telecom use type supplement with translation in Uzbek and Russian",
-          "target" : "Дополнение Типов использования контактных данных с переводами на узбекский ирусский языки"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.name",
-          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "Telecom usu",
-          "target" : "Telecom use"
+          "source" : "Telecom use types in Uzbekistan",
+          "target" : "Типы использования контактных данных в Узбекистане"
         },
         {
           "id" : "ImplementationGuide.definition.resource.description",
           "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Telecom use types in Uzbekistan",
-          "target" : "Типы использования контактных данных в Узбекистане"
+          "source" : "Telecom use type supplement with translation in Uzbek and Russian",
+          "target" : "Дополнение Типов использования контактных данных с переводами на узбекский ирусский языки"
         },
         {
           "id" : "ImplementationGuide.definition.resource.name",
@@ -2158,6 +2254,18 @@
           "context" : "A description of the reason that a resource has been included in the implementation guide.",
           "source" : "Types of clinical status in Uzbekistan",
           "target" : "Типы клинического статуса в Узбекистане"
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "Types of Condition severities",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Types of Condition severities in Uzbekistan",
+          "target" : null
         },
         {
           "id" : "ImplementationGuide.definition.resource.name",
@@ -2378,8 +2486,8 @@
         {
           "id" : "ImplementationGuide.definition.resource.name",
           "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "Uz Core Observation",
-          "target" : "Uz Core Observation"
+          "source" : "UZ Core Observation",
+          "target" : null
         },
         {
           "id" : "ImplementationGuide.definition.resource.description",
@@ -2558,8 +2666,8 @@
         {
           "id" : "ImplementationGuide.definition.resource.name",
           "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "uzb-hrm-argoz",
-          "target" : "uzb-hrm-argoz"
+          "source" : "uzb-hrm-argos",
+          "target" : "uzb-hrm-argos"
         },
         {
           "id" : "ImplementationGuide.definition.resource.description",
@@ -2812,6 +2920,18 @@
           "context" : "A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.",
           "source" : "Translationinfo",
           "target" : "Информация о переводах"
+        },
+        {
+          "id" : "ImplementationGuide.definition.page.source[x]",
+          "context" : "Indicates the URL or the actual content to provide for the page.",
+          "source" : "vital-signs.html",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.page.title",
+          "context" : "A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.",
+          "source" : "Vital Signs",
+          "target" : null
         }
       ]
     }

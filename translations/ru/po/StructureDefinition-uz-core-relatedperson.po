@@ -11,13 +11,13 @@ msgstr "UZ Core RelatedPerson"
 
 # The name of the organization or individual responsible for the release and ongoing maintenance of the structure definition.
 #: StructureDefinition.publisher
-msgid "Uzinfocom LLC"
-msgstr "ООО «Единый интегратор Uzinfocom»"
+msgid "Ministry of Health of the Republic of Uzbekistan"
+msgstr "Ministry of Health of the Republic of Uzbekistan"
 
 # The name of an individual to contact.
 #: StructureDefinition.contact.name
-msgid "Uzinfocom LLC"
-msgstr "Uzinfocom LLC"
+msgid "Ministry of Health of the Republic of Uzbekistan"
+msgstr "Ministry of Health of the Republic of Uzbekistan"
 
 # Text that can be used to describe the constraint in messages identifying that the constraint has been violated.
 #: StructureDefinition.element.RelatedPerson/constraint

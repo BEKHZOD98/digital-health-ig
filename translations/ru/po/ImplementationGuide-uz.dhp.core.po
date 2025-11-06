@@ -11,18 +11,23 @@ msgstr "Единая цифровая платформа здравоохран�
 
 # The name of the organization or individual responsible for the release and ongoing maintenance of the implementation guide.
 #: ImplementationGuide.publisher
-msgid "Uzinfocom LLC"
-msgstr "ООО «Единый интегратор Uzinfocom»"
+msgid "Ministry of Health of the Republic of Uzbekistan"
+msgstr ""
 
 # The name of an individual to contact.
 #: ContactDetail.name
-msgid "Uzinfocom LLC"
+msgid "Ministry of Health of the Republic of Uzbekistan"
 msgstr ""
 
 # A free text natural language description of the implementation guide from a consumer's perspective.
 #: ImplementationGuide.description
 msgid "National implementation guide for Uzbekistan using FHIR R5."
 msgstr "Национальное руководство по внедрению для Узбекистана с использованием FHIRR5."
+
+# A representation of the meaning of the code in the system, following the rules of the system.
+#: Coding.display
+msgid "Uzbekistan"
+msgstr ""
 
 # A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
 #: ImplementationGuide.definition.resource.name
@@ -163,6 +168,56 @@ msgstr "Audit event type"
 #: ImplementationGuide.definition.resource.description
 msgid "Defines the type of event that is being recorded in Uzbek and Russian"
 msgstr "Определяет типы событий аудита на узбекском и русском языках"
+
+# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+#: ImplementationGuide.definition.resource.name
+msgid "blood-pressure-example"
+msgstr ""
+
+# A description of the reason that a resource has been included in the implementation guide.
+#: ImplementationGuide.definition.resource.description
+msgid "Example of a blood pressure vital sign observation with systolic and diastolic components"
+msgstr ""
+
+# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+#: ImplementationGuide.definition.resource.name
+msgid "bmi-example"
+msgstr ""
+
+# A description of the reason that a resource has been included in the implementation guide.
+#: ImplementationGuide.definition.resource.description
+msgid "Example of a body mass index (BMI) vital sign observation"
+msgstr ""
+
+# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+#: ImplementationGuide.definition.resource.name
+msgid "body-height-example"
+msgstr ""
+
+# A description of the reason that a resource has been included in the implementation guide.
+#: ImplementationGuide.definition.resource.description
+msgid "Example of a body height vital sign observation"
+msgstr ""
+
+# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+#: ImplementationGuide.definition.resource.name
+msgid "body-temperature-example"
+msgstr ""
+
+# A description of the reason that a resource has been included in the implementation guide.
+#: ImplementationGuide.definition.resource.description
+msgid "Example of a body temperature vital sign observation"
+msgstr ""
+
+# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+#: ImplementationGuide.definition.resource.name
+msgid "body-weight-example"
+msgstr ""
+
+# A description of the reason that a resource has been included in the implementation guide.
+#: ImplementationGuide.definition.resource.description
+msgid "Example of a body weight vital sign observation"
+msgstr ""
 
 # A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
 #: ImplementationGuide.definition.resource.name
@@ -701,16 +756,6 @@ msgstr ""
 
 # A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
 #: ImplementationGuide.definition.resource.name
-msgid "Example Uz Core Observation - Blood Pressure"
-msgstr "Example Uz Core Observation - Blood Pressure"
-
-# A description of the reason that a resource has been included in the implementation guide.
-#: ImplementationGuide.definition.resource.description
-msgid "Example instance of a blood pressure measurement for a patient"
-msgstr "Пример экземпляра измерения артериального давления у пациента"
-
-# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
-#: ImplementationGuide.definition.resource.name
 msgid "example-auditevent-condition-lookup"
 msgstr "example-auditevent-condition-lookup"
 
@@ -977,6 +1022,26 @@ msgstr ""
 # A description of the reason that a resource has been included in the implementation guide.
 #: ImplementationGuide.definition.resource.description
 msgid "NamingSystem for globally standardized trade identifiers (GTIN) used for medicinal products."
+msgstr ""
+
+# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+#: ImplementationGuide.definition.resource.name
+msgid "head-circumference-example"
+msgstr ""
+
+# A description of the reason that a resource has been included in the implementation guide.
+#: ImplementationGuide.definition.resource.description
+msgid "Example of a head circumference vital sign observation"
+msgstr ""
+
+# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+#: ImplementationGuide.definition.resource.name
+msgid "heart-rate-example"
+msgstr ""
+
+# A description of the reason that a resource has been included in the implementation guide.
+#: ImplementationGuide.definition.resource.description
+msgid "Example of a heart rate vital sign observation"
 msgstr ""
 
 # A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
@@ -1386,6 +1451,16 @@ msgstr "Определяет типы медицинских организац�
 
 # A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
 #: ImplementationGuide.definition.resource.name
+msgid "oxygen-saturation-example"
+msgstr ""
+
+# A description of the reason that a resource has been included in the implementation guide.
+#: ImplementationGuide.definition.resource.description
+msgid "Example of an oxygen saturation vital sign observation with interpretation and reference range"
+msgstr ""
+
+# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+#: ImplementationGuide.definition.resource.name
 msgid "Participant type translations"
 msgstr "Participant type translations"
 
@@ -1611,6 +1686,16 @@ msgstr "Типы родственных связей в Узбекистане"
 
 # A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
 #: ImplementationGuide.definition.resource.name
+msgid "respiratory-rate-example"
+msgstr ""
+
+# A description of the reason that a resource has been included in the implementation guide.
+#: ImplementationGuide.definition.resource.description
+msgid "Example of a respiratory rate vital sign observation"
+msgstr ""
+
+# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+#: ImplementationGuide.definition.resource.name
 msgid "Role class"
 msgstr "Role class"
 
@@ -1731,18 +1816,13 @@ msgstr "Telecom use"
 
 # A description of the reason that a resource has been included in the implementation guide.
 #: ImplementationGuide.definition.resource.description
-msgid "Telecom use type supplement with translation in Uzbek and Russian"
-msgstr "Дополнение Типов использования контактных данных с переводами на узбекский ирусский языки"
-
-# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
-#: ImplementationGuide.definition.resource.name
-msgid "Telecom usu"
-msgstr "Telecom use"
+msgid "Telecom use types in Uzbekistan"
+msgstr "Типы использования контактных данных в Узбекистане"
 
 # A description of the reason that a resource has been included in the implementation guide.
 #: ImplementationGuide.definition.resource.description
-msgid "Telecom use types in Uzbekistan"
-msgstr "Типы использования контактных данных в Узбекистане"
+msgid "Telecom use type supplement with translation in Uzbek and Russian"
+msgstr "Дополнение Типов использования контактных данных с переводами на узбекский ирусский языки"
 
 # A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
 #: ImplementationGuide.definition.resource.name
@@ -1793,6 +1873,16 @@ msgstr "Типы клинического статуса"
 #: ImplementationGuide.definition.resource.description
 msgid "Types of clinical status in Uzbekistan"
 msgstr "Типы клинического статуса в Узбекистане"
+
+# A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+#: ImplementationGuide.definition.resource.name
+msgid "Types of Condition severities"
+msgstr ""
+
+# A description of the reason that a resource has been included in the implementation guide.
+#: ImplementationGuide.definition.resource.description
+msgid "Types of Condition severities in Uzbekistan"
+msgstr ""
 
 # A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
 #: ImplementationGuide.definition.resource.name
@@ -1976,8 +2066,8 @@ msgstr ""
 
 # A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
 #: ImplementationGuide.definition.resource.name
-msgid "Uz Core Observation"
-msgstr "Uz Core Observation"
+msgid "UZ Core Observation"
+msgstr ""
 
 # A description of the reason that a resource has been included in the implementation guide.
 #: ImplementationGuide.definition.resource.description
@@ -2127,8 +2217,8 @@ msgstr "Идентификаторы номеров медицинских ка�
 
 # A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
 #: ImplementationGuide.definition.resource.name
-msgid "uzb-hrm-argoz"
-msgstr "uzb-hrm-argoz"
+msgid "uzb-hrm-argos"
+msgstr "uzb-hrm-argos"
 
 # A description of the reason that a resource has been included in the implementation guide.
 #: ImplementationGuide.definition.resource.description
@@ -2339,4 +2429,14 @@ msgstr ""
 #: ImplementationGuide.definition.page.title
 msgid "Translationinfo"
 msgstr "Информация о переводах"
+
+# Indicates the URL or the actual content to provide for the page.
+#: ImplementationGuide.definition.page.source[x]
+msgid "vital-signs.html"
+msgstr ""
+
+# A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.
+#: ImplementationGuide.definition.page.title
+msgid "Vital Signs"
+msgstr ""
 
