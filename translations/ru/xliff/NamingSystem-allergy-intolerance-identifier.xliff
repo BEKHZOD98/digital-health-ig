@@ -21,14 +21,14 @@
              <notes>
                <note id="n1">The name of the organization or individual responsible for the release and ongoing maintenance of the naming system.</note>
              </notes>
-        <source>Uzinfocom LLC</source>
-        <target>ООО «Единый интегратор Uzinfocom»</target>
+        <source>Ministry of Health of the Republic of Uzbekistan</source>
+        <target></target>
       </trans-unit>
       <trans-unit id="NamingSystem-allergy-intolerance-identifier" resname="ContactDetail.name">
              <notes>
                <note id="n1">The name of an individual to contact.</note>
              </notes>
-        <source>Uzinfocom LLC</source>
+        <source>Ministry of Health of the Republic of Uzbekistan</source>
         <target></target>
       </trans-unit>
       <trans-unit id="NamingSystem-allergy-intolerance-identifier" resname="NamingSystem.description">
@@ -36,6 +36,13 @@
                <note id="n1">A free text natural language description of the naming system from a consumer's perspective. Details about what the namespace identifies including scope, granularity, version labeling, etc.</note>
              </notes>
         <source>Identifier namespace used for AllergyIntolerance resources in the Uzbekistan DHP.</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="NamingSystem-allergy-intolerance-identifier" resname="Coding.display">
+             <notes>
+               <note id="n1">A representation of the meaning of the code in the system, following the rules of the system.</note>
+             </notes>
+        <source>Uzbekistan</source>
         <target></target>
       </trans-unit>
       <trans-unit id="NamingSystem-allergy-intolerance-identifier" resname="NamingSystem.uniqueId.value">

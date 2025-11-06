@@ -45,12 +45,8 @@ InstanceOf: UZCoreAllergyIntolerance
 Usage: #example
 Title: "Allergy to grass pollen — example"
 Description: "Example instance conforming to UZCoreAllergyIntolerance."
-
-* meta.profile = "https://dhp.uz/StructureDefinition/uz-core-allergy-intolerance"
-
 //* identifier.system = "https://terminology.dhp.uz/AllergyIntolerance"
 * identifier.value = "AI-0001"
-
 * clinicalStatus = $allergy-clinical#active "Active"
 * verificationStatus = $allergy-verification#confirmed "Confirmed"
 * type = $allergy-intolerance-type#allergy "Allergy"
@@ -62,8 +58,6 @@ Description: "Example instance conforming to UZCoreAllergyIntolerance."
 * encounter = Reference(Encounter/example-encounter)
 
 * onsetDateTime = "2025-07-10"
-
-* extension[abatement].url = "https://terminology.dhp.uz/fhir/core/StructureDefinition/uz-allergy-abatement"
 * extension[abatement].valueString = "Symptoms resolved after antihistamine course"
 // Реакция
 * reaction.severity = #severe
