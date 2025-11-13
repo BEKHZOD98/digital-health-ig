@@ -356,7 +356,7 @@ Usage: #definition
 * uniqueId[=].value = $productServiceID
 * uniqueId[=].preferred = true
 * uniqueId[=].comment = "Canonical URI to populate Identifier.system for ICPS product and service codes."
-
+/*
 Instance: uz-pharm-id
 InstanceOf: NamingSystem
 Description: "NamingSystem for identifiers issued by the Uzbekistan Pharmaceutical Agency."
@@ -376,3 +376,4 @@ Usage: #definition
 * uniqueId[=].value = $uzpharm-agency
 * uniqueId[=].preferred = true
 * uniqueId[=].comment = "Canonical URI to be used as Identifier.system for Pharmaceutical Agency drug identifiers."
+*/

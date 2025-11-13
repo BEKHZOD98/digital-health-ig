@@ -20,8 +20,8 @@ Description: "UZ Core Medication profile defines the core structure for represen
     globalTradeItemID 0..1 MS and 
     markingID 0..1 MS and 
     productServiceID 0..1 MS and
-    uzpharmInfo 0..1 MS and
     registrationCertificateID 0..1 MS
+    //uzpharmInfo 0..1 MS
 
 * identifier[uzpharmBoxGroupID]
   * system 1..1 MS
@@ -62,7 +62,7 @@ Description: "UZ Core Medication profile defines the core structure for represen
   * type = $medicine-identifier-types#icps "Product and service identification codes"
   * use = #official
   * value 1..1 MS
-
+/*
 * identifier[uzpharmInfo]
   * system 1..1 MS
   * system = $uzpharm-agency
@@ -70,6 +70,7 @@ Description: "UZ Core Medication profile defines the core structure for represen
   * type = $medicine-identifier-types#pharm_id "Pharmaceutical agency drug ID"
   * use = #official
   * value 1..1 MS
+  */
 * code MS
 * code from MedicationClassificationVS 
 * status MS
