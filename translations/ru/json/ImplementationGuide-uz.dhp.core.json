@@ -1322,6 +1322,18 @@
         {
           "id" : "ImplementationGuide.definition.resource.name",
           "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "ISO 3166-1 Alpha-3 to Alpha-2 Country Code Mapping",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "ConceptMap for translating ISO 3166-1 alpha-3 (3-letter) country codes to alpha-2 (2-letter) country codes. For consistency, UZ Core uses 2-letter codes; this ConceptMap is provided to assist 3rd party systems in performing the translation.",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
           "source" : "ISO 3166-1 two-letter translations",
           "target" : null
         },
