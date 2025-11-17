@@ -1274,6 +1274,24 @@
         {
           "id" : "ImplementationGuide.definition.resource.name",
           "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "Identifier domain",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Description of the identifier systems acceptable for entity (patient, practitioner, organization) identification.\n\nThis is modelled after the [Estonian Identifier Domain](https://fhir.ee/ig/terminology/0.2.3/site/CodeSystem-identifier-domain.html) with the exception that country codes are ISO 3166 two letter codes for consistency within UZ Core.",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Description of the identifier systems acceptable for entity (patient, practitioner, organization) identification.\n\nSee [identifiers](identifiers.html) page for guidance and examples on using this codesystem.\n\nThis is modelled after the [Estonian Identifier Domain](https://fhir.ee/ig/terminology/0.2.3/site/CodeSystem-identifier-domain.html) with the exception that country codes are ISO 3166 two letter codes for consistency within UZ Core.",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
           "source" : "International countries (excluding Uzbekistan)",
           "target" : null
         },
@@ -1694,6 +1712,18 @@
         {
           "id" : "ImplementationGuide.definition.resource.name",
           "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "Organization Identifier Domain Value Set",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Allowed codes for organization identification domains (national tax numbers, registration numbers, etc) in Uzbekistan's health information exchange. Used in the [UZ Core Organization](StructureDefinition-uz-core-organization.html) profile.",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
           "source" : "Organizational service group",
           "target" : "Организационно-сервисная группа"
         },
@@ -1796,6 +1826,162 @@
         {
           "id" : "ImplementationGuide.definition.resource.name",
           "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "Patient Identifier Domain Value Set",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Allowed codes for patient identification domains (international passport numbers, drivers licenses) in Uzbekistan's health information exchange. Used in the [UZ Core Patient](StructureDefinition-uz-core-patient.html) profile.",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-birth-certificate",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Birth certificate identifiers assigned by the Uzbekistan Personalization Agency",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-drivers-license",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Driver's license identifiers assigned by the Uzbekistan Ministry of Internal Affairs",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-health-card",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Health card number identifiers assigned by the Uzbekistan Ministry of Health",
+          "target" : "Идентификаторы номеров медицинских карт, присваиваемые Министерствомздравоохранения Республики Узбекистан"
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-military-id",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Military ID number identifiers assigned by the Uzbekistan Ministry of Defense",
+          "target" : "Идентификаторы номеров военных билетов, присваиваемые Министерством обороныРеспублики Узбекистан"
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-national-id",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "National unique identifiers (PINFL) assigned by the Uzbekistan Personalization Agency",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-passport-diplomatic",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Diplomatic passport identifiers assigned by the Uzbekistan Ministry of Foreign Affairs",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-passport-international",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "International passport identifiers assigned by the Uzbekistan Personalization Agency",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-passport-local",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Local (internal) passport identifiers assigned by the Uzbekistan Personalization Agency",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-penitentiary-number",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Penitentiary institution number identifiers assigned by the Uzbekistan correctional system",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-provider-assigned",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Provider-assigned patient identifiers issued by healthcare organizations for unknown patients",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-temp-medical-record",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Temporary medical record numbers assigned by healthcare organizations",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "patient-id-uzb-unknown-patient",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Unknown patient codes generated by healthcare providers (fallback when organization ID unavailable)",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
           "source" : "Possible consent actions",
           "target" : "Possible consent actions"
         },
@@ -1852,6 +2038,18 @@
           "context" : "A description of the reason that a resource has been included in the implementation guide.",
           "source" : "Types of possible name uses supplement with translations in Uzbek and Russian",
           "target" : "Определяет возможные варианты использования имён на узбекском и русскомязыках"
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.name",
+          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
+          "source" : "Practitioner Identifier Domain Value Set",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.resource.description",
+          "context" : "A description of the reason that a resource has been included in the implementation guide.",
+          "source" : "Allowed codes for practitioner identification domains (national unique identifiers, etc) in Uzbekistan's health information exchange. Used in the [UZ Core Practitioner](StructureDefinition-uz-core-practitioner.html) profile.",
+          "target" : null
         },
         {
           "id" : "ImplementationGuide.definition.resource.name",
@@ -2612,56 +2810,8 @@
         {
           "id" : "ImplementationGuide.definition.resource.description",
           "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Naming system for the box-level aggregation identifier used to group serialized pharmaceutical \r\npacks into a shipping/carton unit within Uzbekistan's national track-and-trace program",
+          "source" : "Naming system for the box-level aggregation identifier used to group serialized pharmaceutical \npacks into a shipping/carton unit within Uzbekistan's national track-and-trace program",
           "target" : null
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.name",
-          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "uzb-birth-certificate",
-          "target" : "uzb-birth-certificate"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.description",
-          "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Birth certificate identifiers assigned by the Uzbekistan Personalization Agency",
-          "target" : null
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.name",
-          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "uzb-diplomatic-passport",
-          "target" : "uzb-diplomatic-passport"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.description",
-          "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Diplomatic passport identifiers assigned by the Uzbekistan Ministry of Foreign Affairs",
-          "target" : null
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.name",
-          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "uzb-drivers-license",
-          "target" : "uzb-drivers-license"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.description",
-          "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Driver's license identifiers assigned by the Uzbekistan Ministry of Internal Affairs",
-          "target" : null
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.name",
-          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "uzb-health-card-number",
-          "target" : "uzb-health-card-number"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.description",
-          "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Health card number identifiers assigned by the Uzbekistan Ministry of Health",
-          "target" : "Идентификаторы номеров медицинских карт, присваиваемые Министерствомздравоохранения Республики Узбекистан"
         },
         {
           "id" : "ImplementationGuide.definition.resource.name",
@@ -2678,61 +2828,13 @@
         {
           "id" : "ImplementationGuide.definition.resource.name",
           "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "uzb-military-id-number",
-          "target" : "uzb-military-id-number"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.description",
-          "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Military ID number identifiers assigned by the Uzbekistan Ministry of Defense",
-          "target" : "Идентификаторы номеров военных билетов, присваиваемые Министерством обороныРеспублики Узбекистан"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.name",
-          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "uzb-national-unique-id",
-          "target" : "uzb-national-unique-id"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.description",
-          "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "National unique identifiers (PINFL) assigned by the Uzbekistan Personalization Agency",
+          "source" : "uzb-hrm-argos-practitioner",
           "target" : null
         },
         {
-          "id" : "ImplementationGuide.definition.resource.name",
-          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "uzb-passport-international",
-          "target" : "uzb-passport-international"
-        },
-        {
           "id" : "ImplementationGuide.definition.resource.description",
           "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "International passport identifiers assigned by the Uzbekistan Personalization Agency",
-          "target" : null
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.name",
-          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "uzb-passport-local",
-          "target" : "uzb-passport-local"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.description",
-          "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Local passport identifiers assigned by the Uzbekistan Personalization Agency",
-          "target" : "Идентификаторы внутренних паспортов, присваиваемые Агентством поперсонализации Республики Узбекистан"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.name",
-          "context" : "A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).",
-          "source" : "uzb-penitentiary-institution-number",
-          "target" : "uzb-penitentiary-institution-number"
-        },
-        {
-          "id" : "ImplementationGuide.definition.resource.description",
-          "context" : "A description of the reason that a resource has been included in the implementation guide.",
-          "source" : "Penitentiary institution number identifiers assigned by the Uzbekistan correctional system",
+          "source" : "Healthcare professional identifiers assigned by the Uzbekistan Human Resource Management (HRM) system",
           "target" : null
         },
         {
@@ -2896,6 +2998,18 @@
           "context" : "A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.",
           "source" : "Fhir Basics",
           "target" : "FHIR Основы"
+        },
+        {
+          "id" : "ImplementationGuide.definition.page.source[x]",
+          "context" : "Indicates the URL or the actual content to provide for the page.",
+          "source" : "identifiers.html",
+          "target" : null
+        },
+        {
+          "id" : "ImplementationGuide.definition.page.title",
+          "context" : "A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.",
+          "source" : "Identifiers",
+          "target" : null
         },
         {
           "id" : "ImplementationGuide.definition.page.source[x]",
