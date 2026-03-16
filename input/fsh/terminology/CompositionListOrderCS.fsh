@@ -48,4 +48,8 @@ Description: "Composition list order supplement with translations in uzbek and r
   * ^designation[0].language = #ru
   * ^designation[=].value = "Отсортировано по дате публикации"
   * ^designation[+].language = #uz
+<<<<<<< HEAD
   * ^designation[=].value = "Nashr etilgan sana bo‘yicha tartiblangan"
+=======
+  * ^designation[=].value = "Nashr etilgan sana bo‘yicha tartiblangan"
+>>>>>>> 2df0f73 (Created profile UZCoreComposition)

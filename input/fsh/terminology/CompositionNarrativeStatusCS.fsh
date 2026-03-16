@@ -23,4 +23,8 @@ Description: "Composition narrative status supplement with translations in uzbek
   * ^designation[0].language = #ru
   * ^designation[=].value = "Пусто"
   * ^designation[+].language = #uz
+<<<<<<< HEAD
   * ^designation[=].value = "Bo'sh"
+=======
+  * ^designation[=].value = "Bo'sh"
+>>>>>>> 2df0f73 (Created profile UZCoreComposition)

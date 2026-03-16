@@ -33,4 +33,8 @@ Description: "Composition list empty reason supplement with translations in uzbe
   * ^designation[0].language = #ru
   * ^designation[=].value = "Закрыто"
   * ^designation[+].language = #uz
+<<<<<<< HEAD
   * ^designation[=].value = "Yopilgan"
+=======
+  * ^designation[=].value = "Yopilgan"
+>>>>>>> 2df0f73 (Created profile UZCoreComposition)

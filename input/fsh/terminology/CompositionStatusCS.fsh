@@ -21,12 +21,21 @@ Description: "Composition status supplement with translations in uzbek and russi
   * ^designation[=].value = "Dastlabki"
 * #final
   * ^designation[0].language = #ru
+<<<<<<< HEAD
   * ^designation[=].value = "Окончательный"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Yakuniy"
 * #amended
   * ^designation[0].language = #ru
   * ^designation[=].value = "Изменённый"
+=======
+  * ^designation[=].value = "Окончательный"     
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Final"
+* #amended
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Исправленный"
+>>>>>>> 2df0f73 (Created profile UZCoreComposition)
   * ^designation[+].language = #uz
   * ^designation[=].value = "O'zgartirilgan"
 * #corrected
