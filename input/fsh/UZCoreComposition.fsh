@@ -23,17 +23,10 @@ Description: "UZ Core Composition profile, used as a foundation for creating med
   * mode 1..1 MS
   * mode from CompositionAttModeVS (preferred)
   * party 0..1 MS
-<<<<<<< HEAD
   * party only Reference(UZCorePractitionerRole or UZCorePractitioner or UZCoreOrganization or UZCoreRelatedPerson or UZCorePatient)
 
 * custodian 0..1 MS
 * custodian only Reference(UZCoreOrganization)
-=======
-  * party only Reference(PractitionerRole)
-
-* custodian 0..1 MS
-* custodian only Reference(Organization)
->>>>>>> 2df0f73 (Created profile UZCoreComposition)
 
 * section
   * title and code and author and text and entry and emptyReason and orderedBy MS
@@ -91,7 +84,11 @@ Usage: #example
     * status = #generated
     * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Bemorning umumiy holati qoniqarli, shikoyatlar mavjud emas.</div>"
 <<<<<<< HEAD
+<<<<<<< HEAD
   * orderedBy = $composition-list-order#event-date
 =======
   * orderedBy = $composition-list-order#event-date
 >>>>>>> 2df0f73 (Created profile UZCoreComposition)
+=======
+  * orderedBy = $composition-list-order#event-date
+>>>>>>> 07df07e (modified some vs and cs)
