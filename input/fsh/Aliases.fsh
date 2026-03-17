@@ -204,17 +204,8 @@ Alias: $claim-use = http://hl7.org/fhir/claim-use
 Alias: $currencies-vs = http://hl7.org/fhir/ValueSet/currencies
 Alias: $permitted-data-type = http://hl7.org/fhir/permitted-data-type
 
-<<<<<<< HEAD
 Alias: $composition-att-mode = http://hl7.org/fhir/composition-attestation-mode
 Alias: $composition-list-empty-reason = http://terminology.hl7.org/CodeSystem/list-empty-reason
 Alias: $composition-status = http://hl7.org/fhir/composition-status
-=======
-
-
-Alias: $composition-att-mode = http://hl7.org/fhir/composition-attestation-mode
-Alias: $composition-list-empty-reason = http://terminology.hl7.org/CodeSystem/list-empty-reason
-Alias: $composition-status = http://hl7.org/fhir/composition-status
-Alias: $composition-status-vs = http://hl7.org/fhir/ValueSet/composition-status
->>>>>>> 2df0f73 (Created profile UZCoreComposition)
 Alias: $composition-narrative-status = http://hl7.org/fhir/narrative-status
 Alias: $composition-list-order = http://terminology.hl7.org/CodeSystem/list-order

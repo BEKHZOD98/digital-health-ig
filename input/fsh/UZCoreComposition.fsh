@@ -36,16 +36,11 @@ Description: "UZ Core Composition profile, used as a foundation for creating med
     * div 1..1 MS
   * orderedBy from CompositionListOrderVS (preferred)
   * emptyReason from CompositionListEmptyReasonVS
-<<<<<<< HEAD
   * author only Reference(UZCorePractitionerRole or UZCorePractitioner or UZCoreOrganization or UZCoreRelatedPerson or UZCorePatient)
-=======
-  * author only Reference(PractitionerRole)
->>>>>>> 2df0f73 (Created profile UZCoreComposition)
 
 
 Instance: example-medical-composition
 InstanceOf: UZCoreComposition
-<<<<<<< HEAD
 Description: "Example of a medical record composition "
 Usage: #example
 * language = #uz
@@ -60,22 +55,6 @@ Usage: #example
 * attester
   * mode = $composition-att-mode#professional
   * party = Reference(example-practitionerrole)
-=======
-Description: "Example of a medical record composition"
-Usage: #example
-* language = #uz
-* status = #final
-* type = CompositionTypeCS#emdoc-0010-0001 "Register of persons who visited (presented to) a medical facility"
-* category = CompositionCategoryCS#Comp001-0001 "Tibbiy karta"
-* date = "2026-03-05T10:00:00+05:00"
-* title = "Bemorning elektron tibbiy kartasi"
-* subject = Reference(example-patient)
-* author = Reference(example-practitionerrole )
-
-* attester
-  * mode = $composition-att-mode#professional
-  * party = Reference(example-practitionerrole )
->>>>>>> 2df0f73 (Created profile UZCoreComposition)
 
 * section
   * title = "Anamnez"
