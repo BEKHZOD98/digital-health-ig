@@ -63,7 +63,7 @@ Description: "Example laboratory ServiceRequest instance for UZCore."
 * status = #active
 * intent = #order
 * doNotPerform = false
-* code = service-request-lab-research-code-cs#lab-pan-A "Urine macroscopic analysis"
+* code = lab-pan-cs#lab-pan-A "Urine macroscopic analysis"
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/example-encounter)
 * occurrenceDateTime = "2026-01-16T09:30:00+05:00"
