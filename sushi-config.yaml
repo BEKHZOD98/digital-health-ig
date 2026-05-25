@@ -21,7 +21,6 @@ publisher:
   email: info@ssv.uz
 
 dependencies:
-  # while we don't strictly needs this, this helps resolve the DICOM supplement correctly until tx.fhir.org can do this
   fhir.dicom:
     id: fhir_dicom
     uri: http://fhir.org/packages/fhir.dicom/ImplementationGuide/fhir.dicom
@@ -30,6 +29,11 @@ dependencies:
   hl7.fhir.uv.extensions.r5: 5.3.0
 
 
+
+  hl7.fhir.uv.extensions.r5:
+    id: hl7_fhir_uv_extensions_r5
+    uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
+    version: 5.3.0
 
 # the following are for offline use only
 #  hl7.fhir.uv.tools.r5: 0.5.0

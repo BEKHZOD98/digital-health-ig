@@ -407,7 +407,7 @@ Description: "Опросник для оценки удовлетворённо�
   * item[+]
     * linkId = "questions-answered-other"
     * text = "Другое (укажите)"
-      * extension[$translation-extension][+]
+      * extension[$translatihttps://github.com/BEKHZOD98/digital-health-ig/pull/24/conflict?name=input%252Ffsh%252FStandalone-examples.fsh&ancestor_oid=5081d0ee6decebe0fc64686240abf0ee6baafeaf&base_oid=7240b5767289b685045b3f8d67bd2966827b76db&head_oid=1ec45c5edc985b06fb4cd51644e65231fae40236on-extension][+]
         * extension[lang].valueCode = #en
         * extension[content].valueString = "Other (please specify)"
       * extension[$translation-extension][+]
