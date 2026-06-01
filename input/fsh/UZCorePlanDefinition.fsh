@@ -9,7 +9,7 @@ Description: "UZ Core profile for PlanDefinition resource used to define reusabl
 
 * url 1..1 MS
 * url ^short = "Canonical identifier for this PlanDefinition"
-* url obeys canonical-url-no-version-fragment
+
 
 * identifier MS
 * version MS
@@ -95,10 +95,7 @@ Description: "UZ Core profile for PlanDefinition resource used to define reusabl
 * action.definitionCanonical MS
 * action.definitionUri MS
 
-Invariant: canonical-url-no-version-fragment
-Description: "Canonical URL must not contain | or #."
-Severity: #warning
-Expression: "matches('^[^|#]+$')"
+
 
 Instance: example-uz-core-plan-definition
 InstanceOf: UZCorePlanDefinition
@@ -131,7 +128,7 @@ Description: "Uzbekistan Core PlanDefinition profile, used to represent structur
 * action[0].condition[0].expression.description = "Patient must be 18 years or older"
 * action[0].condition[0].expression.language = #text/fhirpath
 * action[0].condition[0].expression.expression = "Patient.birthDate <= today() - 18 years"
-* action[0].participant[0].type = $resource-types#practitioner
+* action[0].participant[0].type = $action-participant-type#practitioner
 * action[0].participant[0].actorId = "vaccinator"
 * action[0].definitionUri = "https://terminology.dhp.uz/fhir/core/ActivityDefinition/example-activity-definition"
 
@@ -146,7 +143,7 @@ Description: "Uzbekistan Core PlanDefinition profile, used to represent structur
 * action[1].relatedAction[0].offsetDuration.unit = "days"
 * action[1].relatedAction[0].offsetDuration.system = "http://unitsofmeasure.org"
 * action[1].relatedAction[0].offsetDuration.code = #d
-* action[1].participant[0].type = $resource-types#practitioner
+* action[1].participant[0].type = $action-participant-type#practitioner
 * action[1].participant[0].actorId = "vaccinator"
 * action[1].definitionUri = "https://terminology.dhp.uz/fhir/core/ActivityDefinition/example-activity-definition"
 
