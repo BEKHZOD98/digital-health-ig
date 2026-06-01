@@ -44,8 +44,4 @@ Description: "Observation status supplement with translations in Uzbek and Russi
   * ^designation[=].value = "Неизвестный"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Noma'lum"
-* #appended
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Прилагается"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Biriktirildi"
+

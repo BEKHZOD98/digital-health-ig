@@ -2,12 +2,14 @@ Instance: dmed-position-to-dhp-position-cm
 InstanceOf: ConceptMap
 Usage: #definition
 Title: "DMED Position To DHP Position"
-Description: "DMED Position and Professions to DHP Position and Professions ConcepMap"
+Description: "DMED Position and Professions to DHP Position and Professions ConceptMap"
 * name = "DMEDPositionToDHPPositionCM"
 * url = "https://terminology.dhp.uz/fhir/core/ConceptMap/dmed-position-to-dhp-position-cm"
 * status = #draft
 * experimental = false
 * publisher = "Uzinfocom"
+* sourceScopeCanonical = Canonical(DMEDProfessionsVS)
+* targetScopeCanonical = Canonical(PositionAndProfessionVS)
 
 // Group 1: DMEDProfessionsCS to PositionAndProfessionCS
 * group[+].source = Canonical(DMEDProfessionsCS)
@@ -1255,46 +1257,45 @@ Description: "DMED Position and Professions to DHP Position and Professions Conc
 * group[=].element[=].target[=].display = "Jamoatchilik bilan aloqalar, mahsulotlar va xizmatlarni sotish va marketingi bo'yicha professional-mutaxassislar. Reklama va marketing bo'yicha professional-mutaxassislar"
 * group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
-
-// Group 2: DMEDProfessionsCS to DHP 
-* group[+].source = Canonical(DMEDProfessionsCS)
-* group[=].target = $position-and-profession
-
-* group[=].element[+].code = #384
-* group[=].element[=].display = "Psixonevrolog" // ru: Психоневролог
-* group[=].element[=].target[+].code = #2212-157
-* group[=].element[=].target[=].display = "Psixonevrolog"
-* group[=].element[=].target[=].relationship = #equivalent
-
 * group[=].element[+].code = #356
 * group[=].element[=].display = "Metodist" // ru: Методист
 * group[=].element[=].target[+].code = #2212
-* group[=].element[=].target[=].display = "Vrach-mutaxassislar"
+* group[=].element[=].target[=].display = "Vrach-mutaxasislar"
 * group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #358
 * group[=].element[=].display = "VKK shifokori" // ru: врач ВКК
 * group[=].element[=].target[+].code = #2212
-* group[=].element[=].target[=].display = "Vrach-mutaxassislar"
+* group[=].element[=].target[=].display = "Vrach-mutaxasislar"
 * group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #411
 * group[=].element[=].display = "TMEK shifokori (tibbiy mehnat ekspert komissiyasi)" // ru: Врач ВТЭК (врачебно-трудовая экспертная комиссия)
 * group[=].element[=].target[+].code = #2212
-* group[=].element[=].target[=].display = "Vrach-mutaxassislar"
+* group[=].element[=].target[=].display = "Vrach-mutaxasislar"
 * group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #459
 * group[=].element[=].display = "Torakal jarroh" // ru: Торакальный хирург
 * group[=].element[=].target[+].code = #2212
-* group[=].element[=].target[=].display = "Vrach-mutaxassislar"
+* group[=].element[=].target[=].display = "Vrach-mutaxasislar"
 * group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #383
 * group[=].element[=].display = "MedHub Integratori" // ru: Интегратор MedHub
 * group[=].element[=].target[+].code = #2511
-* group[=].element[=].target[=].display = "Tizim tahlilchilari"
+* group[=].element[=].target[=].display = "Axborot kommunikatsiya texnologiyalari bo'yicha professional-mutaxassislar. Dastur ta'minoti va ilovalar ishlab chiquvchilar va tahlilchilar. Tizim tahlilchilari"
 * group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+
+
+* group[+].source = Canonical(DMEDProfessionsCS)
+* group[=].target = Canonical(PositionAndProfessionCS_2)
+// Continuation: more DMEDProfessionsCS to PositionAndProfessionCS_2 mappings
+* group[=].element[+].code = #384
+* group[=].element[=].display = "Psixonevrolog" // ru: Психоневролог
+* group[=].element[=].target[+].code = #2212-157
+* group[=].element[=].target[=].display = "Psixonevrolog"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #818
 * group[=].element[=].display = "Ilmiy ishlar bo'yicha direktor o'rinbosari"
@@ -1781,44 +1782,3 @@ Description: "DMED Position and Professions to DHP Position and Professions Conc
 * group[=].element[=].target[+].code = #3230-004
 * group[=].element[=].target[=].display = "Xalq tabobati boʻyicha mutaxassis"
 * group[=].element[=].target[=].relationship = #equivalent
-
-
-// Group 3: DMEDProfessionsCS to Snomed
-* group[+].source = Canonical(DMEDProfessionsCS)
-* group[=].target = $sct
-
-* group[=].element[+].code = #370
-* group[=].element[=].display = "Statsionar shifokori" // ru: Стационарный врач
-* group[=].element[=].target[+].code = #405279007
-* group[=].element[=].target[=].display = "Attending physician"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
-
-* group[=].element[+].code = #445
-* group[=].element[=].display = "Gistolog" // ru: Гистолог
-* group[=].element[=].target[+].code = #159143006
-* group[=].element[=].target[=].display = "Histologist"
-* group[=].element[=].target[=].relationship = #equivalent
-
-* group[=].element[+].code = #1066
-* group[=].element[=].display = "Neyroreabilitolog" // ru: Нейрореабилитолог
-* group[=].element[=].target[+].code = #25855006
-* group[=].element[=].target[=].display = "Neurological rehabilitation"
-* group[=].element[=].target[=].relationship = #related-to
-
-* group[=].element[+].code = #396
-* group[=].element[=].display = "Bolalar KBB (otolaringolog)" // ru: Детский ЛОР (Отоларинголог)
-* group[=].element[=].target[+].code = #309372007
-* group[=].element[=].target[=].display = "Ear, nose and throat surgeon"
-* group[=].element[=].target[=].relationship = #equivalent
-
-* group[=].element[+].code = #433
-* group[=].element[=].display = "Dopplerografiya" // ru: Допплерография
-* group[=].element[=].target[+].code = #431488007
-* group[=].element[=].target[=].display = "Doppler ultrasound of myocardium for tissue strain rate"
-* group[=].element[=].target[=].relationship = #equivalent
-
-* group[=].element[+].code = #413
-* group[=].element[=].display = "Kunduzgi shifoxona shifokori" // ru: Врач дневного стационара
-* group[=].element[=].target[+].code = #405279007
-* group[=].element[=].target[=].display = "Attending physician"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target

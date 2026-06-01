@@ -19,7 +19,7 @@ Description: "Uzbekistan Core Observation profile, used to represent clinical an
 * status MS
 * status from ObservationStatusVS (required)
 * category MS
-* category from ObservationCategoryCodesVS
+* category from ObservationCategoryVS
 * code MS
 * code from ObservationCodesVS (preferred)
 * subject MS
@@ -47,7 +47,7 @@ Description: "Uzbekistan Core Observation profile, used to represent clinical an
 * referenceRange.high MS
 * referenceRange.normalValue MS
 * referenceRange.normalValue from ObservationNormalValueVS (extensible)
-* referenceRange.type from ObservationReferenceRangeMeaningVS (preferred)
+* referenceRange.type from ReferenceRangeMeaningVS (preferred)
 * referenceRange.age MS
 * referenceRange.text MS
 * hasMember MS
