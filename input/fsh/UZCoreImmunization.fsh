@@ -174,7 +174,11 @@ Description: "Example immunization event for UZ Core Immunization profile."
 * status = #completed
 * statusReason = $v3-ActReason#IMMUNE "immunity"
 
+<<<<<<< HEAD
 * vaccineCode = vaccine-code-cs#immun-5 "Bacillus Calmette-Guerin vaccine"
+=======
+* vaccineCode = $cvx#19 "Bacillus Calmette-Guerin vaccine"
+>>>>>>> d3899c1bc3068ce83ca84c7b4eaf31d5c441add5
 
 * administeredProduct.reference = Reference(medication-imm-001)
 
@@ -237,7 +241,7 @@ Usage: #example
 Title: "Medication - BCG Vaccine"
 Description: "Example Medication resource representing a Bacillus Calmette-Guerin vaccine."
 * language = #en
-* code = vaccine-code-cs#immun-5 "Bacillus Calmette-Guerin vaccine"
+* code = $cvx#19 "Bacillus Calmette-Guerin vaccine"
 
 
 
