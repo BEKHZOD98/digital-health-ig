@@ -1,24 +1,39 @@
 # DHP-temp FHIR Implementation Guide
 
-## Build Commands
-- **Full build**: `./_build.sh` or `./_genonce.sh` (main build command)
-- **Offline build**: `./_build.sh notx` (build without terminology server)
-- **Update publisher**: `./_build.sh update` (download latest IG publisher)
-- **Jekyll build**: `./_build.sh jekyll` (build static site only)
-- **Clean**: `./_build.sh clean` (remove temp directories)
-- **Test**: No specific test framework - validation happens during build
+## Purpose
+This repository contains the **Digital Health Platform (DHP) FHIR R5 Implementation Guide** for Uzbekistan, authored with **SUSHI/FSH** and published using the **HL7 FHIR IG Publisher**.
 
-## Architecture
-- **Type**: FHIR R5 Implementation Guide using SUSHI/FSH (FHIR Shorthand)
-- **Main config**: `sushi-config.yaml` (IG metadata, parameters, menu)
-- **IG config**: `ig.ini` (publisher settings)
-- **Source**: `input/` directory containing FSH files, vocabulary, and content
-- **Generated**: `fsh-generated/` (SUSHI output), `output/` (final IG), `temp/` (build temp)
-- **Publisher**: HL7 FHIR IG Publisher (Java-based, stored in `input-cache/`)
+## When working in this repo
+- Edit source content in `input/` only.
+- Avoid changing generated artifacts in `fsh-generated/`, `output/`, or `temp/` unless diagnosing build issues.
+- Preserve canonical URLs and ID patterns used across the IG.
+- Validation is performed by the IG build process, not by a separate unit-test framework.
 
-## Code Style & Conventions
-- **FSH files**: Most are located in `input/fsh/` with extra-large codesystems in `input/manual-fsh/`
-- **Vocabulary**: Pre-rendered extra-large codesystems are stored in `input/vocabulary/`
-- **Content**: Markdown pages in `input/pagecontent/`
-- **Canonical base**: `http://dhp.uz` and `https://terminology.dhp.uz` for terminologies
-- **ID pattern**: Use lowercase with hyphens (e.g., `dhp`)
+## Build / validation commands
+- Full build: `./_build.sh` or `./_genonce.sh`
+- Offline build: `./_build.sh notx`
+- Update publisher: `./_build.sh update`
+- Jekyll build: `./_build.sh jekyll`
+- Clean generated files: `./_build.sh clean`
+- Windows equivalents: use `_build.bat`, `_genonce.bat`, etc.
+
+## Important files and directories
+- `sushi-config.yaml` — SUSHI configuration and IG metadata
+- `ig.ini` — FHIR IG Publisher settings
+- `input/fsh/` — primary FSH definitions for profiles, extensions, valuesets, examples
+- `input/manual-fsh/` — manually authored FSH, often large terminology or special cases
+- `input/vocabulary/` — pre-rendered terminology artifacts
+- `input/pagecontent/` — markdown pages and narrative content
+- `fsh-generated/` — generated SUSHI output (do not edit directly)
+- `output/` — generated Implementation Guide site and resources
+- `input-cache/publisher.jar` — IG Publisher runtime jar
+
+## Key conventions
+- Use **lowercase hyphenated identifiers** for resource IDs and naming conventions.
+- Follow existing FSH style and structure from nearby files before introducing new patterns.
+- Keep term bindings and value set references aligned with the canonicals: `http://dhp.uz` and `https://terminology.dhp.uz`.
+- Prefer updating source definitions in `input/` over editing generated content.
+
+## Helpful links
+- [README.md](README.md)
+- [modelling-guidelines.md](modelling-guidelines.md)
