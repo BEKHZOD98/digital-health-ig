@@ -4187,8 +4187,8 @@ msgstr ""
 
 # ImplementationGuide.definition.page.title
 #: ImplementationGuide.definition.page.title
-msgid "Fhir Basics"
-msgstr "FHIR Asoslari"
+msgid "Identifiers"
+msgstr "Identifikatorlar"
 
 # ImplementationGuide.definition.page.source[x]
 #: ImplementationGuide.definition.page.source[x]

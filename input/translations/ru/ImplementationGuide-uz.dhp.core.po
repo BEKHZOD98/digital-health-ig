@@ -3867,16 +3867,6 @@ msgstr "Профиль Uzbekistan Core Provenance, используемый дл
 
 # ImplementationGuide.definition.resource.name
 #: ImplementationGuide.definition.resource.name
-msgid "UZ Core Questionnaire"
-msgstr ""
-
-# ImplementationGuide.definition.resource.description
-#: ImplementationGuide.definition.resource.description
-msgid "Uzbekistan Core Questionnaire profile for multilingual structured data capture forms"
-msgstr ""
-
-# ImplementationGuide.definition.resource.name
-#: ImplementationGuide.definition.resource.name
 msgid "UZ Core QuestionnaireResponse"
 msgstr ""
 
@@ -4187,8 +4177,8 @@ msgstr ""
 
 # ImplementationGuide.definition.page.title
 #: ImplementationGuide.definition.page.title
-msgid "Fhir Basics"
-msgstr "FHIR Основы"
+msgid "Identifiers"
+msgstr "Идентификаторы"
 
 # ImplementationGuide.definition.page.source[x]
 #: ImplementationGuide.definition.page.source[x]
