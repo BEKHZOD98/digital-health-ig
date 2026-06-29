@@ -35,8 +35,8 @@ Description: "Uzbekistan Core profile for representing laboratory and other clin
 * role ^short = "Role of this container in the overall specimen . Supports lab handling and result association."
 * collection MS
 * collection.collector MS
-* collection.collector only Reference(UZCorePractitioner)
-* collection.collector ^short = "Practitioner who collected the specimen."
+* collection.collector only Reference(UZCorePractitioner or UZCorePractitionerRole or UZCorePatient or UZCoreRelatedPerson)
+* collection.collector ^short = "Person who collected the specimen. May be a practitioner, practitioner role, patient (self-collection), or related person (e.g., caregiver)."
 * collection.collected[x] MS
 * collection.collected[x] ^short = "Date/time (or period) when the specimen was collected. Used for clinical interpretation and lab timing."
 * collection.duration MS
