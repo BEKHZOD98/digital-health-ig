@@ -12,6 +12,8 @@ Description: "Maps SSV medical type codes to UZ Core Organizational Structure co
 // Group 1: SSV mapping to OrganizationalStructureCS
 * group[+].source = $ssv-organization-type-medical
 * group[=].target = Canonical(OrganizationalStructureCS)
+
+
 * group[=].element[+].code = #1
 * group[=].element[=].display = "Pharmacy" // uz: Dorixona, ru: Аптека
 * group[=].element[=].target[+].code = #999

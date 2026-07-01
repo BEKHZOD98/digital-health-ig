@@ -127,9 +127,7 @@ Alias: $socieeconomic-observation = https://dhp.uz/fhir/core/StructureDefinition
 Alias: $specialization = https://dhp.uz/fhir/core/CodeSystem/specialization
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
 Alias: $ssv = https://gov.uz/ru/ssv
-Alias: $ssv-organization-type-level = http://fhir.ssv.uz/ValueSet/organization-type-level
-Alias: $ssv-organization-type-medical = http://fhir.ssv.uz/ValueSet/organization-type-medical
-Alias: $ssv-organization-type-service = http://fhir.ssv.uz/ValueSet/organization-type-service
+
 Alias: $subordination-group = https://dhp.uz/fhir/core/CodeSystem/subordination-group
 Alias: $telecom-use = http://hl7.org/fhir/contact-point-use
 Alias: $temp-medical-record-example-org = https://dhp.uz/fhir/core/sid/pid/uz/prn/200935935/mrt
@@ -184,3 +182,15 @@ Alias: $administrative-gender-vs = https://terminology.dhp.uz/fhir/core/ValueSet
 Alias: $observation-range-category = http://hl7.org/fhir/observation-range-category
 Alias: $observation-range-category-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/observation-range-category-cs
 Alias: $observation-range-category-vs = https://terminology.dhp.uz/fhir/core/ValueSet/observation-range-category-vs
+
+
+
+
+
+Alias: $ssv-organization-type-level = http://fhir.ssv.uz/CodeSystem/organization-type-level
+Alias: $ssv-organization-type-level-vs = http://fhir.ssv.uz/ValueSet/organization-type-level
+Alias: $ssv-organization-type-medical = http://fhir.ssv.uz/CodeSystem/organization-type-medical
+Alias: $ssv-organization-type-medical-vs = http://fhir.ssv.uz/ValueSet/organization-type-medical
+Alias: $ssv-organization-type-service = http://fhir.ssv.uz/CodeSystem/organization-type-service
+Alias: $ssv-organization-type-service-vs = http://fhir.ssv.uz/ValueSet/organization-type-service
+

@@ -8,9 +8,11 @@ Description: "Maps SSV service type codes to UZ Core Organizational Service Grou
 * status = #draft
 * experimental = false
 * publisher = "Uzinfocom"
-* targetScopeCanonical = Canonical(OrganizationalServiceGroupVS)
+
+
 * group.source = $ssv-organization-type-service
 * group.target = Canonical(OrganizationalServiceGroupCS)
+* targetScopeCanonical = Canonical(OrganizationalServiceGroupVS)
 
 * group.element[+].code = #1
 * group.element[=].display = "Outpatient" // uz: Ambulatoriya, ru: Амбулатория

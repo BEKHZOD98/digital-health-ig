@@ -8,11 +8,14 @@ Description: "ConceptMap for mapping DMED  measure unit codes to DHP  measure un
 * status = #draft
 * experimental = false
 * publisher = "Uzinfocom"
-* sourceScopeCanonical = Canonical(DMEDMeasureUnitVS)
-* targetScopeCanonical = $ucum-vs
+
 
 * group.source = Canonical(DMEDMeasureUnitCS)
 * group.target = $ucum
+* sourceScopeCanonical = Canonical(DMEDMeasureUnitVS)
+* targetScopeCanonical = $ucum-vs
+
+
 
 // 11 мкмоль -> umol
 * group[=].element[+].code = #11
