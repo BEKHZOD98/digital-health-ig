@@ -9,6 +9,23 @@ Description: "A value set of timing abbreviation codes (e.g. BID, TID, QID, C) w
 * ^extension[1].url = $valueset-supplement
 * ^extension[1].valueCanonical = Canonical(GTSAbbreviationCS)
 
-// Include all codes from the standard systems
-* include codes from system $v3-gts-abbreviation
-* include codes from system $timing-abbreviation
+
+
+* $v3-gts-abbreviation#BID
+* $v3-gts-abbreviation#TID
+* $v3-gts-abbreviation#QID
+* $v3-gts-abbreviation#AM
+* $v3-gts-abbreviation#PM
+* $v3-gts-abbreviation#QD
+* $v3-gts-abbreviation#QOD
+* $v3-gts-abbreviation#Q1H
+* $v3-gts-abbreviation#Q2H
+* $v3-gts-abbreviation#Q3H
+* $v3-gts-abbreviation#Q4H
+* $v3-gts-abbreviation#Q6H
+* $v3-gts-abbreviation#Q8H
+* $v3-gts-abbreviation#BED
+* $v3-gts-abbreviation#WK
+* $v3-gts-abbreviation#MO
+
+* $timing-abbreviation#C

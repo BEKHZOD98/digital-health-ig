@@ -8,3 +8,4 @@ Description: "A value set defining the category of a medication request (setting
 * ^extension[0].valueCanonical = Canonical(MedicationRequestAdminLocationCS)
 
 * include codes from system $medicationrequest-admin-location
+* include codes from system medication-request-order-type-cs
