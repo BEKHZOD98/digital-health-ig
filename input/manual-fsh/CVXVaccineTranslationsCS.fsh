@@ -1215,6 +1215,7 @@ Description: "Supplement providing Uzbek and Russian translations for the CVX va
   * ^designation[=].value = "difteriya, ko'k yo'tal, qoqshol, gepatit B, gemofil influenzae turi b, (besh valentli)"
   * ^designation[+].language = #ru
   * ^designation[=].value = "дифтерия, коклюш, столбняк, гепатит В, гемофильный грипп типа b, (пентавалент)"
+
 * #203 "meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine .5mL dose, preservative free"
   * ^designation[0].language = #uz
   * ^designation[=].value = "Meningokokk polisakkaridlari (A, C, Y, W-135 guruhlari) tetanoz konjugati vaktsinasi 0,5 ml dozada, konservantsiz"
@@ -1257,7 +1258,7 @@ Description: "Supplement providing Uzbek and Russian translations for the CVX va
   * ^designation[+].language = #ru
   * ^designation[=].value = "Вакцина SARS-COV-2 (COVID-19), вектор нереплицирующийся, рекомбинантный спайковый белок-ChAdOx1, без консервантов, 0,5 мл"
 
-* #212 "SARS-COV-2 (COVID-19) vaccine, vector non-replicating, recombinant spike protein-Ad26, preservative free, 0.5 ml"
+* #212 "SARS-COV-2 (COVID-19) vaccine, vector non-replicating, recombinant spike protein-ChAdOx1, preservative free, 0.5 mL"
   * ^designation[0].language = #uz
   * ^designation[=].value = "SARS-COV-2 (COVID-19) vaktsinasi, takrorlanmaydigan vektor, rekombinant boshoq oqsili-Ad26, konservantsiz, 0,5 ml"
   * ^designation[+].language = #ru

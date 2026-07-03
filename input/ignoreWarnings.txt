@@ -68,3 +68,5 @@ No definition could be found for URL value 'http://example.org/fhir/sid/lab-test
 
 # IG Publisher 2.2.10 emits an OID-assignment recommendation for every CodeSystem/ValueSet. We don't use OID-based terminology (e.g. CDA), so assigning OIDs IG-wide adds no value here.
 %should have an OID assigned to cater for possible use with OID based terminology systems%
+
+The Target Code System http://hl7.org/fhir/sid/cvx is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed

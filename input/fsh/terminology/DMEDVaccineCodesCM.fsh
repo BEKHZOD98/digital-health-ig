@@ -9,13 +9,9 @@ Description: "ConceptMap for mapping DMED Vaccine codes to CVX vaccine codes"
 * experimental = false
 * publisher = "Uzinfocom"
 //Mapping DMED Vaccine codes to standard CVX vaccine codes. Enables interoperability between the DMED system and CVX-based systems.
-
-
 * group[+].source = Canonical(DMEDVaccineCS)
-* group[=].target = Canonical(CVXVaccineTranslationsCS)
 * sourceScopeCanonical = Canonical(DMEDVaccineVS)
-
-
+* group[=].target = $cvx
 // targetScopeCanonical intentionally omitted: VaccineCodeVS = $cvx + $air-vaccine,
 // and each group's `target` ($cvx here, $air-vaccine below) already restricts
 // target codes to a subset of that ValueSet, so the canonical was a tautological
@@ -41,13 +37,13 @@ Description: "ConceptMap for mapping DMED Vaccine codes to CVX vaccine codes"
 * group[=].element[+].code = #7
 * group[=].element[=].display = "Спутник 1 компонент"
 * group[=].element[=].target[+].code = #212
-* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, vector non-replicating, recombinant spike protein-Ad26, preservative free, 0.5 ml"
+* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, vector non-replicating, recombinant spike protein-Ad26, preservative free, 0.5 mL"
 * group[=].element[=].target[=].relationship = #related-to
 
 * group[=].element[+].code = #2
 * group[=].element[=].display = "Гам Ковид вак Комбинированная векторная вакцина против коронавирусной инф. вызываемой вирусом САР 1-860421"
 * group[=].element[=].target[+].code = #212
-* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, vector non-replicating, recombinant spike protein-Ad26, preservative free, 0.5 ml"
+* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, vector non-replicating, recombinant spike protein-Ad26, preservative free, 0.5 mL"
 * group[=].element[=].target[=].relationship = #related-to
 
 * group[=].element[+].code = #270
@@ -155,7 +151,7 @@ Description: "ConceptMap for mapping DMED Vaccine codes to CVX vaccine codes"
 * group[=].element[+].code = #8
 * group[=].element[=].display = "Johnson & Johnson"
 * group[=].element[=].target[+].code = #212
-* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, vector non-replicating, recombinant spike protein-Ad26, preservative free, 0.5 ml"
+* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, vector non-replicating, recombinant spike protein-Ad26, preservative free, 0.5 mL"
 * group[=].element[=].target[=].relationship = #related-to
 
 * group[=].element[+].code = #6
@@ -167,14 +163,14 @@ Description: "ConceptMap for mapping DMED Vaccine codes to CVX vaccine codes"
 * group[=].element[+].code = #5
 * group[=].element[=].display = "Модерна"
 * group[=].element[=].target[+].code = #207
-* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg/0.5mL dose"
+* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose"
 * group[=].element[=].target[=].relationship = #related-to
 
 * group[=].element[+].code = #3
 * group[=].element[=].display = "Гам Ковид вак Компонент 1-0,5 мл - 1 доза в ампуле в упаковке (Спутник -V) вакцина 1-470321"
 * group[=].element[=].target[+].code = #212
-* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, vector non-replicating, recombinant spike protein-Ad26, preservative free, 0.5 ml"
-* group[=].element[=].target[=].relationship = #related-to 
+* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, vector non-replicating, recombinant spike protein-Ad26, preservative free, 0.5 mL"
+* group[=].element[=].target[=].relationship = #related-to
 
 * group[=].element[+].code = #1
 * group[=].element[=].display = "Pfizer вакцина против COVID"
@@ -239,7 +235,7 @@ Description: "ConceptMap for mapping DMED Vaccine codes to CVX vaccine codes"
 * group[=].element[+].code = #338
 * group[=].element[=].display = "ВЕРОЦЕЛЛ"
 * group[=].element[=].target[+].code = #207
-* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg/0.5mL dose"
+* group[=].element[=].target[=].display = "SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose"
 * group[=].element[=].target[=].relationship = #related-to
 
 * group[=].element[+].code = #197
