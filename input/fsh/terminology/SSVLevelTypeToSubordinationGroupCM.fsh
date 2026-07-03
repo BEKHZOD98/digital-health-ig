@@ -8,9 +8,13 @@ Description: "Maps SSV organization level type codes to UZ Core Organizational S
 * status = #draft
 * experimental = false
 * publisher = "Uzinfocom"
-* targetScopeCanonical = Canonical(OrganizationalSubordinationGroupVS)
+
+
+
 * group.source = $ssv-organization-type-level
 * group.target = Canonical(OrganizationalSubordinationGroupCS)
+* targetScopeCanonical = Canonical(OrganizationalSubordinationGroupVS)
+
 
 * group.element[+].code = #1
 * group.element[=].display = "Republican" // uz: Respublika, ru: Республиканский
