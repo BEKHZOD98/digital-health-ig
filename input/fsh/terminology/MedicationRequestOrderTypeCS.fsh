@@ -7,4 +7,4 @@ Description: "Uzbekistan national code system defining types of medication reque
   * ^designation[0].language = #ru
   * ^designation[=].value = "Заказ Реимбурсационный"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Reimbursement Order"
+  * ^designation[=].value = "Reimburseable Order"
