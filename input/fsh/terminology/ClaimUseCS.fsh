@@ -15,3 +15,8 @@ Description: "Claim Use codes with Uzbek and Russian translations"
   * ^designation[=].value = "Предопределение"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Oldindan aniqlash"
+* #claim
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Требование на оплату"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "To'lov talabi"
