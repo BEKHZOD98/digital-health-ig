@@ -682,11 +682,11 @@ Description: "Code system defining laboratory observation panels and individual 
     * ^designation[+].language = #en
     * ^designation[=].value = "Toxic granules [Presence] in Blood by Light microscopy"
 
-* #lab-pan-CC "Общий анализ крови"
+* #lab-pan-CC "Umumiy qon tahlili (Asosiy)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Umumiy qon tahlili"
+  * ^designation[=].value = "Общий анализ крови (Основной)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "CBC panel"
+  * ^designation[=].value = "CBC panel (Basic)"
 
   * #lab-pan-107 "Leykositlar (WBC)"
     * ^designation[0].language = #ru
