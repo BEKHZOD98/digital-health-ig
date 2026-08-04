@@ -2,16 +2,16 @@ Profile: UZCoreComposition
 Parent: Composition
 Id: uz-core-composition
 Title: "UZ Core Composition"
-Description: "UZ Core Composition profile, which defines the core elements of a composition, including its structure, content, and metadata. This profile is designed to be used as a foundation for creating specific compositions in various domains, such as healthcare, education, or business. It provides a standardized way to represent and exchange information about compositions, ensuring interoperability and consistency across different systems and applications."
+Description: "UZ Core Composition profile, used as a foundation for creating medical documents and digital forms"
 * ^status = #active
 * ^experimental = true
 * ^date = "2026-03-05"
 * ^publisher = "Uzinfocom"
 
 * status and type and category and subject and date and author and title and attester and custodian and section MS
-* status from CompositionStatusVS
+* status from CompositionStatusVS (required)
 * type from CompositionTypeVS (required)
-* category from CompositionCategoryVS
+* category from CompositionCategoryVS (extensible)
 
 * subject 1..* MS
 * subject only Reference(UZCorePatient or UZCoreRelatedPerson)

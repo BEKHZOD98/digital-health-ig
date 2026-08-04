@@ -1,5 +1,5 @@
 CodeSystem: CompositionNarrativeStatusCS
-Id: composition-narrative-status-cs
+Id: narrative-status-cs
 Title: "Composition narrative status"
 Description: "Composition narrative status supplement with translations in uzbek and russian"
 * insert SupplementCodeSystem(composition-narrative-status-cs, $composition-narrative-status, 5.0.0)

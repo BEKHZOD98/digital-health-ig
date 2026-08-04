@@ -1,5 +1,5 @@
 CodeSystem: CompositionListOrderCS
-Id: composition-list-order-cs
+Id: list-order-cs
 Title: "Composition list order"
 Description: "Composition list order supplement with translations in uzbek and russian"
 * insert SupplementCodeSystem(composition-list-order-cs, $composition-list-order, 2.0.0)
