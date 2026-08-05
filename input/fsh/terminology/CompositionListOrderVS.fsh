@@ -1,8 +1,8 @@
 ValueSet: CompositionListOrderVS
-Id: composition-list-order-vs
+Id: list-order-vs
 Title: "Composition list order value set"
 Description: "Composition list order value set with translations in uzbek and russian"
-* ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/composition-list-order-vs"
+* ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/list-order-vs"
 * ^experimental = false
 * ^extension[0].url = $valueset-supplement
 * ^extension[=].valueCanonical = Canonical(CompositionListOrderCS)  
