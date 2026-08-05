@@ -2,7 +2,7 @@ CodeSystem: CompositionListEmptyReasonCS
 Id: list-empty-reason-cs
 Title: "Composition list empty reason"
 Description: "Composition list empty reason supplement with translations in uzbek and russian"
-* insert SupplementCodeSystem(list-empty-reason-cs, $composition-list-empty-reason, 5.0.0)
+* insert SupplementCodeSystem(list-empty-reason-cs, $composition-list-empty-reason, 1.0.1)
 
 * #nilknown
   * ^designation[0].language = #ru

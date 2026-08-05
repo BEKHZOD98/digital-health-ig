@@ -13,11 +13,11 @@ Description: "UZ Core Composition profile, used as a foundation for creating med
 * type from CompositionTypeVS (required)
 * category from CompositionCategoryVS (extensible)
 
-* subject 1..* MS
-* subject only Reference(UZCorePatient or UZCoreRelatedPerson)
+* subject 0..* MS
+  * ^short = "Who and/or what the medical document or digital form is about."
 
 * author 1..* MS
-* author only Reference(UZCorePractitionerRole or UZCorePractitioner or UZCoreOrganization or UZCoreRelatedPerson)
+* author only Reference(UZCorePractitionerRole or UZCorePractitioner or UZCoreOrganization or UZCoreRelatedPerson or UZCorePatient or Device)
 
 * attester
   * mode 1..1 MS
@@ -46,7 +46,7 @@ Usage: #example
 * language = #uz
 * status = #final
 * type = composition-type-cs#emdoc-0010-0001 "Tibbiy muassasaga kelganlarni qayd jurnali"
-* category = composition-category-cs#Comp001-0001 "Tibbiy karta"
+* category = composition-category-cs#Comp-001-0001 "Tibbiy karta"
 * date = "2026-03-05T10:00:00+05:00"
 * title = "Bemorning elektron tibbiy kartasi"
 * subject = Reference(example-patient)
