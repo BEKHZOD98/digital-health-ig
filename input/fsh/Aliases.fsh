@@ -214,3 +214,9 @@ Alias: $breast-cancer-risk-category-cs = https://dhp.uz/fhir/core/CodeSystem/bre
 Alias: $breast-cancer-risk-assessment-category-cs = https://dhp.uz/fhir/core/CodeSystem/breast-cancer-risk-assessment-category-cs
 Alias: $cervical-risk-category-cs = https://dhp.uz/fhir/core/CodeSystem/cervical-risk-category-cs
 Alias: $child-development-result-cs = https://dhp.uz/fhir/core/CodeSystem/child-development-result-cs
+
+Alias: $composition-att-mode = http://hl7.org/fhir/composition-attestation-mode
+Alias: $composition-list-empty-reason = http://terminology.hl7.org/CodeSystem/list-empty-reason
+Alias: $composition-status = http://hl7.org/fhir/composition-status
+Alias: $composition-narrative-status = http://hl7.org/fhir/narrative-status
+Alias: $composition-list-order = http://terminology.hl7.org/CodeSystem/list-order
