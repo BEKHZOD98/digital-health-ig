@@ -1,16 +1,16 @@
 > **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
 
-UZ Core Immunization PlanDefinition содержит национальный календарь иммунизации Узбекистана, выраженный в виде вычислимой логики - каждую рекомендованную дозу, её сроки, минимальные интервалы между дозами и правила соответствия, которые определяют, к кому она применяется. Это ресурс, который считывает механизм рекомендаций для построения [ImmunizationRecommendation](StructureDefinition-uz-core-immunization-recommendation.html) каждого пациента. Для данной области применения или юрисдикции одновременно может быть активна только одна версия календаря.
+UZ Core PlanDefinition содержит национальный календарь иммунизации Узбекистана, выраженный в виде вычислимой логики - каждую рекомендованную дозу, её сроки, минимальные интервалы между дозами и правила соответствия, которые определяют, к кому она применяется. Это ресурс, который считывает механизм рекомендаций для построения [ImmunizationRecommendation](StructureDefinition-uz-core-immunization-recommendation.html) каждого пациента. Для данной области применения или юрисдикции одновременно может быть активна только одна версия календаря.
 
 ### Обязательные и Must Support элементы данных
 
 Перечисленные ниже элементы должны всегда присутствовать (обязательные) или должны поддерживаться, когда данные доступны ([Must Support](must-support.html)) - не все они являются обязательными, но ваша система должна заполнять каждый Must Support элемент, когда у неё есть соответствующие данные, и обрабатывать его при получении. Это человекочитаемое резюме; [формальные представления](#profile) ниже дают точные кардинальности, типы и терминологические связки.
 
-#### Каждый UZ Core Immunization PlanDefinition должен иметь
+#### Каждый UZ Core PlanDefinition должен иметь
 
 Каждый PlanDefinition должен содержать url (канонический идентификатор данного календаря), машиночитаемое name, status (draft, active, retired, unknown), унаследованный как обязательный от базового ресурса, и description того, что охватывает календарь.
 
-#### Каждый UZ Core Immunization PlanDefinition должен поддерживать
+#### Каждый UZ Core PlanDefinition должен поддерживать
 
 
 
@@ -24,7 +24,7 @@ UZ Core Immunization PlanDefinition содержит национальный к
 
 ### Построение JSON, шаг за шагом
 
-PlanDefinition в основном создаётся один раз и считывается механизмом рекомендаций, поэтому примеры ниже короткие. Они идут от наименьшего экземпляра, который примет сервер, до календаря, несущего свои действия. Скопируйте один из них и адаптируйте - каждое показанное значение проходит валидацию по этому профилю. Полный эталонный экземпляр - это [пример PlanDefinition](PlanDefinition-example-uz-core-immunization-plan-definition.html).
+PlanDefinition в основном создаётся один раз и считывается механизмом рекомендаций, поэтому примеры ниже короткие. Они идут от наименьшего экземпляра, который примет сервер, до календаря, несущего свои действия. Скопируйте один из них и адаптируйте - каждое показанное значение проходит валидацию по этому профилю. Полный эталонный экземпляр - это [пример PlanDefinition](PlanDefinition-example-uz-core-plan-definition.html).
 
 #### Наименьший PlanDefinition, который вам следует отправлять
 
@@ -34,9 +34,9 @@ PlanDefinition в основном создаётся один раз и счи�
 {
   "resourceType": "PlanDefinition",
   "meta": {
-    "profile": ["https://dhp.uz/fhir/core/StructureDefinition/uz-core-immunization-plan-definition"]
+    "profile": ["https://dhp.uz/fhir/core/StructureDefinition/uz-core-plan-definition"]
   },
-  "url": "https://terminology.dhp.uz/fhir/core/PlanDefinition/example-uz-core-immunization-plan-definition",
+  "url": "https://terminology.dhp.uz/fhir/core/PlanDefinition/example-uz-core-plan-definition",
   "name": "ExampleImmunizationPlanDefinition",
   "status": "draft",
   "description": "Example PlanDefinition demonstrating actions and relationships."
@@ -52,8 +52,8 @@ PlanDefinition в основном создаётся один раз и счи�
 ```json
 {
   "resourceType": "PlanDefinition",
-  "meta": { "profile": [ "https://dhp.uz/fhir/core/StructureDefinition/uz-core-immunization-plan-definition" ] },
-  "url": "https://terminology.dhp.uz/fhir/core/PlanDefinition/example-uz-core-immunization-plan-definition",
+  "meta": { "profile": [ "https://dhp.uz/fhir/core/StructureDefinition/uz-core-plan-definition" ] },
+  "url": "https://terminology.dhp.uz/fhir/core/PlanDefinition/example-uz-core-plan-definition",
   "name": "ExampleImmunizationPlanDefinition",
   "title": "Example Vaccination Follow-up Plan",
   "status": "draft",

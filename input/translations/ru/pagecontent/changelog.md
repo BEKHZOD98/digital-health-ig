@@ -32,7 +32,7 @@ ValueSet на основе SNOMED CT теперь отбирают иерарх�
 
 `method` в [UZ Core Observation](StructureDefinition-uz-core-observation.html) теперь явно указывает силу привязки как extensible.
 
-[UZ Core Immunization PlanDefinition](StructureDefinition-uz-core-immunization-plan-definition.html) теперь требует второй `useContext` с указанием вида календаря, привязанный (extensible) к новому ValueSet [типа календаря иммунизации](ValueSet-immunization-schedule-type-vs.html). Слайсинг по типу для `action.definition[x]` удалён, поскольку из-за него валидатор отклонял `definitionCanonical`, и примеры теперь используют `definitionCanonical`.
+[UZ Core PlanDefinition](StructureDefinition-uz-core-plan-definition.html) теперь требует второй `useContext` с указанием вида календаря, привязанный (extensible) к новому ValueSet [типа календаря иммунизации](ValueSet-immunization-schedule-type-vs.html). Слайсинг по типу для `action.definition[x]` удалён, поскольку из-за него валидатор отклонял `definitionCanonical`, и примеры теперь используют `definitionCanonical`.
 
 `participant.actor` в [UZ Core Condition](StructureDefinition-uz-core-condition.html) теперь может ссылаться на [UZ Core Organization](StructureDefinition-uz-core-organization.html).
 
@@ -64,7 +64,7 @@ ValueSet на основе SNOMED CT теперь отбирают иерарх�
 
 Добавлен профиль [UZ Core ImmunizationRecommendation](StructureDefinition-uz-core-immunization-recommendation.html) для прогнозов вакцинации с терминологией для [статуса прогноза](ValueSet-recommendation-forecast-status-vs.html), [критерия даты](ValueSet-recommendation-date-criterion-vs.html) и [причины](ValueSet-recommendation-reason-vs.html).
 
-Добавлен профиль [UZ Core Immunization PlanDefinition](StructureDefinition-uz-core-immunization-plan-definition.html) для национальных календарей иммунизации.
+Добавлен профиль [UZ Core PlanDefinition](StructureDefinition-uz-core-plan-definition.html) для национальных календарей иммунизации.
 
 Добавлен профиль [UZ Core ActivityDefinition](StructureDefinition-uz-core-vaccination-activity-definition.html) для определения переиспользуемых клинических активностей (процедур, тестов, протоколов медикаментозной терапии) независимо от конкретного пациента.
 
@@ -100,7 +100,7 @@ ValueSet на основе SNOMED CT теперь отбирают иерарх�
 
 `managingOrganization` в [UZ Core Patient](StructureDefinition-uz-core-patient.html) теперь Must Support и должен ссылаться на [UZ Core Organization](StructureDefinition-uz-core-organization.html).
 
-Расширение для многоязычного перевода (базовое значение на узбекском плюс переводы на русский и каракалпакский) добавлено к `name` в [UZ Core HealthcareService](StructureDefinition-uz-core-healthcareservice.html) и к `title` в [UZ Core ActivityDefinition](StructureDefinition-uz-core-vaccination-activity-definition.html), [UZ Core Laboratory ObservationDefinition](StructureDefinition-uz-core-laboratory-observation-definition.html), [UZ Core Immunization PlanDefinition](StructureDefinition-uz-core-immunization-plan-definition.html) и [UZ Core Questionnaire](StructureDefinition-uz-core-questionnaire.html). Элемент `name` теперь обязателен в [UZ Core Organization](StructureDefinition-uz-core-organization.html) и [UZ Core Location](StructureDefinition-uz-core-location.html).
+Расширение для многоязычного перевода (базовое значение на узбекском плюс переводы на русский и каракалпакский) добавлено к `name` в [UZ Core HealthcareService](StructureDefinition-uz-core-healthcareservice.html) и к `title` в [UZ Core ActivityDefinition](StructureDefinition-uz-core-vaccination-activity-definition.html), [UZ Core Laboratory ObservationDefinition](StructureDefinition-uz-core-laboratory-observation-definition.html), [UZ Core PlanDefinition](StructureDefinition-uz-core-plan-definition.html) и [UZ Core Questionnaire](StructureDefinition-uz-core-questionnaire.html). Элемент `name` теперь обязателен в [UZ Core Organization](StructureDefinition-uz-core-organization.html) и [UZ Core Location](StructureDefinition-uz-core-location.html).
 
 #### Организация и идентификаторы
 
