@@ -1,8 +1,8 @@
-Profile: UZCoreImmunizationPlanDefinition
+Profile: UZCorePlanDefinition
 Parent: PlanDefinition
-Id: uz-core-immunization-plan-definition
-Title: "UZ Core Immunization PlanDefinition"
-Description: "Uzbekistan Core profile that stores and represents the National Immunization Schedule of Uzbekistan, including planned vaccines, recommended administration periods, target age groups, dose sequences, and related scheduling rules. It is used to define structured immunization activities that support consistent planning, implementation, and exchange of vaccination schedules within the national digital health ecosystem."
+Id: uz-core-plan-definition
+Title: "UZ Core PlanDefinition"
+Description: "Uzbekistan Core profile for representing structured healthcare plans and schedules. It supports the definition of clinical activities, including immunization schedules, screening programs, blood donation schedules, and other healthcare planning workflows. The profile enables consistent planning, implementation, and exchange of PlanDefinition resources within the national digital health ecosystem."
 * ^status = #draft
 * ^experimental = true
 
@@ -43,7 +43,7 @@ Description: "Uzbekistan Core profile that stores and represents the National Im
 // useContext lets clients tell immunization schedules apart from other PlanDefinitions on the
 // server. Every UZ Core immunization schedule carries a fixed focus context, so it is found with
 // GET [base]/PlanDefinition?context-type-value=focus$http://snomed.info/sct|33879002
-* useContext 2..* MS
+* useContext 0..* MS
 * useContext ^slicing.discriminator.type = #value
 * useContext ^slicing.discriminator.path = "code"
 * useContext ^slicing.rules = #open
@@ -51,7 +51,9 @@ Description: "Uzbekistan Core profile that stores and represents the National Im
 
 * useContext contains
     immunizationFocus 1..1 MS and
-    scheduleCategory 1..1 MS
+    scheduleCategory 1..1 MS and
+    screeningFocus 0..1 MS and
+    bloodDonationFocus 0..1 MS
 
 * useContext[immunizationFocus] ^short = "Marks this PlanDefinition as an immunization schedule"
 * useContext[immunizationFocus].code = $usage-context-type#focus
@@ -65,6 +67,23 @@ Description: "Uzbekistan Core profile that stores and represents the National Im
 * useContext[scheduleCategory].code = $usage-context-type#topic
 * useContext[scheduleCategory].value[x] only CodeableConcept
 * useContext[scheduleCategory].valueCodeableConcept from ImmunizationScheduleTypeVS (extensible)
+
+* useContext[screeningFocus] ^short = "Marks this PlanDefinition as a whole screening schedule"
+* useContext[screeningFocus].code = $usage-context-type#focus
+* useContext[screeningFocus].value[x] only CodeableConcept
+* useContext[screeningFocus].valueCodeableConcept.coding 1..1
+* useContext[screeningFocus].valueCodeableConcept.coding.system 1..1
+* useContext[screeningFocus].valueCodeableConcept.coding.code 1..1
+* useContext[screeningFocus].valueCodeableConcept = $sct#360156006
+
+* useContext[bloodDonationFocus] ^short = "Marks this PlanDefinition as a whole blood donation schedule"
+* useContext[bloodDonationFocus].code = $usage-context-type#focus
+* useContext[bloodDonationFocus].value[x] only CodeableConcept
+* useContext[bloodDonationFocus].valueCodeableConcept.coding 1..1
+* useContext[bloodDonationFocus].valueCodeableConcept.coding.system 1..1
+* useContext[bloodDonationFocus].valueCodeableConcept.coding.code 1..1
+* useContext[bloodDonationFocus].valueCodeableConcept = $sct#25179006
+
 
 * approvalDate MS
 * effectivePeriod MS
@@ -113,29 +132,37 @@ Description: "Uzbekistan Core profile that stores and represents the National Im
 // with a false "allows for the type uri but found type canonical" error
 * action.definition[x] MS
 
-Instance: example-uz-core-immunization-plan-definition
-InstanceOf: UZCoreImmunizationPlanDefinition
+Instance: example-uz-core-plan-definition
+InstanceOf: UZCorePlanDefinition
 Usage: #example
-Title: "UZ Core Immunization PlanDefinition"
-Description: "Uzbekistan Core Immunization PlanDefinition profile, used to represent structured immunization schedule definitions, including actions, timing, participants, and related activities."
-* id = "example-uz-core-immunization-plan-definition"
 
-* url = "https://terminology.dhp.uz/fhir/core/PlanDefinition/example-uz-core-immunization-plan-definition"
+Title: "UZ Core PlanDefinition"
+
+Description: "Example UZ Core PlanDefinition profile demonstrating a structured healthcare plan with actions, timing, participants, and related activities."
+* id = "example-uz-core-plan-definition"
+
+* url = "https://terminology.dhp.uz/fhir/core/PlanDefinition/example-uz-core-plan-definition"
 
 // * version = "1.0.0"
 
-* name = "ExampleImmunizationPlanDefinition"
+* name = "ExamplePlanDefinition"
 * title = "Example Vaccination Follow-up Plan"
 * status = $publication-status#draft
 * date = "2026-08-10"
 * publisher = "DHP Uzbekistan"
-* description = "Example age-based immunization PlanDefinition demonstrating vaccination actions and relationships."
+* description = "Example PlanDefinition demonstrating healthcare planning activities, action relationships, timing, and participants."
 
 * useContext[immunizationFocus].code = $usage-context-type#focus
 * useContext[immunizationFocus].valueCodeableConcept = $sct#33879002 "Active immunization"
 
 * useContext[scheduleCategory].code = $usage-context-type#topic
 * useContext[scheduleCategory].valueCodeableConcept = ImmunizationScheduleTypeCS#pd-type-0001-00001 "Age-based"
+
+* useContext[screeningFocus].code = $usage-context-type#focus
+* useContext[screeningFocus].valueCodeableConcept = $sct#360156006 "Screening"
+
+* useContext[bloodDonationFocus].code = $usage-context-type#focus
+* useContext[bloodDonationFocus].valueCodeableConcept = $sct#25179006 "Blood donation"
 
 * approvalDate = "2026-08-01"
 
