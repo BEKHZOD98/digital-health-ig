@@ -44,8 +44,11 @@ Description: "Uzbekistan Core profile for representing structured healthcare pla
 // server. Every UZ Core immunization schedule carries a fixed focus context, so it is found with
 // GET [base]/PlanDefinition?context-type-value=focus$http://snomed.info/sct|33879002
 * useContext 0..* MS
-* useContext ^slicing.discriminator.type = #value
-* useContext ^slicing.discriminator.path = "code"
+* useContext ^slicing.discriminator[0].type = #value
+* useContext ^slicing.discriminator[0].path = "code"
+
+* useContext ^slicing.discriminator[1].type = #pattern
+* useContext ^slicing.discriminator[1].path = "value"
 * useContext ^slicing.rules = #open
 * useContext ^slicing.description = "Distinguishes immunization schedules and their categories"
 
@@ -87,6 +90,9 @@ Description: "Uzbekistan Core profile for representing structured healthcare pla
 
 * approvalDate MS
 * effectivePeriod MS
+
+* extension contains PlanDefinitionStatusHistory named statusHistory 0..* MS
+* extension[statusHistory] ^short = "History of PlanDefinition status changes"
 
 * action MS
 * action ^short = "Definition of action included in the plan"
@@ -168,6 +174,17 @@ Description: "Example UZ Core PlanDefinition profile demonstrating a structured 
 
 * effectivePeriod.start = "2026-08-01"
 * effectivePeriod.end = "2027-08-01"
+
+* extension[statusHistory][0].extension[status].valueCode = #draft
+* extension[statusHistory][0].extension[period].valuePeriod.start = "2026-01-01"
+* extension[statusHistory][0].extension[period].valuePeriod.end = "2026-03-31"
+* extension[statusHistory][0].extension[reason].valueString = "Initial draft."
+* extension[statusHistory][0].extension[changedBy].valueReference = Reference(example-practitioner)
+
+* extension[statusHistory][1].extension[status].valueCode = #active
+* extension[statusHistory][1].extension[period].valuePeriod.start = "2026-04-01"
+* extension[statusHistory][1].extension[reason].valueString = "Approved for publication."
+* extension[statusHistory][1].extension[changedBy].valueReference = Reference(example-practitioner)
 
 * action[0].id = "action-1"
 * action[0].linkId = "action-1"

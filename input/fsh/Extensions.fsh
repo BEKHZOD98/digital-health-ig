@@ -143,3 +143,59 @@ Description: "Canonical reference to the laboratory ObservationDefinition that s
 
 * value[x] 1..1
 * value[x] only Canonical(UZCoreLaboratoryObservationDefinition)
+
+
+Extension: PlanDefinitionStatusHistory
+Id: plan-definition-status-history
+Title: "PlanDefinition Status History"
+Description: "Records a status change in the lifecycle of a PlanDefinition."
+Context: PlanDefinition
+
+* ^experimental = true
+
+* extension contains
+    PlanDefinitionStatus named status 1..1 MS and
+    PlanDefinitionStatusPeriod named period 1..1 MS and
+    PlanDefinitionStatusReason named reason 1..1 MS and
+    PlanDefinitionChangedBy named changedBy 1..1 MS
+
+Extension: PlanDefinitionStatus
+Id: plan-definition-status
+Title: "PlanDefinition Status"
+Description: "Publication status of the PlanDefinition."
+Context: PlanDefinitionStatusHistory
+
+* ^experimental = true
+
+* value[x] only code
+* valueCode from PublicationStatusVS (required)
+
+Extension: PlanDefinitionStatusPeriod
+Id: plan-definition-status-period
+Title: "PlanDefinition Status Period"
+Description: "Period during which the PlanDefinition status was effective."
+Context: PlanDefinitionStatusHistory
+
+* ^experimental = true
+
+* value[x] only Period
+
+Extension: PlanDefinitionStatusReason
+Id: plan-definition-status-reason
+Title: "PlanDefinition Status Reason"
+Description: "Reason for the PlanDefinition status change."
+Context: PlanDefinitionStatusHistory
+
+* ^experimental = true
+
+* value[x] only string
+
+Extension: PlanDefinitionChangedBy
+Id: plan-definition-changed-by
+Title: "PlanDefinition Changed By"
+Description: "Person or organization responsible for the PlanDefinition status change."
+Context: PlanDefinitionStatusHistory
+
+* ^experimental = true
+
+* value[x] only Reference(Practitioner or PractitionerRole or Organization)
