@@ -43,20 +43,16 @@ Description: "Uzbekistan Core profile for representing structured healthcare pla
 // useContext lets clients tell immunization schedules apart from other PlanDefinitions on the
 // server. Every UZ Core immunization schedule carries a fixed focus context, so it is found with
 // GET [base]/PlanDefinition?context-type-value=focus$http://snomed.info/sct|33879002
-* useContext 0..* MS
-* useContext ^slicing.discriminator[0].type = #value
-* useContext ^slicing.discriminator[0].path = "code"
-
-* useContext ^slicing.discriminator[1].type = #pattern
-* useContext ^slicing.discriminator[1].path = "value"
+* useContext ^slicing.discriminator.type = #value
+* useContext ^slicing.discriminator.path = "value"
 * useContext ^slicing.rules = #open
-* useContext ^slicing.description = "Distinguishes immunization schedules and their categories"
+* useContext ^slicing.description = "Distinguishes healthcare schedules and their categories"
 
 * useContext contains
     immunizationFocus 1..1 MS and
     scheduleCategory 1..1 MS and
-    screeningFocus 0..1 MS and
-    bloodDonationFocus 0..1 MS
+    bloodDonationFocus 1..1 MS and
+    screeningFocus 1..1 MS
 
 * useContext[immunizationFocus] ^short = "Marks this PlanDefinition as an immunization schedule"
 * useContext[immunizationFocus].code = $usage-context-type#focus
@@ -71,14 +67,6 @@ Description: "Uzbekistan Core profile for representing structured healthcare pla
 * useContext[scheduleCategory].value[x] only CodeableConcept
 * useContext[scheduleCategory].valueCodeableConcept from ImmunizationScheduleTypeVS (extensible)
 
-* useContext[screeningFocus] ^short = "Marks this PlanDefinition as a whole screening schedule"
-* useContext[screeningFocus].code = $usage-context-type#focus
-* useContext[screeningFocus].value[x] only CodeableConcept
-* useContext[screeningFocus].valueCodeableConcept.coding 1..1
-* useContext[screeningFocus].valueCodeableConcept.coding.system 1..1
-* useContext[screeningFocus].valueCodeableConcept.coding.code 1..1
-* useContext[screeningFocus].valueCodeableConcept = $sct#360156006
-
 * useContext[bloodDonationFocus] ^short = "Marks this PlanDefinition as a whole blood donation schedule"
 * useContext[bloodDonationFocus].code = $usage-context-type#focus
 * useContext[bloodDonationFocus].value[x] only CodeableConcept
@@ -86,6 +74,14 @@ Description: "Uzbekistan Core profile for representing structured healthcare pla
 * useContext[bloodDonationFocus].valueCodeableConcept.coding.system 1..1
 * useContext[bloodDonationFocus].valueCodeableConcept.coding.code 1..1
 * useContext[bloodDonationFocus].valueCodeableConcept = $sct#25179006
+
+* useContext[screeningFocus] ^short = "Marks this PlanDefinition as a whole screening schedule"
+* useContext[screeningFocus].code = $usage-context-type#focus
+* useContext[screeningFocus].value[x] only CodeableConcept
+* useContext[screeningFocus].valueCodeableConcept.coding 1..1
+* useContext[screeningFocus].valueCodeableConcept.coding.system 1..1
+* useContext[screeningFocus].valueCodeableConcept.coding.code 1..1
+* useContext[screeningFocus].valueCodeableConcept = $sct#360156006
 
 
 * approvalDate MS
@@ -175,16 +171,13 @@ Description: "Example UZ Core PlanDefinition profile demonstrating a structured 
 * effectivePeriod.start = "2026-08-01"
 * effectivePeriod.end = "2027-08-01"
 
-* extension[statusHistory][0].extension[status].valueCode = #draft
-* extension[statusHistory][0].extension[period].valuePeriod.start = "2026-01-01"
-* extension[statusHistory][0].extension[period].valuePeriod.end = "2026-03-31"
-* extension[statusHistory][0].extension[reason].valueString = "Initial draft."
-* extension[statusHistory][0].extension[changedBy].valueReference = Reference(example-practitioner)
+* extension[statusHistory].extension[status].valueCode = #draft
+* extension[statusHistory].extension[period].valuePeriod.start = "2026-01-01"
+* extension[statusHistory].extension[period].valuePeriod.end = "2026-03-31"
+* extension[statusHistory].extension[reason].valueString = "Initial draft."
+* extension[statusHistory].extension[changedBy].valueReference = Reference(example-practitioner)
 
-* extension[statusHistory][1].extension[status].valueCode = #active
-* extension[statusHistory][1].extension[period].valuePeriod.start = "2026-04-01"
-* extension[statusHistory][1].extension[reason].valueString = "Approved for publication."
-* extension[statusHistory][1].extension[changedBy].valueReference = Reference(example-practitioner)
+
 
 * action[0].id = "action-1"
 * action[0].linkId = "action-1"
