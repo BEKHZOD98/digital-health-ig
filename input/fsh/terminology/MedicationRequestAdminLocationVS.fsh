@@ -5,7 +5,7 @@ Description: "A value set defining the category of a medication request (setting
 * ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/medicationrequest-admin-location-vs"
 * ^experimental = true
 * ^extension[0].url = $valueset-supplement
-* ^extension[0].valueCanonical = Canonical(MedicationRequestAdminLocationCS)
+* ^extension[=].valueCanonical = Canonical(MedicationRequestAdminLocationCS)
 
 * include codes from system $medicationrequest-admin-location
 * include codes from system medication-request-order-type-cs

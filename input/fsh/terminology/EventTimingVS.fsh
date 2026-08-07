@@ -5,9 +5,9 @@ Description: "A value set defining when an event occurs (Morning, Evening, Befor
 * ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/event-timing-vs"
 * ^experimental = true
 * ^extension[0].url = $valueset-supplement
-* ^extension[0].valueCanonical = Canonical(EventTimingCS)
-* ^extension[1].url = $valueset-supplement
-* ^extension[1].valueCanonical = Canonical(TimingEventCS)
+* ^extension[=].valueCanonical = Canonical(EventTimingCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(TimingEventCS)
 
 // Include codes from BOTH systems
 * include codes from system $event-timing

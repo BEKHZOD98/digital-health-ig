@@ -5,6 +5,6 @@ Description: "A value set defining the intent of a medication order (proposal, p
 * ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/medicationrequest-intent-vs"
 * ^experimental = true
 * ^extension[0].url = $valueset-supplement
-* ^extension[0].valueCanonical = Canonical(MedicationRequestIntentCS)
+* ^extension[=].valueCanonical = Canonical(MedicationRequestIntentCS)
 
 * include codes from system $medicationrequest-intent

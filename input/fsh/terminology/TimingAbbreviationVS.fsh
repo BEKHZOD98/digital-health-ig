@@ -5,9 +5,9 @@ Description: "A value set of timing abbreviation codes (e.g. BID, TID, QID, C) w
 * ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/timing-abbreviation-vs"
 * ^experimental = true
 * ^extension[0].url = $valueset-supplement
-* ^extension[0].valueCanonical = Canonical(TimingAbbreviationCS)
-* ^extension[1].url = $valueset-supplement
-* ^extension[1].valueCanonical = Canonical(GTSAbbreviationCS)
+* ^extension[=].valueCanonical = Canonical(TimingAbbreviationCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(GTSAbbreviationCS)
 
 
 
