@@ -240,7 +240,7 @@ Usage: #example
     * code.text = "Two times a day at institution specified time"
   * route.coding[0]
     * system = "https://terminology.dhp.uz/fhir/core/CodeSystem/route-codes-cs" 
-    * code = #pharm.0001.00062 
+    * code = #pharm-0001-00062 
     * display = "External"
   * doseAndRate[0].doseQuantity
     * value = 1
