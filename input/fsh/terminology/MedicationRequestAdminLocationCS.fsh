@@ -6,18 +6,18 @@ Description: "Uzbek and Russian translations for the MedicationRequest category 
 
 * #inpatient
   * ^designation[0].language = #uz
-  * ^designation[0].value = "statsionar"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Стационар"
+  * ^designation[=].value = "statsionar"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Стационар"
 
 * #outpatient
   * ^designation[0].language = #uz
-  * ^designation[0].value = "ambulatoriya"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Амбулатория"
+  * ^designation[=].value = "ambulatoriya"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Амбулатория"
 
 * #community
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Uyda"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "На дому"
+  * ^designation[=].value = "Uyda"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "На дому"

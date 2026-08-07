@@ -6,6 +6,6 @@ Description: "Translations for standard Timing Abbreviation codes (Continuous)"
 
 * #C "Continuous (frequency)"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Doimiy"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Непрерывно"
+  * ^designation[=].value = "Doimiy"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Непрерывно"

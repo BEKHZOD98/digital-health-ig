@@ -6,84 +6,84 @@ Description: "Translations for v3 Timing codes (Meals, Sleep, etc.)"
 
 * #HS "HS"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Uyqudan oldin"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Перед сном"
+  * ^designation[=].value = "Uyqudan oldin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Перед сном"
 
 * #WAKE "WAKE"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Uyqudan turganda"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "При пробуждении"
+  * ^designation[=].value = "Uyqudan turganda"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "При пробуждении"
 
 * #C "C"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Ovqatlanish paytida"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Во время еды"
+  * ^designation[=].value = "Ovqatlanish paytida"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Во время еды"
 
 * #CM "CM"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Nonushta paytida"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Во время завтрака"
+  * ^designation[=].value = "Nonushta paytida"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Во время завтрака"
 
 * #CD "CD"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Tushlik paytida"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Во время обеда"
+  * ^designation[=].value = "Tushlik paytida"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Во время обеда"
 
 * #CV "CV"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Kechki ovqat paytida"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Во время ужина"
+  * ^designation[=].value = "Kechki ovqat paytida"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Во время ужина"
 
 * #AC "AC"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Ovqatdan oldin"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Перед едой"
+  * ^designation[=].value = "Ovqatdan oldin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Перед едой"
 
 * #ACM "ACM"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Nonushtadan oldin"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Перед завтраком"
+  * ^designation[=].value = "Nonushtadan oldin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Перед завтраком"
 
 * #ACD "ACD"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Tushlikdan oldin"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Перед обедом"
+  * ^designation[=].value = "Tushlikdan oldin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Перед обедом"
 
 * #ACV "ACV"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Kechki ovqatdan oldin"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Перед ужином"
+  * ^designation[=].value = "Kechki ovqatdan oldin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Перед ужином"
 
 * #PC "PC"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Ovqatdan keyin"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "После еды"
+  * ^designation[=].value = "Ovqatdan keyin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "После еды"
 
 * #PCM "PCM"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Nonushtadan keyin"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "После завтрака"
+  * ^designation[=].value = "Nonushtadan keyin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "После завтрака"
 
 * #PCD "PCD"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Tushlikdan keyin"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "После обеда"
+  * ^designation[=].value = "Tushlikdan keyin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "После обеда"
 
 * #PCV "PCV"
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Kechki ovqatdan keyin"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "После ужина"
+  * ^designation[=].value = "Kechki ovqatdan keyin"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "После ужина"

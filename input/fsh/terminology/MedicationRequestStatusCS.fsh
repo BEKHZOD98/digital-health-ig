@@ -6,54 +6,54 @@ Description: "MedicationRequest statuses with translations into Uzbek and Russia
 
 * #active "Active" "The prescription is currently valid and ready to be dispensed."
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Faol"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Активно"
+  * ^designation[=].value = "Faol"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Активно"
 
 * #on-hold "On Hold" "Actions implied by the prescription are to be temporarily halted."
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Ushlab qolingan"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "На удержании"
+  * ^designation[=].value = "Ushlab qolingan"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "На удержании"
 
 * #ended "Ended" "The prescription has expired or has been superseded."
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Tugadi"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Завершено"
+  * ^designation[=].value = "Tugadi"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Завершено"
 
 * #stopped "Stopped" "Actions implied by the prescription are to be permanently halted."
   * ^designation[0].language = #uz
-  * ^designation[0].value = "To'xtatildi"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Остановлено"
+  * ^designation[=].value = "To'xtatildi"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Остановлено"
 
 * #completed "Completed" "All actions that are implied by the prescription have occurred."
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Bajarildi"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Завершено"
+  * ^designation[=].value = "Bajarildi"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Завершено"
 
 * #cancelled "Cancelled" "The prescription has been withdrawn before any administrations have occurred."
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Bekor qilingan"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Отменено"
+  * ^designation[=].value = "Bekor qilingan"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Отменено"
 
 * #entered-in-error "Entered in Error" "The prescription was entered in error and should not be followed."
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Xatoda kiritilgan"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Введено с ошибкой"
+  * ^designation[=].value = "Xatoda kiritilgan"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Введено с ошибкой"
 
 * #draft "Draft" "The prescription is not yet 'actionable'."
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Qoralama"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Черновик"
+  * ^designation[=].value = "Qoralama"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Черновик"
 
 * #unknown "Unknown" "The authoring/source system does not know which of the status values currently applies."
   * ^designation[0].language = #uz
-  * ^designation[0].value = "Noma'lum"
-  * ^designation[1].language = #ru
-  * ^designation[1].value = "Неизвестно"
+  * ^designation[=].value = "Noma'lum"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Неизвестно"
