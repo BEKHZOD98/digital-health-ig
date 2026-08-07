@@ -143,3 +143,11 @@ Description: "Canonical reference to the laboratory ObservationDefinition that s
 
 * value[x] 1..1
 * value[x] only Canonical(UZCoreLaboratoryObservationDefinition)
+
+Extension: Trustee
+Id: trustee
+Title: "Trustee"
+Description: "Extension to specify a trustee (RelatedPerson or PractitionerRole)"
+Context: MedicationRequest
+* ^experimental = true
+* value[x] only Reference(UZCoreRelatedPerson or UZCorePractitionerRole)
