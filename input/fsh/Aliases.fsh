@@ -4,6 +4,16 @@ Alias: $medicationdispense-status-reason = http://hl7.org/fhir/CodeSystem/medica
 Alias: $medicationdispense-status = http://hl7.org/fhir/CodeSystem/medicationdispense-status
 Alias: $action-participant-type = http://hl7.org/fhir/action-participant-type
 Alias: $event-status = http://hl7.org/fhir/event-status
+Alias: $medicationrequest-admin-location = http://terminology.hl7.org/CodeSystem/medicationrequest-admin-location
+Alias: $medicationrequest-intent = http://hl7.org/fhir/CodeSystem/medicationrequest-intent
+Alias: $medicationrequest-status-reason = http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason
+Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status
+Alias: $days-of-week = http://hl7.org/fhir/days-of-week
+Alias: $event-timing = http://hl7.org/fhir/event-timing
+Alias: $v3-timing-event = http://terminology.hl7.org/CodeSystem/v3-TimingEvent
+Alias: $v3-gts-abbreviation = http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation
+Alias: $timing-abbreviation = http://terminology.hl7.org/CodeSystem/timing-abbreviation
+
 Alias: $address-type = http://hl7.org/fhir/address-type
 Alias: $address-use = http://hl7.org/fhir/address-use
 Alias: $allergy-category = 	http://hl7.org/fhir/allergy-intolerance-category
@@ -191,6 +201,7 @@ Alias: $observation-range-category = http://hl7.org/fhir/observation-range-categ
 Alias: $observation-range-category-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/observation-range-category-cs
 Alias: $observation-range-category-vs = https://terminology.dhp.uz/fhir/core/ValueSet/observation-range-category-vs
 
+Alias: $inn-medication-name-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/inn-medication-name-cs
 Alias: $task-status = http://hl7.org/fhir/task-status
 Alias: $task-intent = http://hl7.org/fhir/task-intent
 
