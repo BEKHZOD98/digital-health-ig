@@ -100,17 +100,7 @@ Usage: #example
   * system = $registrationCertificateID
   * use = #official
   * value = "UZ/MED/2024/00123"
-// * code = inn-medication-name-cs#005325 "paracetamol"
-* code
-  * coding[0]
-    * system = $inn-medication-name-cs
-    * code = #005325
-    * display = "paracetamol"
-  * coding[1]
-    * system = $medical-product-classification
-    * code = #N02BE01
-    * display = "Paracetamol"
-  * text = "Paracetamol 500 mg Tablet"
+* code = inn-medication-name-cs#005325 "paracetamol"
 * status = $medication-status#active "Faol"
 * doseForm = medication-doseform-cs#TAB101 "tablets"
 * totalVolume

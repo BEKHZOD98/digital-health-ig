@@ -128,7 +128,7 @@ SHOULD NOT BE USED:
 
 * dosageInstruction.timing.repeat.durationUnit MS
 * dosageInstruction.timing.repeat.durationUnit from UnitsOfTimeVS (required)
-* dosageInstruction.timing.repeat.durationUnit ^short = "s | min | h | d | wk | mo | a - unit of time"
+* dosageInstruction.timing.repeat.durationUnit ^short = "s | min | h | d | wk | mo | yr - unit of time"
 
 * dosageInstruction.timing.repeat.frequency MS
 * dosageInstruction.timing.repeat.frequency ^short = "Indicates the number of repetitions that should occur within the period"
@@ -138,7 +138,7 @@ SHOULD NOT BE USED:
 
 * dosageInstruction.timing.repeat.periodUnit MS
 * dosageInstruction.timing.repeat.periodUnit from UnitsOfTimeVS (required)
-* dosageInstruction.timing.repeat.periodUnit ^short = "s | min | h | d | wk | mo | a - unit of time"
+* dosageInstruction.timing.repeat.periodUnit ^short = "s | min | h | d | wk | mo | yr - unit of time"
 
 * dosageInstruction.timing.repeat.timeOfDay MS
 * dosageInstruction.timing.repeat.timeOfDay ^short = "Time of day for the action"
