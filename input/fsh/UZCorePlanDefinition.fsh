@@ -48,41 +48,29 @@ Description: "Uzbekistan Core profile for representing structured healthcare pla
 * useContext ^slicing.rules = #open
 * useContext ^slicing.description = "Distinguishes healthcare schedules and their categories"
 
+
+
+* useContext ^slicing.discriminator.type = #value
+* useContext ^slicing.discriminator.path = "code"
+* useContext ^slicing.rules = #open
+* useContext ^slicing.description = "Healthcare schedule classification"
+
 * useContext contains
-    immunizationFocus 1..1 MS and
-    scheduleCategory 1..1 MS and
-    bloodDonationFocus 1..1 MS and
-    screeningFocus 1..1 MS
+    focus 1..* MS and
+    scheduleCategory 0..1 MS
 
-* useContext[immunizationFocus] ^short = "Marks this PlanDefinition as an immunization schedule"
-* useContext[immunizationFocus].code = $usage-context-type#focus
-* useContext[immunizationFocus].value[x] only CodeableConcept
-* useContext[immunizationFocus].valueCodeableConcept.coding 1..1
-* useContext[immunizationFocus].valueCodeableConcept.coding.system 1..1
-* useContext[immunizationFocus].valueCodeableConcept.coding.code 1..1
-* useContext[immunizationFocus].valueCodeableConcept = $sct#33879002
+* useContext[focus] ^short = "Healthcare schedule focus"
+* useContext[focus].code = $usage-context-type#focus
+* useContext[focus].value[x] only CodeableConcept
+* useContext[focus].valueCodeableConcept.coding 1..1
+* useContext[focus].valueCodeableConcept.coding.system 1..1
+* useContext[focus].valueCodeableConcept.coding.code 1..1
+* useContext[focus].valueCodeableConcept from HealthcareScheduleFocusVS (required)
 
-* useContext[scheduleCategory] ^short = "Kind of immunization schedule"
+* useContext[scheduleCategory] ^short = "Kind of healthcare schedule"
 * useContext[scheduleCategory].code = $usage-context-type#topic
 * useContext[scheduleCategory].value[x] only CodeableConcept
 * useContext[scheduleCategory].valueCodeableConcept from ImmunizationScheduleTypeVS (extensible)
-
-* useContext[bloodDonationFocus] ^short = "Marks this PlanDefinition as a whole blood donation schedule"
-* useContext[bloodDonationFocus].code = $usage-context-type#focus
-* useContext[bloodDonationFocus].value[x] only CodeableConcept
-* useContext[bloodDonationFocus].valueCodeableConcept.coding 1..1
-* useContext[bloodDonationFocus].valueCodeableConcept.coding.system 1..1
-* useContext[bloodDonationFocus].valueCodeableConcept.coding.code 1..1
-* useContext[bloodDonationFocus].valueCodeableConcept = $sct#25179006
-
-* useContext[screeningFocus] ^short = "Marks this PlanDefinition as a whole screening schedule"
-* useContext[screeningFocus].code = $usage-context-type#focus
-* useContext[screeningFocus].value[x] only CodeableConcept
-* useContext[screeningFocus].valueCodeableConcept.coding 1..1
-* useContext[screeningFocus].valueCodeableConcept.coding.system 1..1
-* useContext[screeningFocus].valueCodeableConcept.coding.code 1..1
-* useContext[screeningFocus].valueCodeableConcept = $sct#360156006
-
 
 * approvalDate MS
 * effectivePeriod MS
@@ -154,17 +142,18 @@ Description: "Example UZ Core PlanDefinition profile demonstrating a structured 
 * publisher = "DHP Uzbekistan"
 * description = "Example PlanDefinition demonstrating healthcare planning activities, action relationships, timing, and participants."
 
-* useContext[immunizationFocus].code = $usage-context-type#focus
-* useContext[immunizationFocus].valueCodeableConcept = $sct#33879002 "Active immunization"
+* useContext[focus][0].code = $usage-context-type#focus
+* useContext[focus][0].valueCodeableConcept = $sct#33879002 "Active immunization"
+
+* useContext[focus][1].code = $usage-context-type#focus
+* useContext[focus][1].valueCodeableConcept = $sct#25179006 "Blood donation"
+
+* useContext[focus][2].code = $usage-context-type#focus
+* useContext[focus][2].valueCodeableConcept = $sct#360156006 "Screening"
 
 * useContext[scheduleCategory].code = $usage-context-type#topic
-* useContext[scheduleCategory].valueCodeableConcept = ImmunizationScheduleTypeCS#pd-type-0001-00001 "Age-based"
-
-* useContext[screeningFocus].code = $usage-context-type#focus
-* useContext[screeningFocus].valueCodeableConcept = $sct#360156006 "Screening"
-
-* useContext[bloodDonationFocus].code = $usage-context-type#focus
-* useContext[bloodDonationFocus].valueCodeableConcept = $sct#25179006 "Blood donation"
+* useContext[scheduleCategory].valueCodeableConcept =
+    ImmunizationScheduleTypeCS#pd-type-0001-00001 "Age-based"
 
 * approvalDate = "2026-08-01"
 

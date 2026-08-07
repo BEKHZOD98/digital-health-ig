@@ -151,6 +151,9 @@ Title: "PlanDefinition Status History"
 Description: "Records the history of status changes for a PlanDefinition, including the status, period during which the status was effective, reason for the status change, and the actor who performed the change."
 Context: PlanDefinition
 
+* ^status = #draft
+* ^experimental = true
+
 * extension contains
     status 1..1 MS and
     period 1..1 MS and
