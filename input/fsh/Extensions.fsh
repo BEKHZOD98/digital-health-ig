@@ -154,3 +154,11 @@ Context: ServiceRequest
 
 * value[x] only CodeableConcept
 * valueCodeableConcept from CoverageKindVS (required)
+
+Extension: Trustee
+Id: trustee
+Title: "Trustee"
+Description: "Extension to specify a trustee (RelatedPerson or PractitionerRole)"
+Context: MedicationRequest
+* ^experimental = true
+* value[x] only Reference(UZCoreRelatedPerson or UZCorePractitionerRole)
