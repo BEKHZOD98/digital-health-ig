@@ -178,3 +178,13 @@ Context: PlanDefinition
 * extension[changedBy].value[x] 1..1
 * extension[changedBy].value[x] only Reference
 * extension[changedBy].valueReference only Reference(Practitioner or PractitionerRole)
+Extension: CoverageKind
+Id: coverage-kind
+Title: "Coverage Kind"
+Description: "Extension indicating the kind of financing or coverage source for a requested service, such as state insurance, private insurance, self-pay, or other."
+Context: ServiceRequest
+
+* ^experimental = true
+
+* value[x] only CodeableConcept
+* valueCodeableConcept from CoverageKindVS (required)
