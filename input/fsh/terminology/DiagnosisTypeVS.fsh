@@ -6,3 +6,4 @@ Description: "Diagnosis types in Uzbekistan"
 * ^experimental = true
 * ^language = #uz
 * include codes from system diagnosis-type-cs
+* include codes from system cancer-diagnosis-type-cs
