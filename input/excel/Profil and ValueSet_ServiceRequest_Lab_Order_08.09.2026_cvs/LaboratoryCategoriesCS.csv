@@ -1,0 +1,40 @@
+sr-sct-category-cs:,,,
+CODE,UZ,RU,EN
+108252007,Laboratoriya muolajasi,Лабораторные исследования,Laboratory procedure
+363679005,Rasmlash muolajasi,Инструментальная диагностика,Imaging procedure
+165197003,Diagnostika muolajasi,Функциональные исследования,Diagnostic procedure
+387713003,Jarrohlik muolajasi,Операции,Surgical procedure
+91251008,Fizioterapiya muolajasi,Физиотерапия,Physiotherapy procedure
+277132007,Terapevtik muolaja,"Инъекции, перевязки",Therapeutic procedure
+371883000,Ambulatoriya muolajasi,Амбулаторные процедуры,Outpatient procedure
+11429006,Konsultatsiya,Консультации,Consultation
+32485007,Kasalxonaga yotqizish,Госпитализация,Admission to hospital
+52052004,Reabilitatsiya terapiyasi,Реабилитация,Rehabilitation therapy
+448337001,Teletibbiyot bo'yicha konsultatsiya,Телемедицина,Telemedicine consultation
+20135006,Skrining tekshiruvi va patronaj,Скрининг и патронажные мероприятия,Screening and home visits
+25179006,Qon berish,Донация,Donation
+,,,
+,,,
+,,,
+lab-categories-cs:,,,
+CODE,UZ,RU,EN
+lab-category-01,Umum klinik tahlillar,Общеклинические исследования,General clinical tests
+lab-category-02,Gematologiya,Гематология,Hematology
+lab-category-03,Koagulologiya,Коагулология,Coagulation
+lab-category-04,Biokimyo,Биохимия,Biochemistry
+lab-category-05,Immunologiya,Иммунология,Immunology
+lab-category-06,Serologiya,Серология,Serology
+lab-category-07,Mikrobiologiya,Микробиология,Microbiology
+lab-category-08,Bakteriologiya,Бактериология,Bacteriology
+lab-category-09,Virusologiya,Вирусология,Virology
+lab-category-10,Parazitologiya,Паразитология,Parasitology
+lab-category-11,Mikologiya,Микология,Mycology
+lab-category-12,Molekulyar diagnostika,Молекулярная диагностика,Molecular diagnostics
+lab-category-13,Sitologiya,Цитология,Cytology
+lab-category-14,Gistologiya,Гистология,Histology
+lab-category-15,Patomorfologiya,Патоморфология,Pathomorphology
+lab-category-16,Toksikologiya,Токсикология,Toxicology
+lab-category-17,Genetika,Генетика,Genetics
+lab-category-18,Transfuziologiya,Трансфузиология,Transfusion medicine
+lab-category-19,Gormonal tadqiqotlar,Гормональные исследования,Hormonal studies
+lab-category-20,Infeksion diagnostika,Инфекционная диагностика,Infectious disease diagnostics

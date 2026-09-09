@@ -1,0 +1,33 @@
+Name,,,Flags,,Cardinality,Example,Document,Type,Description & Constraints,,,,,,,,,
+ServiceRequest,,,TU,,,,,DomainResource,"Uzbekistan Core ServiceRequest profile, used to represent a request for service such as diagnostic investigations, treatments, or operations to be performed.",,,,,,ValueSets,,,
+,identifier,,Σ S,,1..*,,,identifier,"Unique identifier for the (e.g., laboratory) referral or order.",,,,,,System,ValueSet,CodeSystem,Code
+,requisition,,Σ S,,0..1,,,identifier,"A common identifier used to group multiple ServiceRequest resources created as part of a single referral, visit, or a single specimen collection episode.",,,,,,http://hl7.org/fhir/request-status,ServiceRequestStatusVS,ServiceRequestStatusCS,все коды
+,status,,Σ S,,1..1,active,,ServiceRequestStatusVS,The status of a service order. Binding : http://hl7.org/fhir/request-status ,,,,,,http://hl7.org/fhir/request-intent,RequestIntentVS,RequestIntentCS,все коды
+,intent,,Σ S,,1..1,order,,RequestIntentVS,"Indicates the level of obligation and intent of the service request, specifying whether the request represents an official order to be performed. Binding:  http://hl7.org/fhir/request-intent",,,,,,https://dhp.uz/fhir/core/en/ValueSet-service-request-categories-vs.html,ServiceRequestCategoriesVS,SRSctCategoryCS,все коды
+new,category,,Σ S,,0..*,,,ServiceRequestCategoriesVS (extensible),"The category of the service being requested, such as laboratory, imaging, or procedural care. This element provides a high-level classification of the type of service being ordered.",,,,,,http://hl7.org/fhir/request-priority,RequestPriorityVS,RequestPriorityCS,все коды
+new,priority,,Σ S,,0..1,,,RequestPriorityVS (required),Indicates how quickly the ServiceRequest should be addressed with respect to other requests,,,,,,,ServiceRequestCodesVS,,все коды
+,doNotPerform,,Σ S,,0..1,False,,boolean,Indicates that the service described by the ServiceRequest should not be performed.,,,,,,,ConditionCodeVS,,все коды
+,code,,Σ S,,0..1,"lab-pan-cs#lab-pan-E ""CBC panel""",,ServiceRequestCodesVS (extensible),"Specifies the procedure, diagnostic investigation, or panel being requested. The codes used represent orderable services and must not be used for analytical result observations.  Binding: https://terminology.dhp.uz/fhir/core/CodeSystem/service-request-lab-research-codes-cs ",,,,,,,,,
+,subject,,Σ S,,1..1,Patient/example-salim,,Reference(UZCorePatient or UZCoreLocation),The patient for whom the laboratory referral or order is issued. This element identifies the individual who is the subject of the requested laboratory investigation.,,,,,,,,,
+,encounter,,Σ S,,0..1,Encounter/example-encounter,,Reference(UZCoreEncounter),"The healthcare encounter during which the laboratory referral or order was created or to which the laboratory investigation is related. This element provides clinical context for the ServiceRequest, such as an outpatient visit or inpatient hospitalization.",,,,,,,,,
+,occurrence[x],,Σ S,,0..1,2026-01-16T09:30:00+05:00,,dateTime,This element is used to indicate the intended or actual timing of the laboratory service,,,,,,,,,
+,authoredOn,,Σ S,,1..1,2026-01-16T09:10:00+05:00,,dateTime,The date and time when the ServiceRequest was authored and formally issued by the requester.,,,,,,,,,
+,requester,,Σ S,,0..1,Practitioner/example-practitioner,,Reference(UZCorePractitioner or UZCorePractitionerRole or UZCoreOrganization or UZCorePatient or UZCoreRelatedPerson),"The individual, role, or organization that authored and issued the laboratory referral/order. This element identifies the healthcare professional or organizational unit responsible for initiating the ServiceRequest.",,,,,,,,,
+,reason,,Σ S,,0..1,Suspected anemia,,ConditionCodeVS,"A reason to a Condition or other clinical resource that represents the medical justification for the laboratory referral, such as a diagnosis coded using ICD-10. This allows structured representation of diagnosis details including onset date and clinical status.  Binding: http://hl7.org/fhir/sid/icd-10 ",,,,,,,,,
+new,extension,,,,,,,,,,,,,,,,,
+,,paymentType,Σ S,,0..1,"payment-type-cs#paytype-0001-0001 ""Free""",,,"short = ""Payment type for the laboratory service""
+definition = ""Indicates the type of payment or financing model used for the requested laboratory service. This extension may be used when a laboratory test is ordered directly by a laboratory medical registrar without a prior physician referral, for example when the patient receives the laboratory service as a paid service.""
+comment = ""For example, this extension can be used to distinguish paid laboratory services from services covered by state programs, insurance, or other financing mechanisms. In the direct-to-laboratory scenario, the value may be set to 'paid'.""
+",,,,,,,,,
+,insurance,,Σ S,,0..*,Coverage/uz-coverage-example-01,,Reference(Coverage),Insurance coverage or funding source applicable to the requested service.,,,,,,,,,
+,supportingInfo,,Σ S,,0..*,UZCoreServiceRequest/uz-servicerequest-supporting-01,,CodeableReference(ServiceRequest),Additional clinical or administrative information supporting or justifying the requested service.,,,,,,,,,
+,specimen,,Σ S,,0..*,Specimen/example-specimen-blood-cbc,,Reference(UZCoreSpecimen),The specimen or specimens to be analyzed as part of the requested laboratory service.,,,,,,,,,
+,note,,,,0..*,Please perform CBC urgently.,,Annotation,Doctor's comment or conclution upon referral,,,,,,,,,
+new,patientInstruction,,Σ S,,0..*,,,BackboneElement,"Instructions in terms that are understood by the patient or their caregiver regarding the laboratory service, such as preparation requirements or post-service care instructions.
+",,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+"UZCoreServiceRequest defines how laboratory orders are represented in the Uzbekistan Digital Health Platform (DHP) using the HL7 FHIR ServiceRequest resource, in accordance with the UZCore Implementation Guide.",,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html,,,,,,,,,,,,,,,,,,
