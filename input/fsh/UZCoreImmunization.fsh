@@ -29,7 +29,7 @@ Description: "Uzbekistan Core Immunization profile, used to represent immunizati
 * vaccineCode ^short = "Administered vaccine"
 
 * administeredProduct 0..1 MS
-* administeredProduct only CodeableReference(Medication)
+* administeredProduct only CodeableReference(UZCoreMedication)
 * administeredProduct ^short = "Vaccine product"
 
 
@@ -100,7 +100,7 @@ Description: "Uzbekistan Core Immunization profile, used to represent immunizati
 * note ^short = "Notes"
 
 * reason 0..* MS
-* reason only CodeableReference(UZCoreCondition or UZCoreObservation or DiagnosticReport)
+* reason only CodeableReference(UZCoreCondition or UZCoreObservation or UZCoreDiagnosticReport)
 * reason ^short = "Vaccination reason"
 
 * isSubpotent 0..1 MS
@@ -148,7 +148,15 @@ Description: "Uzbekistan Core Immunization profile, used to represent immunizati
 * protocolApplied.authority ^short = "Authority organization"
 
 * protocolApplied.targetDisease 0..* MS
-* protocolApplied.targetDisease from TargetDiseaseVS (extensible)
+* protocolApplied.targetDisease from TargetDiseaseVS (preferred)
+* protocolApplied.targetDisease ^slicing.discriminator.type = #value
+* protocolApplied.targetDisease ^slicing.discriminator.path = "$this"
+* protocolApplied.targetDisease ^slicing.rules = #open
+* protocolApplied.targetDisease ^slicing.description = "Target diseases from the national value set; codes from other systems are allowed alongside them"
+* protocolApplied.targetDisease ^slicing.ordered = false
+* protocolApplied.targetDisease contains dhpTargetDisease 0..* MS
+* protocolApplied.targetDisease[dhpTargetDisease] from TargetDiseaseVS (required)
+* protocolApplied.targetDisease[dhpTargetDisease] ^short = "Target disease from the national value set"
 * protocolApplied.targetDisease ^short = "Target Disease"
 
 * protocolApplied.doseNumber 1..1 MS
@@ -268,8 +276,8 @@ Description: "Example ImmunizationRecommendation resource indicating a due BCG v
 
 * patient = Reference(example-salim)
 * date = "2026-04-27"
-* recommendation[0].vaccineCode = $sct#836402002 "Bacillus Calmette-Guerin antigen-containing vaccine product"
-* recommendation[0].forecastStatus = $sct#171279008 "Immunization due"
+* recommendation[0].vaccineCode = $cvx#19 "Bacillus Calmette-Guerin vaccine"
+* recommendation[0].forecastStatus = $immunization-recommendation-status#due "Due"
 
 Instance: condition-tuberculosis-risk-example
 InstanceOf: UZCoreCondition

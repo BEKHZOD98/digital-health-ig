@@ -20,3 +20,39 @@ Description: "Role code supplement with translations in Uzbek and Russian"
   * ^designation[=].value = "Мать"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Ona"
+
+* #FTH
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Отец"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Ota"
+
+* #GUARD
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Опекун"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Vasiy"
+  
+* #TPA //insurance-fund-administrator
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Администратор третьей стороны"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Uchinchi tomon administratori"
+
+* #PAYOR //insurance-fund-employee
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Контактная информация плательщика"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "To'lovchi bilan bog'lanish"
+
+* #ORG //department-employee
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Oрганизационные контакты"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Tashkiliy aloqa"
+
+* #VALIDATOR //moderator
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Уполномоченная организация, осуществляющая проверку информации для включения в запись."
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Yozuvga kiritish uchun ma'lumotni tasdiqlash vakolatiga ega bo'lgan tashkilot"

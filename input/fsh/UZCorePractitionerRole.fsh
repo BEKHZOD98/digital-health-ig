@@ -12,6 +12,8 @@ Description: "Uzbekistan Core PractitionerRole profile, used to define roles of 
 * identifier.use from IdentifierUseVS (required)
 * identifier.type from IdentifierTypeVS (required)
 
+* code 1..1 MS
+
 * active and practitioner and organization and code and specialty and location and healthcareService MS
 
 * specialty.coding ^slicing.discriminator.type = #value
@@ -38,7 +40,7 @@ Description: "Uzbekistan Core PractitionerRole profile, used to define roles of 
   * system 1..1 MS
   * system = "https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs"
   * code 1..1 MS
-  * code from practitioner-role-vs (required)
+  * code from position-and-profession-vs (required)
 
 Instance: example-practitionerrole
 InstanceOf: UZCorePractitionerRole

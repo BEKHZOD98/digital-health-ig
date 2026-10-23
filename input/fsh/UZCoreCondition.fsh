@@ -29,8 +29,9 @@ Description: "Uzbekistan Core Condition profile, used for documenting a patient'
 * abatement[x] MS
 * recordedDate MS
 
-* participant  0..1 MS
-* participant.actor  only Reference(UZCorePractitioner or UZCorePractitionerRole or UZCorePatient or UZCoreRelatedPerson or Device)
+* participant 0..* MS
+* participant.actor 1..1 MS
+* participant.actor  only Reference(UZCorePractitioner or UZCorePractitionerRole or UZCorePatient or UZCoreRelatedPerson or UZCoreOrganization or Device)
 * participant.function MS
 * participant.function from ConditionParticipationRoleTypeVS (extensible)
 
@@ -84,9 +85,9 @@ Usage: #example
 * clinicalStatus = $condition-clinical#active "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
 * severity = $sct#255604002 "Mild"
-* code = $icd-10#R51 "Headache"
+* code = $icd-10#G43.9 "Migraine, unspecified"
 * extension[diagnosisType].valueCodeableConcept = diagnosis-type-cs#gencl-0001-00001 "Diagnosis of the referring institution"
-* bodySite = $sct#67169006 "Head of first metatarsal bone"
+* bodySite = $sct#69536005 "Head structure"
 * subject = Reference(example-patient)
 * onsetDateTime = "2025-07-25"
 * recordedDate = "2025-07-29"
@@ -94,7 +95,7 @@ Usage: #example
   * actor = Reference(example-practitioner)
   * function = $provenance-participant-type#author "Author"
 * note
-  * text = "Patient complained of mild headache for two days. Condition resolved after rest and hydration."
+  * text = "Patient reported a mild migraine lasting two days; advised rest, hydration, and analgesia."
 
 Instance: example-pregnancy
 InstanceOf: UZCoreCondition

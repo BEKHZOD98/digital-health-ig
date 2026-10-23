@@ -9,7 +9,7 @@ Description: "Uzbekistan Core Patient profile, used to represent patients admini
 * ^publisher = "Uzinfocom"
 
 * identifier 1..* MS
-  * extension contains data-absent-reason named data-absent-reason 0..1 MS
+  * value.extension contains data-absent-reason named data-absent-reason 0..1 MS
 * identifier.use from IdentifierUseVS (required)
 * identifier.type from IdentifierTypeVS (required)
 * identifier ^slicing.discriminator.type = #value
@@ -18,8 +18,8 @@ Description: "Uzbekistan Core Patient profile, used to represent patients admini
 * identifier ^slicing.description = "Ways a patient can be identified"
 * identifier ^slicing.ordered = false
 * identifier contains nationalId 0..1 MS and
-    passportLocal 0..1 MS and
-    passportInternational 0..1 MS and
+    passportLocal 0..* MS and
+    passportInternational 0..* MS and
     passportForeign 0..1 MS and
     pensionNumber 0..1 MS and
     birthCertificate 0..1 MS and
@@ -34,11 +34,12 @@ Description: "Uzbekistan Core Patient profile, used to represent patients admini
     unknownPatient 0..1 MS
 
 * identifier[passportLocal]
+  * ^short = "Local passport / ID card number"
+  * ^definition = "Local (internal) passport number, shared by the modern ID card and the older book-form passport. Set use = official for the credential currently in force (typically the ID card) and use = old for a superseded paper passport number."
   * system 1..1 MS
   * system = $passport-local
   * type 1..1 MS
   * type = $identifier-type#PPN
-  * use = #official
   * value 1..1 MS
 
 * identifier[passportInternational]
@@ -162,13 +163,17 @@ Description: "Uzbekistan Core Patient profile, used to represent patients admini
 * extension[nationality].extension[code].valueCodeableConcept from NationalityVS (required)
 * extension[citizenship].extension[code].valueCodeableConcept from ISO3166_2 (required)
 * gender MS
+* gender from AdministrativeGenderVS (required)
   * extension contains GenderOtherUZ named gender-other 0..1 MS
 * obeys uzcore-gender-other-2
 * insert IntAndUzAddressRules
 * maritalStatus from MaritalStatusVS (required)
 * insert HumanName
+* insert MultilingualHumanName
 * active MS
 * birthDate MS
+* managingOrganization MS
+* managingOrganization only Reference(UZCoreOrganization)
 
 Instance: example-salim
 InstanceOf: UZCorePatient
@@ -293,3 +298,79 @@ Usage: #example
 * maritalStatus = $v3-MaritalStatus#U "Unmarried"
 * multipleBirthInteger = 2
 * extension[nationality].extension[code].valueCodeableConcept = $nationality-cs#42 "TURKMAN"
+
+Instance: example-unidentified-patient
+InstanceOf: UZCorePatient
+Description: "Unidentified patient brought in unconscious, with no identifier available. Patient.identifier is mandatory (1..*), so rather than inventing a fake value the single identifier carries a data-absent-reason extension - the resource still validates without fabricating data."
+Usage: #example
+* identifier
+  * use = #temp
+  * value.extension[data-absent-reason].valueCode = #unknown
+* active = true
+* name
+  * use = #anonymous
+  * text = "Unidentified patient"
+
+Instance: example-nodira
+InstanceOf: UZCorePatient
+Description: "Example of a patient named Nodira, the subject of the state-insurance referral approval workflow examples"
+Usage: #example
+* language = #uz
+* identifier[nationalId]
+  * value = "40503855900021"
+* active = true
+* name
+  * use = #usual
+  * text = "Karimova Nodira Anvarovna"
+    * extension[translation]
+      * extension[lang].valueCode = #ru
+      * extension[content].valueString = "Каримова Нодира Анваровна"
+  * family = "Karimova"
+    * extension[translation]
+      * extension[lang].valueCode = #ru
+      * extension[content].valueString = "Каримова"
+  * given = "Nodira"
+    * extension[translation]
+      * extension[lang].valueCode = #ru
+      * extension[content].valueString = "Нодира"
+  * suffix = "Anvarovna"
+    * extension[translation]
+      * extension[lang].valueCode = #ru
+      * extension[content].valueString = "Анваровна"
+* gender = #female
+* birthDate = "1985-03-05"
+
+Instance: example-jasur
+InstanceOf: UZCorePatient
+Title: "Example UZ Core Patient - Child"
+Description: "Example of a child whose mother is recorded against them - the relationship itself is held by the RelatedPerson example-mother-of-a-child"
+Usage: #example
+* language = #uz
+* identifier[nationalId]
+  * value = "52006155900123"
+* identifier[birthCertificate]
+  * value = "II-ЮА №654321"
+* active = true
+* name
+  * use = #usual
+  * text = "Karimov Jasur Bekzodovich"
+  * family = "Karimov"
+  * given = "Jasur"
+  * suffix = "Bekzodovich"
+  * period.start = "2015-06-20"
+* telecom
+  * system = #phone
+  * value = "+998901112233"
+  * use = #mobile
+  * rank = 1
+  * period.start = "2015-06-20"
+* gender = #male
+* birthDate = "2015-06-20"
+* address[uzAddress]
+  * use = #home
+  * type = #physical
+  * line = "2 квартал 13 дом 12 квартира"
+  * country = "UZ"
+  * district = "1703206"
+  * city = "22070011"
+  * period.start = "2015-06-20"

@@ -8,6 +8,11 @@ Description: "Uzbekistan Core ImmunizationRecommendation profile, used to repres
 * ^date = "2026-05-07"
 * ^publisher = "Uzinfocom"
 
+* extension contains RecommendationAuthor named recommendationAuthor 0..* MS
+
+* extension[recommendationAuthor] ^short = "Author of recommendation"
+* extension[recommendationAuthor] ^definition = "Practitioner or PractitionerRole responsible for creating the immunization recommendation."
+
 * identifier 0..* MS
 * identifier ^short = "Business identifier"
 * identifier ^definition = "Business identifier for this immunization recommendation."
@@ -32,7 +37,15 @@ Description: "Uzbekistan Core ImmunizationRecommendation profile, used to repres
 * recommendation obeys uzcore-imrec-1
 
 * recommendation.vaccineCode 0..* MS
-* recommendation.vaccineCode from VaccineCodeVS (extensible)
+* recommendation.vaccineCode from VaccineCodeVS (preferred)
+* recommendation.vaccineCode ^slicing.discriminator.type = #value
+* recommendation.vaccineCode ^slicing.discriminator.path = "$this"
+* recommendation.vaccineCode ^slicing.rules = #open
+* recommendation.vaccineCode ^slicing.description = "Vaccine codes from the national value set; codes from other systems are allowed alongside them"
+* recommendation.vaccineCode ^slicing.ordered = false
+* recommendation.vaccineCode contains dhpVaccineCode 0..* MS
+* recommendation.vaccineCode[dhpVaccineCode] from VaccineCodeVS (required)
+* recommendation.vaccineCode[dhpVaccineCode] ^short = "Vaccine code from the national value set"
 * recommendation.vaccineCode ^short = "Recommended vaccine or vaccine group"
 
 * recommendation.targetDisease 0..* MS
@@ -109,6 +122,8 @@ Description: "Example of an immunization recommendation with non-mandatory eleme
 
 * authority = Reference(example-organization)
 
+* extension[recommendationAuthor].valueReference = Reference(example-practitioner)
+
 * recommendation[0].vaccineCode[0] = $cvx#03 "measles, mumps and rubella virus vaccine"
 * recommendation[0].targetDisease[0] = $sct#14189004 "Measles"
 // * recommendation[0].contraindicatedVaccineCode[0] = $sct#1119305005 "COVID-19 vaccine"
@@ -143,7 +158,7 @@ Title: "Immunization - Measles, Mumps and Rubella (MMR)"
 Description: "Example Immunization resource representing administration of measles, mumps and rubella (MMR) vaccine to a patient."
 
 * status = #completed
-* vaccineCode = $sct#150971000119104 "Measles, mumps and rubella vaccination given (situation)"
+* vaccineCode = $cvx#03 "measles, mumps and rubella virus vaccine"
 * patient = Reference(example-emma)
 * occurrenceDateTime = "2024-01-10"
 

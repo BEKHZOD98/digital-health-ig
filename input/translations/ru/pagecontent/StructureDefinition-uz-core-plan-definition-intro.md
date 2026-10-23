@@ -1,0 +1,191 @@
+> **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
+
+UZ Core PlanDefinition содержит национальный календарь здравоохранения Узбекистана, выраженный в виде вычислимой логики - каждое запланированное мероприятие, его сроки, минимальные интервалы между мероприятиями и правила соответствия, которые определяют, к кому оно применяется. Один и тот же профиль охватывает национальный календарь иммунизации, календари донации цельной крови и календари скрининга; контекст использования `focus` указывает, к какому виду относится конкретный календарь. Календарь иммунизации - это ресурс, который считывает механизм рекомендаций для построения [ImmunizationRecommendation](StructureDefinition-uz-core-immunization-recommendation.html) каждого пациента. Для данной области применения или юрисдикции одновременно может быть активна только одна версия календаря.
+
+### Обязательные и Must Support элементы данных
+
+Перечисленные ниже элементы должны всегда присутствовать (обязательные) или должны поддерживаться, когда данные доступны ([Must Support](must-support.html)) - не все они являются обязательными, но ваша система должна заполнять каждый Must Support элемент, когда у неё есть соответствующие данные, и обрабатывать его при получении. Это человекочитаемое резюме; [формальные представления](#profile) ниже дают точные кардинальности, типы и терминологические связки.
+
+#### Каждый UZ Core PlanDefinition должен иметь
+
+Каждый PlanDefinition должен содержать url (канонический идентификатор данного календаря), машиночитаемое name, status (draft, active, retired, unknown), унаследованный как обязательный от базового ресурса, description того, что охватывает календарь, и ровно один контекст использования с кодом `focus`, указывающим вид календаря.
+
+#### Каждый UZ Core PlanDefinition должен поддерживать
+
+
+
+- идентификатор, версию и алгоритм версионирования, человекочитаемый заголовок и статус (draft, active, retired);
+- субъекта, к которому применяется календарь (кодированное понятие или ссылку);
+- дату, издателя, контекст использования (включая то, где применяется календарь - по всей стране или в отдельных регионах), дату утверждения и период действия;
+- действия, составляющие календарь, каждое с linkId, title, description и code;
+- для каждого действия: условие (соответствие - его вид и FHIRPath-выражение), связанное действие (целевое действие, отношение и смещение в виде длительности или диапазона для минимальных интервалов), сроки (возраст или расписание), участника (его идентификатор актора и тип) и определение (каноническую ссылку на ActivityDefinition или другое определение, либо uri).
+
+> Календарь должен удовлетворять правилам валидации календаря: отсутствие пропусков в последовательности доз, отсутствие невозможных временных окон и отсутствие двух активных перекрывающихся версий для одной и той же области применения.
+
+### Построение JSON, шаг за шагом
+
+PlanDefinition в основном создаётся один раз и считывается механизмом рекомендаций, поэтому примеры ниже короткие. Они идут от наименьшего экземпляра, который примет сервер, до календаря, несущего свои действия. Скопируйте один из них и адаптируйте - каждое показанное значение проходит валидацию по этому профилю. Полный эталонный экземпляр - это [пример PlanDefinition](PlanDefinition-example-uz-core-immunization-plan-definition.html).
+
+#### Наименьший PlanDefinition, который вам следует отправлять
+
+`url`, `name` и `description` являются обязательными элементами, а `status` обязателен в базовом ресурсе (draft \| active \| retired \| unknown - required связка). `url` - это канонический идентификатор, на который ссылаются другие ресурсы, поэтому он должен быть стабильным. Каждый UZ Core ресурс также указывает профиль, которому он заявляет о своём соответствии, в `meta.profile`. Также обязателен один `useContext` с кодом `focus` - он указывает, что это за календарь, и именно по нему клиенты находят календарь на сервере. Уже этого достаточно для прохождения валидации:
+
+```json
+{
+  "resourceType": "PlanDefinition",
+  "meta": {
+    "profile": ["https://dhp.uz/fhir/core/StructureDefinition/uz-core-plan-definition"]
+  },
+  "url": "https://terminology.dhp.uz/fhir/core/PlanDefinition/example-uz-core-immunization-plan-definition",
+  "name": "ExampleImmunizationPlanDefinition",
+  "status": "draft",
+  "description": "Example PlanDefinition demonstrating actions and relationships.",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "33879002",
+            "display": "Active immunization"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+Допускается ровно один контекст `focus`. Используйте `33879002` для календаря вакцинации, `25179006` для календаря донации цельной крови или `360156006` для календаря скрининга. Календарь находится запросом `GET [base]/PlanDefinition?context-type-value=focus$http://snomed.info/sct|33879002`.
+
+#### Национальный или региональный
+
+Контекст использования `jurisdiction` указывает, где применяется календарь. Национальный календарь содержит одну запись с кодом страны `UZ`. Региональный календарь вместо этого содержит по одной записи на каждый регион с теми же кодами регионов, что и `Address.state` в адресе пациента, поэтому регион пациента можно напрямую сопоставить с календарями, которые в нём действуют. Календарь не может быть одновременно и тем, и другим: `UZ` нельзя сочетать с кодами регионов. Календарь скрининга, проводимого только в Самаркандской и Навоийской областях:
+
+```json
+{
+  "resourceType": "PlanDefinition",
+  "meta": {
+    "profile": ["https://dhp.uz/fhir/core/StructureDefinition/uz-core-plan-definition"]
+  },
+  "url": "https://terminology.dhp.uz/fhir/core/PlanDefinition/example-uz-core-regional-screening-plan-definition",
+  "name": "ExampleRegionalDiabetesScreeningPlanDefinition",
+  "status": "draft",
+  "description": "Example screening PlanDefinition run in Samarqand and Navoiy regions only.",
+  "useContext": [
+    {
+      "code": { "system": "http://terminology.hl7.org/CodeSystem/usage-context-type", "code": "focus" },
+      "valueCodeableConcept": {
+        "coding": [ { "system": "http://snomed.info/sct", "code": "360156006", "display": "Screening intent" } ]
+      }
+    },
+    {
+      "code": { "system": "http://terminology.hl7.org/CodeSystem/usage-context-type", "code": "jurisdiction" },
+      "valueCodeableConcept": {
+        "coding": [ { "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/states-cs", "code": "1718" } ]
+      }
+    },
+    {
+      "code": { "system": "http://terminology.hl7.org/CodeSystem/usage-context-type", "code": "jurisdiction" },
+      "valueCodeableConcept": {
+        "coding": [ { "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/states-cs", "code": "1712" } ]
+      }
+    }
+  ]
+}
+```
+
+Для национального календаря запись юрисдикции имеет вид `{ "system": "urn:iso:std:iso:3166", "code": "UZ" }`. Используйте этот контекст использования, а не элемент `jurisdiction`: FHIR R5 объявляет этот элемент устаревшим, а R6 переопределяет его как юрисдикцию органа, выпустившего календарь, а не место его применения. Календари, действующие в регионе, находятся запросом `GET [base]/PlanDefinition?context-type-value=jurisdiction$https://terminology.dhp.uz/fhir/core/CodeSystem/states-cs|1718`. Полный экземпляр см. в [примере регионального скрининга](PlanDefinition-example-uz-core-regional-screening-plan-definition.html).
+
+`name` - это машиночитаемое имя (без пробелов); добавьте человекочитаемый `title`, когда он у вас есть. См. [Метаданные](general-guidance.html#metadata) для полей издателя, даты и версии, которые также должен нести опубликованный календарь.
+
+#### Календарь с его действиями
+
+На практике календарь - это список `action`. Каждая доза является одним действием с `linkId`, `title`, `description` и `code`. Добавьте `condition` для соответствия (его `kind` и FHIRPath-`expression`), `participant` (кто выполняет - `actorId` и `type`) и `definitionUri` (или `definitionCanonical`), указывающий на активность, несущую сведения о вакцине. Более поздняя доза использует `relatedAction`, чтобы сослаться обратно на более раннюю по `targetId`, с минимальным интервалом в `offsetDuration`:
+
+```json
+{
+  "resourceType": "PlanDefinition",
+  "meta": { "profile": [ "https://dhp.uz/fhir/core/StructureDefinition/uz-core-plan-definition" ] },
+  "url": "https://terminology.dhp.uz/fhir/core/PlanDefinition/example-uz-core-immunization-plan-definition",
+  "name": "ExampleImmunizationPlanDefinition",
+  "title": "Example Vaccination Follow-up Plan",
+  "status": "draft",
+  "date": "2026-08-10",
+  "publisher": "DHP Uzbekistan",
+  "description": "Example PlanDefinition demonstrating actions and relationships.",
+  "useContext": [
+    {
+      "code": { "system": "http://terminology.hl7.org/CodeSystem/usage-context-type", "code": "focus" },
+      "valueCodeableConcept": {
+        "coding": [ { "system": "http://snomed.info/sct", "code": "33879002", "display": "Active immunization" } ]
+      }
+    },
+    {
+      "code": { "system": "http://terminology.hl7.org/CodeSystem/usage-context-type", "code": "topic" },
+      "valueCodeableConcept": {
+        "coding": [ { "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/immunization-schedule-type-cs", "code": "pd-type-0001-00001", "display": "Age-based" } ]
+      }
+    }
+  ],
+  "approvalDate": "2026-08-01",
+  "effectivePeriod": { "start": "2026-08-01", "end": "2027-08-01" },
+  "action": [
+    {
+      "id": "action-1",
+      "linkId": "action-1",
+      "title": "Initial vaccination",
+      "description": "Administer first vaccine dose.",
+      "code": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/action-code",
+            "code": "recommend-immunization",
+            "display": "Recommend an immunization"
+          }
+        ]
+      },
+      "condition": [
+        {
+          "kind": "applicability",
+          "expression": {
+            "description": "Patient must be 18 years or older",
+            "language": "text/fhirpath",
+            "expression": "Patient.birthDate <= today() - 18 years"
+          }
+        }
+      ],
+      "participant": [ { "type": "practitioner", "actorId": "vaccinator" } ],
+      "definitionUri": "https://terminology.dhp.uz/fhir/core/ActivityDefinition/example-activity-definition"
+    },
+    {
+      "id": "action-2",
+      "linkId": "action-2",
+      "title": "Follow-up vaccination",
+      "description": "Administer second vaccine dose.",
+      "relatedAction": [
+        {
+          "targetId": "action-1",
+          "relationship": "after-end",
+          "offsetDuration": {
+            "value": 30,
+            "unit": "days",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+          }
+        }
+      ],
+      "participant": [ { "type": "practitioner", "actorId": "vaccinator" } ],
+      "definitionUri": "https://terminology.dhp.uz/fhir/core/ActivityDefinition/example-activity-definition"
+    }
+  ]
+}
+```
+
+`condition.kind`, `relatedAction.relationship` и `participant.type` каждый используют required связку - берите значение из связанного набора значений (представление Snapshot ниже перечисляет каждый из них). `relatedAction.targetId` должен совпадать с `linkId` действия, уже имеющегося в том же календаре.
+
+Примеры вызовов API и образец полезной нагрузки см. в разделе [Быстрый старт](#quick-start) внизу этой страницы.

@@ -9,7 +9,7 @@ name: DHP
 title: Uzbekistan Digital Health Platform
 description: National implementation guide for Uzbekistan using FHIR R5.
 status: draft # draft | active | retired | unknown
-version: 0.5.0
+version: 0.11.1
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
@@ -21,6 +21,8 @@ publisher:
   email: info@ssv.uz
 
 dependencies:
+  # HL7 Terminology — v3-RoleCode, v3-RoleClass va boshqa THO terminologiyalari
+  hl7.terminology.r5: 7.3.0
   # while we don't strictly needs this, this helps resolve the DICOM supplement correctly until tx.fhir.org can do this
   fhir.dicom:
     id: fhir_dicom
@@ -55,7 +57,50 @@ dependencies:
 #     title: Examples Overview
 #     simpleExamples.xml:
 #     complexExamples.xml:
-#
+
+# Curated page order: drives the TOC and the prev/next page navigation.
+# Declaring pages: disables SUSHI auto-generation, so every narrative page
+# must be listed here or it drops out of the navigation.
+pages:
+  index.md:
+    title: Home
+  fhir-basics.md:
+    title: FHIR basics
+  how-to-read.md:
+    title: How to read this guide
+  general-guidance.md:
+    title: General guidance
+  must-support.md:
+    title: Must Support
+  identifiers.md:
+    title: Identifier systems
+  payor-identification.md:
+    title: Payor identification
+  vital-signs.md:
+    title: Vital signs
+  workflows.md:
+    title: Workflows
+    workflow-lab.md:
+      title: Laboratory order to result
+    workflow-immunization.md:
+      title: Immunization
+    workflow-referral.md:
+      title: e-Referral lifecycle
+    workflow-patient-journey.md:
+      title: Patient journey (Episode of Care)
+    workflow-prescription.md:
+      title: e-Prescription and dispensing
+  forms.md:
+    title: Questionnaires
+  api-access.md:
+    title: API access
+  components.md:
+    title: Components
+  changelog.md:
+    title: Changelog
+  translationinfo.md:
+    title: Translation information
+
 #
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
@@ -68,15 +113,24 @@ dependencies:
 #
 parameters:
   special-url-base: https://terminology.dhp.uz/fhir/core
+  # external classifications shipped under their terminology.hl7.org canonical
+  special-url:
+    - http://terminology.hl7.org/CodeSystem/iccc-3
+    - http://terminology.hl7.org/CodeSystem/icd-o-3
+    # ICHI keeps WHO's own canonical: it is a linearization of the ICD-11 Foundation
+    # Component, so it shares the icd/release/11 namespace with ICD-11 MMS and ICF.
+    - http://id.who.int/icd/release/11/ichi
   excludettl: true
   excludexml: true
   usage-stats-opt-out: true # times out often
   # language-translations-mode: preserve
-  # shownav: true
+  shownav: true # show next/previous page navigation tabs in header and footer
 
   pin-canonicals: pin-all
   apply-version: false # don't override the version in the knowledge resources
   default-version: true
+
+  show-inherited-invariants: false # hide invariants inherited from the base resource in profile tables
 
   # openehr: true
 
@@ -103,8 +157,14 @@ menu:
   Home: index.html
   Guidance:
     FHIR basics: fhir-basics.html
+    How to read this guide: how-to-read.html
+    General guidance: general-guidance.html
+    Must Support: must-support.html
     Identifiers: identifiers.html
+    Payors: payor-identification.html
     Vital signs: vital-signs.html
+  Workflows: workflows.html
+  Questionnaires: forms.html
   API access: api-access.html
   Artifacts: artifacts.html
   Components: components.html

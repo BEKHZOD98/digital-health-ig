@@ -18,8 +18,8 @@ Description: "Uzbekistan Core RelatedPerson profile, used to represent persons r
 * identifier ^slicing.ordered = false
 * identifier contains
     nationalId 0..1 MS and
-    passportLocal 0..1 MS and
-    passportInternational 0..1 MS and
+    passportLocal 0..* MS and
+    passportInternational 0..* MS and
     birthCertificate 0..1 MS and
     driversLicense 0..1 MS and
     diplomaticPassport 0..1 MS and
@@ -36,11 +36,12 @@ Description: "Uzbekistan Core RelatedPerson profile, used to represent persons r
   * value 1..1 MS
 
 * identifier[passportLocal]
+  * ^short = "Local passport / ID card number"
+  * ^definition = "Local (internal) passport number, shared by the modern ID card and the older book-form passport. Set use = official for the credential currently in force (typically the ID card) and use = old for a superseded paper passport number."
   * system 1..1 MS
   * system = $passport-local
   * type 1..1 MS
   * type = $identifier-type#PPN "Passport number"
-  * use = #official
   * value 1..1 MS
 
 * identifier[passportInternational]
@@ -93,7 +94,15 @@ Description: "Uzbekistan Core RelatedPerson profile, used to represent persons r
 * patient 1..1 MS
 * patient only Reference(UZCorePatient)
 * relationship 0..* MS
-* relationship from RelationshipTypeVS (required)
+* relationship from RelationshipTypeVS (preferred)
+* relationship ^slicing.discriminator.type = #value
+* relationship ^slicing.discriminator.path = "$this"
+* relationship ^slicing.rules = #open
+* relationship ^slicing.description = "Relationships from the national value set; codes from other systems are allowed alongside them"
+* relationship ^slicing.ordered = false
+* relationship contains dhpRelationship 0..* MS
+* relationship[dhpRelationship] from RelationshipTypeVS (required)
+* relationship[dhpRelationship] ^short = "Relationship from the national value set"
 * telecom 0..* MS
   * system 0..1 MS
   * system from ContactPointSystemVS (required)
@@ -162,3 +171,36 @@ Description: "Example of a related person"
     * start = "1999-06-04"
 
 * gender = #male
+
+Instance: example-mother-of-a-child
+InstanceOf: UZCoreRelatedPerson
+Title: "Example UZ Core RelatedPerson - Mother of a child"
+Description: "The mother of a child, recorded so that a system can recognise her as the parent and, where the rules allow, let her act for the child. She carries the same PINFL as her own patient record (example-nodira), which is how a system matches the parent to this relationship; the child's age, where it matters, is read from the child's Patient.birthDate, not from this resource."
+Usage: #example
+* language = #uz
+* identifier[nationalId]
+  * value = "40503855900021"
+* active = true
+* patient = Reference(example-jasur)
+* relationship[0].coding[0] = $v3-RoleCode#MTH "Ona"
+* name
+  * use = #usual
+  * text = "Karimova Nodira Anvarovna"
+  * family = "Karimova"
+  * given = "Nodira"
+  * suffix = "Anvarovna"
+  * period.start = "1985-03-05"
+* telecom
+  * system = #phone
+  * value = "+998901112233"
+  * use = #mobile
+* gender = #female
+* birthDate = "1985-03-05"
+* address[uzAddress]
+  * use = #home
+  * type = #physical
+  * line = "2 квартал 13 дом 12 квартира"
+  * country = "UZ"
+  * district = "1703206"
+  * city = "22070011"
+  * period.start = "2015-06-20"

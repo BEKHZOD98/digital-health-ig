@@ -1,8 +1,8 @@
-# Identifikator tizimlari
+> **Mashina tarjimasi, inson tomonidan tekshirilishi zarur.** Ushbu sahifa ingliz tilidan sun'iy intellekt yordamida avtomatik tarjima qilingan va hali muharrir tomonidan tekshirilmagan. Har qanday nomuvofiqlikda asl inglizcha versiya ustuvor hisoblanadi.
 
 Ushbu qo'llanma O'zbekiston Raqamli Sog'liqni Saqlash Platformasi doirasida bemorlar, sog'liqni saqlash xodimlari va tashkilotlarni identifikatsiya qilish uchun identifikator tizimlaridan qanday foydalanishni tushuntiradi.
 
-## Umumiy ko'rinish
+### Umumiy ko'rinish
 
 UZ Core implementatsiyasi identifikator domenlarining ierarxik tizimidan foydalanadi. Barcha identifikatorlar quyidagi strukturaga amal qiladi:
 
@@ -11,16 +11,16 @@ https://dhp.uz/fhir/core/sid/{namespace}/{country}/{type}[/subtype]
 ```
 
 Bu yerda:
-- `namespace`: `pid` (shaxsiy), `pro` (kasbiy), `org` (tashkiliy) yoki `doc` (hujjat);
+- `namespace`: `pid` (shaxsiy), `pro` (kasbiy), `org` (tashkiliy), `doc` (hujjat) yoki `prd` (mahsulot);
 - `country`: ISO 3166-1 bo'yicha mamlakatning ikki harfli kodi (masalan, O'zbekiston uchun `uz`);
 - `type`: identifikator turi (masalan, pasport uchun `ppn`, milliy ID uchun `ni`);
 - `subtype`: ixtiyoriy qo'shimcha tasnif (masalan, pasport turlari uchun `local`, `intl`).
 
 Barcha mamlakatlar bo'yicha qo'llab-quvvatlanadigan identifikator tizimlarining to'liq ro'yxati [IdentifierDomainCS CodeSystem](CodeSystem-identifier-domain-cs.html) sahifasida keltirilgan.
 
-## Bemor identifikatorlari
+### Bemor identifikatorlari
 
-### Milliy ID (PINFL)
+#### Milliy ID (PINFL)
 
 Milliy noyob identifikator (PINFL — Personal Identification Number for Foreign and Local citizens) O'zbekiston fuqarolari va rezidentlari uchun asosiy identifikator hisoblanadi.
 
@@ -48,11 +48,16 @@ Milliy noyob identifikator (PINFL — Personal Identification Number for Foreign
 }
 ```
 
-### Pasport — ichki (local)
+#### Pasport — ichki (local)
 
 Ichki pasportlar O'zbekiston ichidagi identifikatsiya uchun ishlatiladi.
 
 **System URI**: `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`
+
+Bitta mahalliy pasport tizimi ham zamonaviy ID-kartani, ham u almashtirayotgan eski kitobcha ko'rinishidagi pasportni qamrab oladi - ular bir xil ichki pasport raqamini saqlaydi, shuning uchun ID-karta uchun alohida System URI mavjud emas. Ularni `use` orqali ajrating:
+
+- `use = official` - hozirda amalda bo'lgan hujjat, odatda ID-karta. Buni kundalik oddiy yozuvlarda ishlating.
+- `use = old` - eskirgan qog'oz pasport raqami; egasi ID-kartaga o'tgandan keyin tarixiy yoki moslashtirish maqsadida saqlanadi.
 
 ```json
 {
@@ -75,7 +80,7 @@ Ichki pasportlar O'zbekiston ichidagi identifikatsiya uchun ishlatiladi.
 }
 ```
 
-### Shaxsi aniqlanmagan bemorlar uchun identifikatorlar
+#### Shaxsi aniqlanmagan bemorlar uchun identifikatorlar
 
 Bemorni darhol identifikatsiya qilib bo'lmaydigan hollarda (masalan, hujjatsiz hushsiz holatdagi bemor), platforma ikkita identifikator turini taqdim etadi. Imkon bo'lganda har doim tashkilot doirasidagi vaqtinchalik tibbiy karta raqamidan foydalanishga ustunlik bering.
 
@@ -84,7 +89,7 @@ Bemorni darhol identifikatsiya qilib bo'lmaydigan hollarda (masalan, hujjatsiz h
 | Shaxsi aniqlanmagan bemor ma'lum tibbiy tashkilotga qabul qilingan | `medicalRecordTemp` (afzal) |
 | Shaxsi aniqlanmagan bemor, tashkilot noma'lum yoki uning soliq ID'si yo'q | `unknownPatient` (zaxira variant) |
 
-#### Vaqtinchalik tibbiy karta raqami (afzal)
+##### Vaqtinchalik tibbiy karta raqami (afzal)
 
 Shaxsi aniqlanmagan bemor tibbiy tashkilotga qabul qilingan va tashkilotning soliq ID'si (Soliq) ma'lum bo'lgan hollarda ushbu identifikatordan foydalaning. Bu variant afzal, chunki u identifikatorni bergan tashkilotgacha kuzatish imkonini beradi.
 
@@ -113,7 +118,7 @@ Misol (soliq ID'si `200935935` bo'lgan tashkilot uchun):
 }
 ```
 
-#### Noma'lum bemor identifikatori (zaxira variant)
+##### Noma'lum bemor identifikatori (zaxira variant)
 
 Ushbu identifikatordan faqat shaxsi aniqlanmagan bemorni qabul qilgan tashkilot noma'lum bo'lganda yoki uning soliq ID'si mavjud bo'lmaganda foydalaning. Imkon bo'lganda har doim tashkilot doirasidagi vaqtinchalik tibbiy karta raqamidan foydalanishga ustunlik bering.
 
@@ -140,7 +145,7 @@ Ushbu identifikatordan faqat shaxsi aniqlanmagan bemorni qabul qilgan tashkilot 
 }
 ```
 
-### Xorijiy pasportlar va haydovchilik guvohnomalari
+#### Xorijiy pasportlar va haydovchilik guvohnomalari
 
 Platforma xorijiy fuqarolarning pasport raqami va haydovchilik guvohnomalari orqali identifikatsiyalashni qo'llab-quvvatlaydi. System URI ISO 3166-1 bo'yicha mamlakatning ikki harfli kodi bilan o'sha namunaga amal qiladi:
 
@@ -171,9 +176,9 @@ Estoniya pasporti uchun misol:
 
 Qo'llab-quvvatlanadigan barcha bemor identifikatorlari, jumladan xorijiy pasportlar va haydovchilik guvohnomalari uchun barcha mamlakatlar to'liq ro'yxati [PatientIdentifierDomainVS](ValueSet-patient-identifier-domain-vs.html) qiymatlar to'plamida keltirilgan.
 
-## Sog'liqni saqlash xodimlari identifikatorlari
+### Sog'liqni saqlash xodimlari identifikatorlari
 
-### Tibbiyot xodimi ID'si (HRM Argos)
+#### Tibbiyot xodimi ID'si (HRM Argos)
 
 Tibbiyot xodimlari kadrlar bilan ishlash (Human Resource Management, HRM) Argos tizimi orqali identifikatsiya qilinadi.
 
@@ -203,11 +208,47 @@ Tibbiyot xodimlari kadrlar bilan ishlash (Human Resource Management, HRM) Argos 
 }
 ```
 
+#### Mutaxassis sertifikati
+
+Sog'liqni saqlash vazirligi bergan mutaxassis sertifikati tibbiyot xodimining malakasini identifikatsiya qiladi, shuning uchun u `Practitioner.identifier` da emas, `Practitioner.qualification.identifier` da yoziladi. Qiymat - seriya va raqam ajratuvchisiz. Maydonlarning to'liq moslashuvi [Mutaxassis sertifikatlari](StructureDefinition-uz-core-practitioner.html#specialist-certificates) bo'limida keltirilgan.
+
+**System URI**: `https://dhp.uz/fhir/core/sid/pro/uz/specialist-certificate`
+
+```json
+{
+  "resourceType": "Practitioner",
+  "qualification": [
+    {
+      "identifier": [
+        {
+          "system": "https://dhp.uz/fhir/core/sid/pro/uz/specialist-certificate",
+          "value": "CA008815"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0360",
+            "code": "CER",
+            "display": "Certificate"
+          }
+        ],
+        "text": "Psixiatriya, oliy toifa, shifokor"
+      },
+      "period": {
+        "start": "2024-05-05",
+        "end": "2029-05-05"
+      }
+    }
+  ]
+}
+```
+
 Qo'llab-quvvatlanadigan barcha tibbiyot xodimi identifikatorlarining to'liq ro'yxati [PractitionerIdentifierDomainVS](ValueSet-practitioner-identifier-domain-vs.html) qiymatlar to'plamida keltirilgan.
 
-## Tashkilot identifikatorlari
+### Tashkilot identifikatorlari
 
-### Soliq ID'si (Soliq)
+#### Soliq ID'si (Soliq)
 
 Tashkilotlar Davlat soliq qo'mitasi tomonidan beriladigan soliq identifikatsiya raqami bo'yicha identifikatsiyalanadi.
 
@@ -235,9 +276,11 @@ Tashkilotlar Davlat soliq qo'mitasi tomonidan beriladigan soliq identifikatsiya 
 }
 ```
 
-### Davlat tibbiy sug'urta jamg'armasi (DTSJ)
+#### Davlat tibbiy sug'urta jamg'armasi (DTSJ)
 
 O'zbekiston Respublikasi Davlat tibbiy sug'urta jamg'armasi (DTSJ) bilan shartnoma asosida ishlovchi tibbiy tashkilotlar o'zlarining DTSJ kodi orqali identifikatsiyalanadi. Kod `^[A-Z]{3}[0-9]{6}$` namunasiga amal qiladi — 3 ta bosh harf, undan keyin 6 ta raqam (masalan, `OAA000024`).
+
+DTSJ kodi — bu Fond (biriktiruvchi organ) tomonidan shartnoma asosidagi har bir tashkilotga Fondning identifikatorlar fazosida beriladigan provayder raqami (HL7 v2-0203 `PRN`). U Fondning o'zini emas, balki shartnoma asosidagi provayderni identifikatsiyalaydi: Fond to'lovchi sifatida o'zining soliq identifikatori (Soliq) orqali identifikatsiyalanadi. Bu O'zbekistonda sug'urtalovchilar tomonidan beriladigan provayder identifikatorlarining umumiy modeliga mos keladi, bunda har bir to'lovchi o'z fazosida provayder raqamlarini beradi.
 
 **System URI**: `https://dhp.uz/fhir/core/sid/org/uz/shif`
 
@@ -251,8 +294,8 @@ O'zbekiston Respublikasi Davlat tibbiy sug'urta jamg'armasi (DTSJ) bilan shartno
         "coding": [
           {
             "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "NIIP",
-            "display": "National Insurance Payor Identifier (Payor)"
+            "code": "PRN",
+            "display": "Provider number"
           }
         ]
       },
@@ -265,13 +308,19 @@ O'zbekiston Respublikasi Davlat tibbiy sug'urta jamg'armasi (DTSJ) bilan shartno
 
 Qo'llab-quvvatlanadigan barcha tashkilot identifikatorlarining to'liq ro'yxati [OrganizationIdentifierDomainVS](ValueSet-organization-identifier-domain-vs.html) qiymatlar to'plamida keltirilgan.
 
-## Hujjat identifikatorlari
+### Hujjat identifikatorlari {#document-identifiers}
 
 Hujjatlar `doc` nom maydoni orqali identifikatsiya qilinadi. Bu klinik hujjatlar, hisobotlar va boshqa tibbiy hujjatlarni kuzatish imkonini beradi.
 
 **System URI namunasi**: `https://dhp.uz/fhir/core/sid/doc/{country}/{type}`
 
-## To'liq misol: bir nechta identifikatorga ega bemor
+### Mahsulot identifikatorlari {#product-identifiers}
+
+Mahsulotlar `prd` nom maydoni orqali identifikatsiya qilinadi. U nom maydonini platformaning o'zi belgilaydigan raqamlar uchun mo'ljallangan, masalan, qon xizmatlari qon mahsulotlariga beradigan birlik raqamlari. Agar tashqi reestr mahsulot raqami uchun o'z tizim URI'sini e'lon qilsa, o'sha URI'dan foydalaning: masalan, dori vositalari identifikatorlari Asl Belgisi va uzpharminfo.uz reestri tizimlaridan foydalanadi.
+
+**System URI namunasi**: `https://dhp.uz/fhir/core/sid/prd/{country}/{type}[/subtype]`
+
+### To'liq misol: bir nechta identifikatorga ega bemor
 
 Bemorning bir nechta identifikatori bo'lishi mumkin. Quyida to'g'ri foydalanishni ko'rsatuvchi to'liq misol keltirilgan:
 
@@ -351,7 +400,7 @@ Bemorning bir nechta identifikatori bo'lishi mumkin. Quyida to'g'ri foydalanishn
 }
 ```
 
-## Joriy etish bo'yicha qo'llanma
+### Joriy etish bo'yicha qo'llanma
 
 IdentifierDomainCS CodeSystem dagi barcha tushunchalar tanlanadigan emas. Ota-ona/guruhlovchi tushunchalarda `notSelectable` xususiyati `true` qiymati bilan o'rnatilgan. FHIR resurslarida faqat barg-tushunchalar (haqiqiy identifikator tizimlari) ishlatilishi mumkin:
 
@@ -359,6 +408,7 @@ IdentifierDomainCS CodeSystem dagi barcha tushunchalar tanlanadigan emas. Ota-on
 - `https://dhp.uz/fhir/core/sid/pid/uz/ni`
 - `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`
 - `https://dhp.uz/fhir/core/sid/pro/uz/argos`
+- `https://dhp.uz/fhir/core/sid/pro/uz/specialist-certificate`
 
 **Tanlanmaydigan** (faqat ota-ona guruhlari):
 - `https://dhp.uz/fhir/core/sid/pid` (root)
@@ -366,7 +416,7 @@ IdentifierDomainCS CodeSystem dagi barcha tushunchalar tanlanadigan emas. Ota-on
 - `https://dhp.uz/fhir/core/sid/pid/uz/ppn` (pasport root)
 
 
-### Qidiruv
+#### Qidiruv
 
 Resurslarni identifikator bo'yicha qidirish uchun FHIR standart qidiruv parametrlaridan foydalaning:
 
@@ -378,10 +428,10 @@ GET [base]/Practitioner?identifier=https://dhp.uz/fhir/core/sid/pro/uz/argos|987
 GET [base]/Organization?identifier=https://dhp.uz/fhir/core/sid/org/uz/soliq|200935935
 ```
 
-## Bog'liq resurslar
+### Bog'liq resurslar
 
 - [IdentifierDomainCS CodeSystem](CodeSystem-identifier-domain-cs.html)
 - [UZCorePatient profili](StructureDefinition-uz-core-patient.html)
 - [UZCorePractitioner profili](StructureDefinition-uz-core-practitioner.html)
 - [UZCoreOrganization profili](StructureDefinition-uz-core-organization.html)
-- [Nomlash tizimlari (NamingSystems)](artifacts.html#terminology-naming-systems)
+- [Nomlash tizimlari (NamingSystems)](artifacts.html)

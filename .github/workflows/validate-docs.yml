@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install Sushi
         run: sudo npm install -g fsh-sushi
@@ -23,9 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       JAVA_TOOL_OPTIONS: "-Xmx8g"
+      PUBLISHER_URL: https://media.githubusercontent.com/media/vadi2/ig-publisher-builds/main/publisher-3.0.0-optimised.jar
+      PUBLISHER_SHA256: 34f1bc11c5fd1a9c1d639ad5a8b11b4939073c09e8b8c99838d626c0dde796c1
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install Jekyll
         run: sudo gem install jekyll
@@ -33,21 +35,37 @@ jobs:
       - name: Install Sushi
         run: sudo npm install -g fsh-sushi
 
+      # Validate with the optimised publisher build from vadi2/ig-publisher-builds,
+      # which is much faster than the official jar; release.yml still publishes
+      # with the official one. The jar is served via Git LFS, so cache it by
+      # checksum rather than re-downloading 250 MB on every run.
+      - name: Cache IG publisher
+        uses: actions/cache@v6
+        with:
+          path: input-cache/publisher.jar
+          key: publisher-${{ env.PUBLISHER_SHA256 }}
+
+      # Download the publisher directly and invoke it without the wrapper scripts:
+      # _updatePublisher.sh and _genonce.sh both probe the tx.fhir.org landing page
+      # and abort (or silently fall back to -tx n/a, skipping terminology validation)
+      # when that page is down even though the terminology API itself is up.
       - name: Install IG publisher
         run: |
-          chmod +x ./_updatePublisher.sh
-          ./_updatePublisher.sh -y
+          mkdir -p input-cache
+          if ! echo "$PUBLISHER_SHA256  input-cache/publisher.jar" | sha256sum -c --status 2>/dev/null; then
+            curl -fL --retry 3 --max-time 300 "$PUBLISHER_URL" -o input-cache/publisher.jar
+            echo "$PUBLISHER_SHA256  input-cache/publisher.jar" | sha256sum -c
+          fi
 
       - name: Check that the IG builds successfully
         run: |
-          chmod +x ./_genonce.sh
-          ./_genonce.sh
+          java -Dfile.encoding=UTF-8 -Xmx10g -jar input-cache/publisher.jar -ig .
           echo "✅ IG built successfully"
 
       - name: Check QA report
         run: |
           # Configuration
-          MAX_ALLOWED_ERRORS=52
+          MAX_ALLOWED_ERRORS=0
           MAX_ALLOWED_WARNINGS=0
 
           if [ ! -f "output/qa.json" ]; then

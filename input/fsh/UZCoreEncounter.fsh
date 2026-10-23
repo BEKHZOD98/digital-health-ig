@@ -16,7 +16,15 @@ Description: "Uzbekistan Core Encounter profile, used to represent clinical enco
 * status ^short = "Текущее состояние встречи"
 
 * class MS
-* class from EncounterClassVS (required)
+* class from EncounterClassVS (preferred)
+* class ^slicing.discriminator.type = #value
+* class ^slicing.discriminator.path = "$this"
+* class ^slicing.rules = #open
+* class ^slicing.description = "Encounter classes from the national value set; codes from other systems are allowed alongside them"
+* class ^slicing.ordered = false
+* class contains dhpClass 0..* MS
+* class[dhpClass] from EncounterClassVS (required)
+* class[dhpClass] ^short = "Encounter class from the national value set"
 * class ^short = "Классификация встречи с пациентом"
 
 * priority MS
@@ -24,8 +32,15 @@ Description: "Uzbekistan Core Encounter profile, used to represent clinical enco
 * priority ^short = "Указывает срочность встречи"
 
 * type MS
-* type from EncounterTypeVS (required)
-* type ^short = "Конкретный тип встречи"
+  * ^short = "Конкретный тип встречи"
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "coding.system"
+  * ^slicing.rules = #open
+  * ^slicing.description = "A national encounter-type classification is required; additional type codings from other systems are allowed"
+* type contains nationalType 1..1 MS
+* type[nationalType] from EncounterTypeVS (required)
+  * ^short = "National encounter-type classification"
+  * coding.system = Canonical(EncounterTypeCS)
 
 * serviceType MS
 * serviceType only CodeableReference(UZCoreHealthcareService)
@@ -75,7 +90,7 @@ Description: "Uzbekistan Core Encounter profile, used to represent clinical enco
 * reason.use ^short = "Для чего/как следует использовать значение причины"
 
 * reason.value MS
-* reason.value only CodeableReference (UZCoreCondition or DiagnosticReport or Procedure or UZCoreObservation)
+* reason.value only CodeableReference (UZCoreCondition or DiagnosticReport or Procedure or UZCoreObservation or UZCoreImmunizationRecommendation)
 * reason.value ^short = "Медицинская причина, требующая рассмотрения"
 
 * virtualService MS

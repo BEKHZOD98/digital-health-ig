@@ -8,7 +8,17 @@ Description: "Uzbekistan Core HealthcareService profile, used to define healthca
 * ^date = "2025-03-11"
 * ^publisher = "Uzinfocom"
 
-* active and category and type and name MS
+* active and category and type and providedBy MS
+
+* insert MultilingualName(услуги)
+
+
+* extension contains
+    TurnaroundTime named turnaroundTime 0..1 MS and
+    ServiceDefinition named serviceDefinition 0..1 MS
+* extension[turnaroundTime] ^short = "Time from specimen receipt to result availability"
+* extension[serviceDefinition] ^short = "Global ObservationDefinition catalogue entry that defines this offered laboratory service"
+
 * category.coding ^slicing.discriminator.type = #value
 * category.coding ^slicing.discriminator.path = "system"
 * category.coding ^slicing.rules = #open
@@ -23,13 +33,13 @@ Description: "Uzbekistan Core HealthcareService profile, used to define healthca
   * system 1..1 MS
   * system = Canonical(CancerTypesCS)
   * code 1..1 MS
-  * code from ServiceCategoriesVS (required)
+  * code from ServiceCategoriesVS (extensible)
 
 * category.coding[labCategory]
   * system 1..1 MS
   * system = Canonical(LabCategoriesCS)
   * code 1..1 MS
-  * code from lab-service-categories-vs (required)
+  * code from service-categories-vs (extensible)
 
 * type.coding ^slicing.discriminator.type = #value
 * type.coding ^slicing.discriminator.path = "system"
@@ -45,23 +55,42 @@ Description: "Uzbekistan Core HealthcareService profile, used to define healthca
   * system 1..1 MS
   * system = Canonical(CancerTypesCS)
   * code 1..1 MS
-  * code from ServiceNamesVS (required)
+  * code from ServiceNamesVS (extensible)
 
 * type.coding[labService]
   * system 1..1 MS
-  * system = Canonical(ObservationLabResearchCodesCS) //This link is temporary. After merging the ObservationLabCodes branch, it will be updated.
+  * system = Canonical(LabPanelCS) 
   * code 1..1 MS
-  * code from observation-codes-vs (required)
+  * code from observation-codes-vs (extensible)
+
+* characteristic ^slicing.discriminator.type = #value
+* characteristic ^slicing.discriminator.path = "coding.system"
+* characteristic ^slicing.rules = #open
+* characteristic ^slicing.description = "Funding source for each healthcare service"
+* characteristic ^slicing.ordered = false
+
+* characteristic contains
+    paymentType 0..* MS
+
+* characteristic[paymentType]
+  * coding 1..*
+  * coding.system 1..1 MS
+  * coding.system = Canonical(PaymentTypeCS)
+  * coding.code 1..1 MS
+  * coding.code from PaymentTypeVS (required)
 
 Instance: example-healthcareservice
 InstanceOf: UZCoreHealthcareService
 Description: "Example of a healthcare service"
 Usage: #example
 * active = true
+
 * category.coding[dhpCategory]
   * code = #cancr0013.00000
 * type.coding[dhpService]
   * code = #cancr0013.00001
+* characteristic[paymentType]
+  * coding.code = #paytype-0001-0004
 * language = #uz
 * name = "IHC-ga xos"
   * extension[translation][0]
@@ -74,3 +103,48 @@ Usage: #example
       * valueCode = #kaa
     * extension[content][+]
       * valueString = "IHC ushın arnawlı"
+
+
+
+
+Instance: example-healthcareservice-complete-blood-count
+InstanceOf: UZCoreHealthcareService
+Description: "Example of a laboratory healthcare service"
+Usage: #example
+
+* active = true
+
+// Illustrative: no panel-level ObservationDefinition exists yet, so this points at the hemoglobin analyte definition
+* extension[serviceDefinition].valueCanonical = Canonical(example-laboratory-hemoglobin)
+
+* extension[turnaroundTime].valueDuration.value = 4
+* extension[turnaroundTime].valueDuration.unit = "hours"
+* extension[turnaroundTime].valueDuration.system = "http://unitsofmeasure.org"
+* extension[turnaroundTime].valueDuration.code = #h
+
+* category.coding[labCategory]
+  * code = #lab-category-02 "Hematology"
+
+* type.coding[labService]
+  * code = #lab-pan-E "CBC panel"
+
+* language = #en
+
+* name = "Complete Blood Count (CBC)"
+  * extension[translation][0]
+    * extension[lang][0]
+      * valueCode = #ru
+    * extension[content][0]
+      * valueString = "Общий анализ крови"
+
+  * extension[translation][+]
+    * extension[lang][0]
+      * valueCode = #uz
+    * extension[content][0]
+      * valueString = "Umumiy qon tahlili"
+
+  * extension[translation][+]
+    * extension[lang][0]
+      * valueCode = #en
+    * extension[content][0]
+      * valueString = "Complete Blood Count (CBC)"

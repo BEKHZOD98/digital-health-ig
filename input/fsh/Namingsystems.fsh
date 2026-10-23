@@ -20,6 +20,45 @@ Usage: #definition
 * uniqueId[=].preferred = true
 * uniqueId[=].comment = "This is the canonical URI for the Uzbekistan HRM Argos system"
 
+Instance: uzb-moh-id
+InstanceOf: NamingSystem
+Description: "Organization identifiers assigned by the Ministry of Health (MOH) of Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-moh-id"
+* name = "UzbekistanMohOrganizationSystem"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-06-08"
+* type = $identifier-type#XX "Organization identifier"
+* description = "Naming system for healthcare organization identifiers assigned by the Ministry of Health of the Republic of Uzbekistan"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used to uniquely identify healthcare organizations managed or registered by the Ministry of Health of the Republic of Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $organization-moh-id-system
+* uniqueId[=].preferred = true
+* uniqueId[=].comment = "This is the canonical URI for the Uzbekistan Ministry of Health organization identifier system"
+Instance: uzb-dhp-id
+InstanceOf: NamingSystem
+Description: "Organization identifiers assigned by the Digital Health Platform (DHP) of Uzbekistan"
+Usage: #definition
+
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-dhp-id"
+* name = "UzbekistanDhpOrganizationSystem"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Digital Health Platform of the Republic of Uzbekistan"
+* date = "2026-06-08"
+* description = "Naming system for healthcare organization identifiers assigned by the Digital Health Platform of the Republic of Uzbekistan"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used to uniquely identify healthcare organizations registered in the Digital Health Platform of the Republic of Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $organization-dhp-id-system
+* uniqueId[=].preferred = true
+* uniqueId[=].comment = "This is the canonical URI for the Uzbekistan Digital Health Platform organization identifier system"
+
 Instance: uzb-shif
 InstanceOf: NamingSystem
 Description: "Organization identifiers assigned by the State Health Insurance Fund (SHIF) of Uzbekistan"
@@ -31,7 +70,7 @@ Usage: #definition
 * publisher = "Uzinfocom"
 * responsible = "State Health Insurance Fund of the Republic of Uzbekistan"
 * date = "2026-05-19"
-* type = $identifier-type#NIIP "National Insurance Payor Identifier (Payor)"
+* type = $identifier-type#PRN "Provider number"
 * description = "Naming system for organization identifiers assigned by the State Health Insurance Fund (SHIF) of the Republic of Uzbekistan to healthcare organizations that have entered into contracts with the Fund."
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * usage = "Used for identifying healthcare organizations that have contracts with the State Health Insurance Fund of Uzbekistan."
@@ -344,6 +383,121 @@ Description: "Identifier system used for EpisodeOfCare resources within the Uzbe
 * uniqueId[0].value = "http://dhp.uz/ids/episode-of-care"
 * uniqueId[0].preferred = true
 
+Instance: uz-pharm-box-id
+InstanceOf: NamingSystem
+Description: "Naming system for the box-level aggregation identifier used to group serialized pharmaceutical 
+packs into a shipping/carton unit within Uzbekistan's national track-and-trace program "
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uz-pharm-box-id"
+* name = "UzbekistanPharmBoxGroupID"
+* status = #active
+* kind = #identifier
+* date = "2025-10-06"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan."
+* description = "Box-level aggregate identifier for serialized pharmaceutical packaging in Uzbekistan's track-and-trace system."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Use as Identifier.system for box-level aggregation (pharm box group ID) in Uzbekistan's pharma track-and-trace."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $uzpharmBoxGroupID
+* uniqueId[=].preferred = true
+* uniqueId[=].comment = "Canonical URI to populate Identifier.system when recording a pharm box group ID."
+
+Instance: global-trade-item-id
+InstanceOf: NamingSystem
+Description: "NamingSystem for globally standardized trade identifiers (GTIN) used for medicinal products."
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/global-trade-item-id"
+* name = "GlobalTradeItemID"
+* status = #active
+* kind = #identifier
+* date = "2025-10-09"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan."
+* description = "Identifies the Global Trade Item Number (GTIN) assigned to medicinal products distributed in Uzbekistan, ensuring global interoperability in product identification."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Use as Identifier.system when recording a GTIN for any medicine or medical device in FHIR resources such as Medication, Device, or MedicationRequest."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $globalTradeItemID 
+* uniqueId[=].preferred = true
+* uniqueId[=].comment = "Canonical URI to be used as Identifier.system for GTIN codes in product records."
+
+Instance: uz-marking-id
+InstanceOf: NamingSystem
+Description: "NamingSystem for Uzbekistan's national marking identifiers (Asl Belgisi)."
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uz-marking-id"
+* name = "AslBelgisiMarkingID"
+* status = #active
+* kind = #identifier
+* date = "2025-10-09"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan."
+* description = "Identifies the national marking (Asl Belgisi) code assigned to serialized pharmaceutical packages within Uzbekistan's track-and-trace system."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Use as Identifier.system when referencing the Asl Belgisi marking ID in medication packaging, transport, and verification records."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $markingID
+* uniqueId[=].preferred = true
+* uniqueId[=].comment = "Canonical URI to populate Identifier.system when recording an Asl Belgisi marking identifier."
+
+Instance: registration-certificate-id
+InstanceOf: NamingSystem
+Description: "NamingSystem for official registration certificate identifiers for medicines."
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/registration-certificate-id"
+* name = "RegistrationCertificateID"
+* status = #active
+* kind = #identifier
+* date = "2025-10-09"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan."
+* description = "Represents the registration certificate number assigned by the Ministry of Health of the Republic of Uzbekistan to authorize the marketing of medicinal products."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Use as Identifier.system when capturing or validating a medicine's registration certificate number in regulatory and inventory systems."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $registrationCertificateID
+* uniqueId[=].preferred = true
+* uniqueId[=].comment = "Canonical URI to be used as Identifier.system for registration certificate identifiers."
+
+Instance: product-service-id
+InstanceOf: NamingSystem
+Description: "NamingSystem for national product and service classification codes."
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/product-service-id"
+* name = "ProductServiceID"
+* status = #active
+* kind = #identifier
+* date = "2025-10-09"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan."
+* description = "Represents the Product and Service Identification Code (ICPS) used to categorize medicines, healthcare products, and services within Uzbekistan's health information systems."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Use as Identifier.system when referencing ICPS-based codes in product catalogs, invoices, or billing-related FHIR resources."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $productServiceID
+* uniqueId[=].preferred = true
+* uniqueId[=].comment = "Canonical URI to populate Identifier.system for ICPS product and service codes."
+/*
+Instance: uz-pharm-id
+InstanceOf: NamingSystem
+Description: "NamingSystem for identifiers issued by the Uzbekistan Pharmaceutical Agency."
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uz-pharm-id"
+* name = "Pharmaceutical agency drug id"
+* status = #active
+* kind = #identifier
+* date = "2025-10-09"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan."
+* description = "Represents the official drug identifier (Pharm ID) assigned by the Pharmaceutical Agency of Uzbekistan for national medicine registry management and data exchange."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Use as Identifier.system when recording or exchanging official Pharmaceutical Agency drug identifiers in FHIR resources like Medication or MedicationKnowledge."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $uzpharm-agency
+* uniqueId[=].preferred = true
+* uniqueId[=].comment = "Canonical URI to be used as Identifier.system for Pharmaceutical Agency drug identifiers."
+*/
 Instance: who-ichi
 InstanceOf: NamingSystem
 Description: "WHO International Classification of Health Interventions (ICHI)"
@@ -356,12 +510,12 @@ Usage: #definition
 * publisher = "World Health Organization"
 * responsible = "World Health Organization"
 * description = "WHO International Classification of Health Interventions (ICHI) is a common tool for reporting and analyzing health interventions for clinical and statistical purposes."
-* jurisdiction = urn:iso:std:iso:3166#001 "World"
+* jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 * usage = "Used to classify health interventions for statistical reporting and clinical documentation."
 * uniqueId[0].type = #uri
-* uniqueId[=].value = "http://id.who.int/icd/release/11/beta/ichi"
+* uniqueId[=].value = "http://id.who.int/icd/release/11/ichi"
 * uniqueId[=].preferred = true
-* uniqueId[=].comment = "WHO ICHI beta release URI"
+* uniqueId[=].comment = "Canonical URI for ICHI. ICHI is a linearization of the ICD-11 Foundation Component, so it shares the icd/release/11 namespace with ICD-11 MMS and ICF."
 
 Instance: ssv-organization-type-level
 InstanceOf: NamingSystem
@@ -436,6 +590,24 @@ Usage: #definition
 * uniqueId[=].value = $pension-number
 * uniqueId[=].preferred = true
 
+Instance: diagnostic-report-id
+InstanceOf: NamingSystem
+Description: "Identifier used to uniquely identify a diagnostic report within the Uzbekistan digital health system."
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/diagnostic-report-id"
+* name = "UzbekistanDiagnosticReportIdSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-02-06"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* description = "Naming system defining the identifier assigned to diagnostic reports within Uzbekistan’s national health information exchange. This identifier ensures uniqueness of laboratory and clinical diagnostic reports and supports interoperability across healthcare providers, laboratories, and national registries."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used to record and exchange unique identifiers for diagnostic reports across healthcare systems, including laboratory results and imaging reports. This identifier supports traceability, result validation, and integration with national eHealth services."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://terminology.dhp.uz/fhir/core/NamingSystem/diagnostic-report-id"
+* uniqueId[=].preferred = true
+
 Instance: immunization-identifier
 InstanceOf: NamingSystem
 Usage: #definition
@@ -467,4 +639,132 @@ Usage: #definition
 * usage = "Used for identifying clinical records assigned by the Uzbekistan Medical Information System."
 * uniqueId[0].type = #uri
 * uniqueId[=].value = $mis-dmed-uz
+* uniqueId[=].preferred = true
+
+Instance: uzb-blood-unit-number
+InstanceOf: NamingSystem
+Description: "Local blood product unit identifiers issued by blood services in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-blood-unit-number"
+* name = "UzbekistanBloodProductUnitNumber"
+* status = #active
+* kind = #identifier
+* date = "2026-10-08"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* description = "Naming system for local identifiers of individual blood product units. The collecting blood service assigns the original unit number when collection is registered. The processing blood service assigns a distinct unit number to each derived component or aliquot. These identifiers support labeling, inventory management and product traceability; they are not ISBT 128 Donation Identification Numbers."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in BiologicallyDerivedProduct.identifier.system. Values must be unique across participating blood services within this namespace, using coordinated allocation or an issuer-qualified value. Record the issuing service in identifier.assigner. Preserve the unit number throughout the product lifecycle; derived components receive their own unit numbers."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $blood-unit-number
+* uniqueId[=].preferred = true
+
+Instance: uzb-blood-donation-number
+InstanceOf: NamingSystem
+Description: "Local blood donation event identifiers issued by collecting blood services in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-blood-donation-number"
+* name = "UzbekistanBloodDonationNumber"
+* status = #active
+* kind = #identifier
+* date = "2026-10-08"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* description = "Naming system for local blood donation event identifiers assigned by the collecting blood service when collection is registered. The donation number supports donor-to-product and product-to-donor traceability and is retained on all products derived from that single donation. This local numbering scheme does not assert ISBT 128 compliance."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in BiologicallyDerivedProduct.biologicalSourceEvent.system. Values must be unique across participating blood services within this namespace, using coordinated allocation or an issuer-qualified value. Record the collecting service in biologicalSourceEvent.assigner. Derived components retain the original donation number. Do not use a donor identifier. This namespace does not cover pooling events."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $blood-donation-number
+* uniqueId[=].preferred = true
+
+Instance: uzb-supply-request-number
+InstanceOf: NamingSystem
+Description: "Supply request numbers assigned by requesting hospitals in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-supply-request-number"
+* name = "UzbekistanSupplyRequestIdentifier"
+* status = #active
+* kind = #identifier
+* date = "2026-09-30"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* type = $identifier-type#PLAC "Placer Identifier"
+* description = "Naming system for supply request numbers assigned by the requesting hospital's information system when ordering blood components from the blood service."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in SupplyRequest.identifier.system to identify and track the hospital's supply request and correlate it with the blood service's response and delivery. Values must be unique across requesting hospitals within this namespace, using coordinated allocation or an issuer-qualified value. Record the requesting hospital in identifier.assigner."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $supply-request-number
+* uniqueId[=].preferred = true
+
+Instance: uzb-supply-contract-number
+InstanceOf: NamingSystem
+Description: "Supply agreement numbers between hospitals and blood services in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-supply-contract-number"
+* name = "UzbekistanSupplyContractIdentifier"
+* status = #active
+* kind = #identifier
+* date = "2026-09-30"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* description = "Naming system for numbers identifying supply agreements between the requesting hospital and the blood service, as recorded in the source system's Contract module."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in SupplyRequest.identifier.system to link a supply request to the agreement under which the blood service supplies blood components to the hospital. Values must be unique across agreements within this namespace, using coordinated allocation or an issuer-qualified value. Record the party that issued the agreement number in identifier.assigner."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $supply-contract-number
+* uniqueId[=].preferred = true
+
+Instance: uzb-supply-delivery-number
+InstanceOf: NamingSystem
+Description: "Supply delivery numbers assigned by suppliers such as blood services in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-supply-delivery-number"
+* name = "UzbekistanSupplyDeliveryIdentifier"
+* status = #active
+* kind = #identifier
+* date = "2026-09-30"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* type = $identifier-type#FILL "Filler Identifier"
+* description = "Naming system for supply delivery numbers assigned by the supplier's information system when it issues supplies, such as the blood service issuing blood components to a hospital."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in SupplyDelivery.identifier.system to identify and track a delivery and correlate it with the supply request it fulfils. Values must be unique across suppliers within this namespace, using coordinated allocation or an issuer-qualified value. Record the supplier in identifier.assigner."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $supply-delivery-number
+* uniqueId[=].preferred = true
+
+Instance: uzb-specialist-certificate
+InstanceOf: NamingSystem
+Description: "Specialist certificate numbers of healthcare professionals issued by the Ministry of Health of Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-specialist-certificate"
+* name = "UzbekistanSpecialistCertificateSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-10-08"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* description = "Naming system for specialist certificates that the Ministry of Health of the Republic of Uzbekistan issues to healthcare professionals. The identifier value is the certificate series followed by its number, without separators (e.g. CA008815)."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in Practitioner.qualification.identifier to identify the specialist certificate of a healthcare professional."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $specialist-certificate
+* uniqueId[=].preferred = true
+
+Instance: uzb-inventory-item-number
+InstanceOf: NamingSystem
+Description: "Inventory item identifiers assigned by inventory-managing organizations in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/core/NamingSystem/uzb-inventory-item-number"
+* name = "UzbekistanInventoryItemIdentifier"
+* status = #active
+* kind = #identifier
+* date = "2026-10-20"
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* description = "Naming system for inventory item identifiers assigned by the managing organization's information system to inventory records for products such as medications, devices, nutrition products and blood products."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in InventoryItem.identifier.system to identify and track an inventory item record. Values must be unique across participating organizations within this namespace, using coordinated allocation or an issuer-qualified value. Record the organization that assigned the identifier in identifier.assigner. Identifiers of individual physical instances are recorded in InventoryItem.instance.identifier."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $inventory-item-number
 * uniqueId[=].preferred = true
