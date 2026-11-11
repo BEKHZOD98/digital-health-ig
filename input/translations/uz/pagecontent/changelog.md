@@ -31,6 +31,8 @@ Endi har bir profil sahifasida kirish qismi va Tez boshlash bo'limi bor. Ular [U
 
 #### O'zgartirildi
 
+BloodProductInventoryItem CSV papkasi nomining oxiridagi yangi qator belgisi olib tashlandi, shunda repozitoriyni Windows tizimida klonlash mumkin.
+
 [FHIR turlari supplementi](CodeSystem-fhir-types-cs.html) har bir resurs turiga nomi o'rniga uning ta'rifi tarjimasini berardi. Endi har bir turning o'zbekcha va ruscha nomi bor, masalan `Patient` uchun "Bemor" va "Пациент", ular `preferredForLanguage` bilan belgilangan, shuning uchun `displayLanguage` bilan `$lookup` nomni qaytaradi. Tarjima qilingan ta'riflar SNOMED CT `900000000000550004` Definition use bilan belgilashlar sifatida qoladi.
 
 Kod tizimlari va qiymatlar to'plamlarining sarlavhalari va tavsiflari endi [modellashtirish qo'llanmasidagi](https://github.com/uzinfocom-org/digital-health-ig/blob/main/modelling-guidelines.md) nomlash shabloniga mos keladi: supplement `[Concept] translations`, qiymatlar to'plami esa `[Concept]` deb nomlanadi, sarlavhalarda "CodeSystem" yoki "ValueSet" kabi so'zlar endi yo'q. Kanonik URL, identifikatorlar va kodlar o'zgarmadi.
@@ -42,6 +44,8 @@ Kod tizimlari va qiymatlar to'plamlarining sarlavhalari va tavsiflari endi [mode
 [UZ Core Observation](StructureDefinition-uz-core-observation.html), [UZ Core Immunization](StructureDefinition-uz-core-immunization.html) va [UZ Core Procedure](StructureDefinition-uz-core-procedure.html) dagi `basedOn` endi istalgan CarePlan emas, UZ Core CarePlan ga havola qiladi.
 
 [UZ Core Organization](StructureDefinition-uz-core-organization.html) va [UZ Core RelatedPerson](StructureDefinition-uz-core-relatedperson.html) endi identifikator turining display qiymatini qat'iy belgilamaydi: `mohId` va `argosId` bo'laklari faqat tizim va `XX` kodini, `healthCard` esa faqat `HC` kodini belgilaydi. Belgilangan "Organization Identifier" va "Health card number" display qiymatlari HL7 terminologiyasidagi "Organization identifier" va "Health Card Number" bilan mos kelmagani sababli profilga mos har bir namuna terminologiya ogohlantirishini olardi. Endi identifikator turi ushbu display qiymatlaridan istalgani bilan yoki usiz profilga mos keladi.
+
+[UZ Core Patient](StructureDefinition-uz-core-patient.html) endi bir nechta tug'ilganlik haqidagi guvohnomaga ruxsat beradi (`birthCertificate` endi 0..1 o'rniga 0..*) va uning `use` qiymatini qat'iy belgilamaydi, shuning uchun bemorning almashtirilgan guvohnomasini `use = old` bilan, amaldagisini esa `use = official` bilan birga yuborish mumkin.
 
 UZ Core profillaridagi Device ga barcha havolalar endi [UZ Core Device](StructureDefinition-uz-core-device.html) ga yo'naltirilgan: Observation, Procedure, Condition, AdverseEvent, Composition, QuestionnaireResponse, Group, MedicationAdministration, MedicationDispense, InventoryItem, SupplyRequest va SupplyDelivery.
 
